@@ -1,78 +1,229 @@
 import React from 'react';
+import { Globe } from 'lucide-react';
+import siteContent from '../data/siteContent';
 
 const Projects = () => {
-    const projects = [
-        {
-            name: "Custom CMS",
-            description: "A CMS for content creation and publishing.",
-            status: "Live",
-            linkLive: "",
-            linkGithub: "https://github.com/Nabil-00/molten-nova-cms.git"
-        },
-        {
-            name: "Organization Website + CMS Integration",
-            description: "A connected site powered by the custom CMS.",
-            status: "Live",
-            linkLive: "https://www.galaltixnig.com",
-            linkGithub: "https://github.com/Nabil-00/molten-nova-cms.git"
-        },
-        {
-            name: "Portfolio Website",
-            description: "This portfolio project demonstrating my skills.",
-            status: "Live",
-            linkLive: "#",
-            linkGithub: "#"
-        },
-        {
-            name: "E-commerce Platform",
-            description: "Online store system with cart and order flow.",
-            status: "Live",
-            linkLive: "https://9jamart.co",
-            linkGithub: "#"
-        }
-    ];
+    const { projects, sections } = siteContent;
+    const { projects: projectsSection } = sections;
+    const [visibleCards, setVisibleCards] = React.useState({});
+    const cardRefs = React.useRef([]);
+
+    React.useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+                    const index = Number(entry.target.getAttribute('data-index'));
+                    setVisibleCards((prev) => ({ ...prev, [index]: true }));
+                    observer.unobserve(entry.target);
+                });
+            },
+            { threshold: 0.15 }
+        );
+
+        cardRefs.current.forEach((card) => {
+            if (card) {
+                observer.observe(card);
+            }
+        });
+
+        return () => observer.disconnect();
+    }, []);
 
     return (
-        <section id="projects" className="section bg-surface-color">
+        <section id="projects" style={{ background: 'var(--bg-2)', padding: '120px 0' }}>
             <div className="container">
-                <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">Projects</h2>
+                <div className="max-w-3xl">
+                    <p
+                        style={{
+                            fontSize: '12px',
+                            letterSpacing: '0.12em',
+                            color: 'var(--accent)',
+                            textTransform: 'uppercase',
+                            fontWeight: 600,
+                        }}
+                    >
+                        {projectsSection.eyebrow}
+                    </p>
+                    <h2
+                        className="mt-3"
+                        style={{
+                            fontSize: 'clamp(32px, 5vw, 48px)',
+                            fontWeight: 800,
+                            letterSpacing: '-0.02em',
+                            color: 'var(--text-primary)',
+                        }}
+                    >
+                        {projectsSection.heading}
+                    </h2>
+                    <p className="mt-4" style={{ fontSize: '16px', color: 'var(--text-secondary)' }}>
+                        {projectsSection.subtext}
+                    </p>
+                </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+                <div className="mt-12">
                     {projects.map((project, index) => (
-                        <div key={index} className="project-card group">
-                            <div className="p-6 md:p-8 text-center space-y-3 md:space-y-4">
-                                <h3 className="text-lg md:text-xl font-bold text-white leading-tight">{project.name}</h3>
-                                <p className="text-text-secondary text-sm md:text-base">{project.description}</p>
-                                <div className="inline-block px-3 py-1 bg-white/5 rounded-full text-xs text-accent border border-accent/20">
-                                    {project.status}
+                        <article
+                            key={project.id ?? index}
+                            ref={(el) => {
+                                cardRefs.current[index] = el;
+                            }}
+                            data-index={index}
+                            className="grid lg:grid-cols-2 gap-10 lg:gap-[60px] items-center"
+                            style={{
+                                marginBottom: '80px',
+                                opacity: visibleCards[index] ? 1 : 0,
+                                transform: visibleCards[index] ? 'translateY(0)' : 'translateY(30px)',
+                                transition: 'opacity 0.6s ease, transform 0.6s ease',
+                                transitionDelay: `${index * 0.1}s`,
+                            }}
+                        >
+                            <div className={index % 2 === 0 ? 'order-1' : 'order-1 lg:order-2'}>
+                                {project.image ? (
+                                    <img
+                                        src={project.image}
+                                        alt={`${project.title} preview`}
+                                        style={{
+                                            width: '100%',
+                                            aspectRatio: '16/10',
+                                            objectFit: 'cover',
+                                            objectPosition: 'top',
+                                            borderRadius: 'var(--radius-md)',
+                                            border: '1px solid var(--border)',
+                                        }}
+                                        loading="lazy"
+                                    />
+                                ) : (
+                                    <div
+                                        className="w-full flex flex-col items-center justify-center text-center px-5"
+                                        style={{
+                                            background: 'var(--bg-3)',
+                                            border: '1px solid var(--border)',
+                                            borderRadius: 'var(--radius-md)',
+                                            aspectRatio: '16 / 10',
+                                        }}
+                                    >
+                                        <Globe size={40} style={{ color: 'var(--border-hover)' }} />
+                                        <p className="mt-3" style={{ color: 'var(--text-primary)', fontWeight: 600 }}>
+                                            {project.title}
+                                        </p>
+                                        <p
+                                            className="mt-2"
+                                            style={{
+                                                fontFamily: 'monospace',
+                                                fontSize: '12px',
+                                                color: 'var(--text-tertiary)',
+                                            }}
+                                        >
+                                            {project.live || project.title}
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
+
+                            <div className={index % 2 === 0 ? 'order-2' : 'order-2 lg:order-1'}>
+                                <p style={{ fontSize: '12px', color: 'var(--text-secondary)', fontWeight: 600 }}>
+                                    <span style={{ color: (project.status || '').toLowerCase().includes('maintenance') ? 'var(--yellow)' : 'var(--accent)' }}>
+                                        ●
+                                    </span>{' '}
+                                    {project.status?.toUpperCase() || projectsSection.fallbackStatus}
+                                </p>
+
+                                {project.collab && (
+                                    <p style={{ fontSize: '12px', color: 'var(--text-tertiary)', marginTop: '6px' }}>
+                                        In collaboration with{' '}
+                                        <a
+                                            href={project.collab.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            style={{ color: 'var(--accent)', fontSize: '13px', fontWeight: 600, transition: 'opacity 0.2s ease' }}
+                                            onMouseEnter={(e) => {
+                                                e.currentTarget.style.opacity = '0.8';
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                e.currentTarget.style.opacity = '1';
+                                            }}
+                                        >
+                                            {project.collab.name}
+                                        </a>
+                                    </p>
+                                )}
+
+                                <h3
+                                    className="mt-3"
+                                    style={{
+                                        fontSize: 'clamp(24px, 4vw, 36px)',
+                                        fontWeight: 800,
+                                        color: 'var(--text-primary)',
+                                        letterSpacing: '-0.02em',
+                                    }}
+                                >
+                                    {project.title}
+                                </h3>
+
+                                <p className="mt-4" style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+                                    {project.desc}
+                                </p>
+
+                                <div className="mt-5 flex flex-wrap gap-2">
+                                    {project.tags?.map((tag) => (
+                                        <span
+                                            key={tag}
+                                            style={{
+                                                background: 'var(--bg-3)',
+                                                border: '1px solid var(--border)',
+                                                borderRadius: 'var(--radius-pill)',
+                                                padding: '6px 16px',
+                                                fontSize: '13px',
+                                                color: 'var(--text-secondary)',
+                                                fontFamily: 'monospace',
+                                            }}
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                <div className="mt-6 flex items-center gap-5">
+                                    {project.live && (
+                                        <a
+                                            href={project.live}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            style={{ color: 'var(--text-primary)', fontWeight: 600, transition: 'color 0.2s ease' }}
+                                            onMouseEnter={(e) => {
+                                                e.currentTarget.style.color = 'var(--accent)';
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                e.currentTarget.style.color = 'var(--text-primary)';
+                                            }}
+                                        >
+                                            {projectsSection.liveLinkLabel} ↗
+                                        </a>
+                                    )}
+
+                                    {project.github && (
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            style={{ color: 'var(--text-secondary)', transition: 'color 0.2s ease' }}
+                                            onMouseEnter={(e) => {
+                                                e.currentTarget.style.color = 'var(--text-primary)';
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                e.currentTarget.style.color = 'var(--text-secondary)';
+                                            }}
+                                        >
+                                            {projectsSection.githubLinkLabel} →
+                                        </a>
+                                    )}
                                 </div>
                             </div>
-
-                            {/* Hover Overlay */}
-                            <div className="project-overlay bg-accent/20 backdrop-blur-md">
-                                {project.linkLive && (
-                                    <a
-                                        href={project.linkLive}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="overlay-link border border-accent/50 hover:bg-accent hover:border-accent hover:text-black transition-all"
-                                    >
-                                        Visit Website
-                                    </a>
-                                )}
-
-                                {project.linkGithub && project.linkGithub !== "#" && (
-                                    <a
-                                        href={project.linkGithub}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="overlay-link border border-accent/50 text-accent hover:bg-accent hover:border-accent hover:text-black transition-all"
-                                    >
-                                        View GitHub Repo
-                                    </a>
-                                )}
-                            </div>
-                        </div>
+                        </article>
                     ))}
                 </div>
             </div>

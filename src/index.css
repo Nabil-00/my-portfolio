@@ -1,13 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --bg-color: #000000;
-  --surface-color: #111512;
-  --accent-color: #00ff88;
-  --accent-glow: rgba(0, 255, 136, 0.4);
-  --text-primary: #ffffff;
-  --text-secondary: #9aa39c;
-  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --bg: #000000;
+  --bg-2: #0A0A0A;
+  --bg-3: #111111;
+  --accent: #00E5A0;
+  --accent-dim: rgba(0, 229, 160, 0.12);
+  --accent-glow: rgba(0, 229, 160, 0.25);
+  --blue: #3B82F6;
+  --blue-dim: rgba(59, 130, 246, 0.12);
+  --red: #EF4444;
+  --yellow: #EAB308;
+  --text-primary: #FFFFFF;
+  --text-secondary: #9CA3AF;
+  --text-tertiary: #6B7280;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.16);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
 }
 
 * {
@@ -16,12 +28,14 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--bg);
+  color: var(--text-primary);
 }
 
 body {
-  background-color: var(--bg-color);
+  background-color: var(--bg);
   color: var(--text-primary);
-  font-family: var(--font-main);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   margin: 0;
   padding: 0;
@@ -75,11 +89,11 @@ a {
 }
 
 .bg-surface-color {
-  background-color: var(--surface-color);
+  background-color: var(--bg-3);
 }
 
 .text-accent {
-  color: var(--accent-color);
+  color: var(--accent);
 }
 
 .text-text-secondary {
@@ -90,7 +104,7 @@ a {
 .btn-3d {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background-color: var(--accent-color);
+  background-color: var(--accent);
   color: #000;
   font-weight: 700;
   border-radius: 9999px;
@@ -132,7 +146,7 @@ a {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: var(--accent-color);
+  background-color: var(--accent);
   transition: width 0.3s;
 }
 
@@ -143,7 +157,7 @@ a {
 /* Project Cards */
 .project-card {
   position: relative;
-  background-color: var(--surface-color);
+  background-color: var(--bg-3);
   border-radius: 1rem;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -208,27 +222,6 @@ a {
   }
 }
 
-/* Skills Section */
-.skill-bar {
-  height: 6px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-}
-
-@media (min-width: 768px) {
-  .skill-bar {
-    height: 8px;
-  }
-}
-
-.skill-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--accent-color), #00cc6a);
-  border-radius: 999px;
-  transition: width 1s ease-out;
-}
-
 /* Animations */
 @keyframes fade-in-left {
   from {
@@ -291,7 +284,7 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-color);
+  background: var(--bg);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -300,7 +293,7 @@ a {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-color);
+  background: var(--accent);
 }
 
 /* Mobile-first responsive typography */
@@ -322,22 +315,6 @@ h3 {
   }
 }
 
-/* About section image */
-.about-image {
-  position: relative;
-  border-radius: 1rem;
-  overflow: hidden;
-}
-
-.about-image::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 1rem;
-  background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), transparent);
-  z-index: 1;
-}
-
 /* Footer responsive */
 .footer-content {
   display: flex;
@@ -353,23 +330,6 @@ h3 {
     justify-content: space-between;
     text-align: left;
   }
-}
-
-/* Glass morphism effect for cards */
-.glass-card {
-  background: rgba(17, 21, 18, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Modern hover states for interactive elements */
-.interactive-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.interactive-hover:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Safe area insets for notched phones */

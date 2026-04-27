@@ -1,103 +1,202 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import siteContent from '../data/siteContent';
 
 const Navbar = () => {
-    const [scrolled, setScrolled] = useState(false);
+    const { meta, hero, navigation } = siteContent;
+    const firstName = meta.name.split(' ')[0];
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const drawerRef = useRef(null);
+    const closeButtonRef = useRef(null);
+    const menuTriggerRef = useRef(null);
+    const wasOpenRef = useRef(false);
 
-    const navLinks = [
-        { name: "Home", href: "#home" },
-        { name: "About", href: "#about" },
-        { name: "Skills", href: "#skills" },
-        { name: "Portfolio", href: "#projects" },
-        { name: "Contact", href: "#contact" }
-    ];
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    // Close mobile menu when clicking a link
     const handleLinkClick = () => {
         setMobileMenuOpen(false);
     };
 
+    useEffect(() => {
+        if (wasOpenRef.current && !mobileMenuOpen) {
+            menuTriggerRef.current?.focus();
+        }
+        wasOpenRef.current = mobileMenuOpen;
+
+        if (!mobileMenuOpen) {
+            return undefined;
+        }
+
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        closeButtonRef.current?.focus();
+
+        const handleKeyDown = (event) => {
+            if (event.key === 'Escape') {
+                setMobileMenuOpen(false);
+                return;
+            }
+
+            if (event.key !== 'Tab') {
+                return;
+            }
+
+            const focusable = drawerRef.current?.querySelectorAll(
+                'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+            );
+
+            if (!focusable || focusable.length === 0) {
+                return;
+            }
+
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [mobileMenuOpen]);
+
     return (
         <>
-            <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/95 backdrop-blur-md py-3 md:py-4' : 'bg-transparent py-4 md:py-6'}`}>
-                <div className="container flex items-center justify-between">
-                    {/* Logo */}
-                    <a href="#" className="text-xl md:text-2xl font-bold tracking-tight text-white flex items-center hover:text-accent hover:scale-105 transition-all duration-300">
-                        <span className="text-accent">N</span>abeel
+            <nav
+                className="fixed inset-x-0 top-0"
+                style={{
+                    zIndex: 1000,
+                    height: '64px',
+                    background: 'rgba(0,0,0,0.8)',
+                    backdropFilter: 'blur(20px)',
+                    borderBottom: '1px solid var(--border)',
+                }}
+            >
+                <div className="container h-full flex items-center justify-between gap-4">
+                    <a href="#home" className="text-xl font-extrabold tracking-tight text-white">
+                        <span style={{ color: 'var(--accent)' }}>{firstName[0]}</span>{firstName.slice(1)}
                     </a>
 
-                    {/* Desktop Menu & CTA */}
-                    <div className="hidden md:flex items-center gap-8 lg:gap-12">
-                        {/* Links */}
-                        <div className="flex items-center gap-6 lg:gap-8">
-                            {navLinks.map((link) => (
-                                <a
-                                    key={link.name}
-                                    href={link.href}
-                                    className="nav-link text-sm font-medium text-white/70 hover:text-accent transition-colors"
-                                >
-                                    {link.name}
-                                </a>
-                            ))}
-                        </div>
+                    <div className="hidden lg:flex items-center gap-6">
+                        {navigation.map((link) => (
+                            <a
+                                key={link.href}
+                                href={link.href}
+                                className="text-sm"
+                                style={{
+                                    fontSize: '14px',
+                                    color: 'var(--text-secondary)',
+                                    transition: 'color 0.2s ease',
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.color = 'var(--text-primary)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.color = 'var(--text-secondary)';
+                                }}
+                            >
+                                {link.label}
+                            </a>
+                        ))}
+                    </div>
 
-                        {/* Download CV Button */}
+                    <div className="hidden lg:flex items-center">
                         <a
-                            href="/Nabeel_Ismail_CV.pdf"
-                            className="px-5 lg:px-6 py-2 bg-accent text-black text-sm font-bold rounded-full hover:bg-transparent hover:text-accent hover:border-2 hover:border-accent hover:scale-110 hover:shadow-[0_0_25px_rgba(0,255,136,0.6)] transition-all duration-300 shadow-[0_4px_15px_rgba(0,255,136,0.3)] border-2 border-transparent"
+                            href={meta.cvPath}
                             download
+                            style={{
+                                background: 'var(--accent)',
+                                color: '#000',
+                                fontWeight: 700,
+                                borderRadius: 'var(--radius-pill)',
+                                padding: '8px 20px',
+                            }}
                         >
-                            Download CV
+                            {hero.cta.secondary}
                         </a>
                     </div>
 
-                    {/* Mobile Actions (CV + Menu) */}
-                    <div className="flex items-center gap-4 md:hidden">
-                        <a
-                            href="/Nabeel_Ismail_CV.pdf"
-                            className="px-4 py-2 bg-accent text-black text-xs font-bold rounded-full hover:bg-transparent hover:text-accent hover:border-2 hover:border-accent transition-all duration-300 shadow-[0_4px_15px_rgba(0,255,136,0.3)] border-2 border-transparent"
-                            download
-                        >
-                            Download CV
-                        </a>
-
-                        <button
-                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            className="w-10 h-10 flex items-center justify-center text-white hover:text-accent transition-colors"
-                            aria-label="Toggle menu"
-                        >
-                            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                        </button>
-                    </div>
+                    <button
+                        ref={menuTriggerRef}
+                        onClick={() => setMobileMenuOpen((prev) => !prev)}
+                        className="lg:hidden w-10 h-10 inline-flex items-center justify-center"
+                        style={{ color: 'var(--text-primary)' }}
+                        aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+                        aria-expanded={mobileMenuOpen}
+                        aria-controls="mobile-drawer"
+                    >
+                        {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+                    </button>
                 </div>
             </nav>
 
-            {/* Mobile Menu Overlay */}
             <div
-                className={`fixed inset-0 bg-black/95 backdrop-blur-lg z-40 md:hidden transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                className={`fixed inset-0 lg:hidden transition-opacity duration-200 ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+                style={{ zIndex: 999, background: 'rgba(0,0,0,0.55)' }}
+                onClick={() => setMobileMenuOpen(false)}
+                aria-hidden={!mobileMenuOpen}
             >
-                <div className="flex flex-col items-center justify-center min-h-screen gap-8">
-                    {navLinks.map((link, index) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            onClick={handleLinkClick}
-                            className="text-3xl font-bold text-white hover:text-accent transition-all duration-300 hover:scale-110"
-                            style={{ animationDelay: `${index * 100}ms` }}
+                <aside
+                    id="mobile-drawer"
+                    ref={drawerRef}
+                    className={`absolute right-0 top-0 h-full w-[min(320px,85vw)] transition-transform duration-200 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                    style={{
+                        background: 'var(--bg-2)',
+                        borderLeft: '1px solid var(--border)',
+                        backdropFilter: 'blur(20px)',
+                    }}
+                    role="dialog"
+                    aria-modal="true"
+                    onClick={(e) => e.stopPropagation()}
+                >
+                    <div className="p-5 flex items-center justify-between" style={{ borderBottom: '1px solid var(--border)' }}>
+                        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{meta.name}</p>
+                        <button
+                            ref={closeButtonRef}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="w-10 h-10 inline-flex items-center justify-center"
+                            style={{ color: 'var(--text-primary)' }}
+                            aria-label="Close menu"
                         >
-                            {link.name}
+                            <X size={20} />
+                        </button>
+                    </div>
+
+                    <div className="p-5 flex flex-col gap-2">
+                        {navigation.map((link) => (
+                            <a
+                                key={link.href}
+                                href={link.href}
+                                onClick={handleLinkClick}
+                                className="px-3 py-3 rounded-lg text-base"
+                                style={{ color: 'var(--text-secondary)', border: '1px solid transparent' }}
+                            >
+                                {link.label}
+                            </a>
+                        ))}
+
+                        <a
+                            href={meta.cvPath}
+                            download
+                            className="mt-2 text-center"
+                            style={{
+                                background: 'var(--accent)',
+                                color: '#000',
+                                fontWeight: 700,
+                                borderRadius: 'var(--radius-pill)',
+                                padding: '10px 20px',
+                            }}
+                        >
+                            {hero.cta.secondary}
                         </a>
-                    ))}
-                </div>
+                    </div>
+                </aside>
             </div>
         </>
     );

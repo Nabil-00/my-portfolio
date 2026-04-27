@@ -1,70 +1,114 @@
 import React from 'react';
-import { Github, Facebook, MessageCircle, Mail } from 'lucide-react';
-
-// Custom TikTok icon
-const TikTokIcon = ({ size = 20 }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
-    </svg>
-);
+import { Github, Facebook, MessageCircle, Mail, Music2 } from 'lucide-react';
+import siteContent from '../data/siteContent';
 
 const Footer = () => {
+    const { meta, navigation, sections } = siteContent;
+    const { footer } = sections;
+    const firstName = meta.name.split(' ')[0];
     const socialLinks = [
         {
             icon: <MessageCircle size={20} />,
-            href: "https://wa.me/2349136159701?text=Hi%20Nabeel,%20I%20just%20viewed%20your%20portfolio%20and%20I%E2%80%99d%20like%20to%20work%20with%20you",
-            label: "WhatsApp"
+            href: meta.whatsapp,
+            label: meta.socialLabels.whatsapp
         },
         {
             icon: <Facebook size={20} />,
-            href: "https://www.facebook.com/nabil.ismail.5855",
-            label: "Facebook"
+            href: meta.facebook,
+            label: meta.socialLabels.facebook
         },
         {
-            icon: <TikTokIcon size={20} />,
-            href: "https://www.tiktok.com/i_nabeel_?_r=1&_t=ZS-92YGfy4oydl",
-            label: "TikTok"
+            icon: <Music2 size={20} />,
+            href: meta.tiktok,
+            label: meta.socialLabels.tiktok
         },
         {
             icon: <Github size={20} />,
-            href: "https://github.com/Nabil-00",
-            label: "GitHub"
+            href: meta.github,
+            label: meta.socialLabels.github
         },
         {
             icon: <Mail size={20} />,
-            href: "mailto:nabeelismailabdulkadir15@gmail.com",
-            label: "Email"
+            href: `mailto:${meta.email}`,
+            label: meta.socialLabels.email
         }
     ];
 
     return (
-        <footer className="py-10 md:py-12 bg-surface-color mt-20 border-t border-white/5">
-            <div className="container flex flex-col items-center gap-6">
-                {/* Logo */}
-                <a href="#" className="text-xl md:text-2xl font-bold hover:text-accent transition-colors duration-300">
-                    <span className="text-accent">N</span>abeel
-                </a>
+        <footer style={{ background: 'var(--bg-2)', padding: '48px 0 24px', borderTop: '1px solid var(--border)' }}>
+            <div className="container">
+                <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-6 items-center">
+                    <a href="#home" className="text-xl font-extrabold text-white lg:justify-self-start justify-self-center">
+                        <span style={{ color: 'var(--accent)' }}>{firstName[0]}</span>{firstName.slice(1)}
+                    </a>
 
-                {/* Social Icons - Centered */}
-                <div className="flex items-center justify-center gap-4">
-                    {socialLinks.map((social, index) => (
-                        <a
-                            key={index}
-                            href={social.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={social.label}
-                            className="w-11 h-11 flex items-center justify-center rounded-full border border-accent/30 text-accent hover:bg-accent hover:text-black hover:scale-110 hover:shadow-[0_0_20px_rgba(0,255,136,0.4)] transition-all duration-300"
-                        >
-                            {social.icon}
-                        </a>
-                    ))}
+                    <nav className="flex flex-wrap items-center justify-center gap-4 lg:gap-5">
+                        {navigation.map((link) => (
+                            <a
+                                key={link.href}
+                                href={link.href}
+                                style={{ fontSize: '13px', color: 'var(--text-secondary)', transition: 'color 0.2s ease' }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.color = 'var(--text-primary)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.color = 'var(--text-secondary)';
+                                }}
+                            >
+                                {link.label}
+                            </a>
+                        ))}
+                    </nav>
+
+                    <div className="flex items-center justify-center lg:justify-self-end gap-3">
+                        {socialLinks.map((social, index) => (
+                            social.href.startsWith('mailto:') ? (
+                                <a
+                                    key={index}
+                                    href={social.href}
+                                    aria-label={`Contact on ${social.label}`}
+                                    className="w-9 h-9 inline-flex items-center justify-center rounded-full"
+                                    style={{ border: '1px solid var(--border)', color: 'var(--text-secondary)', transition: 'all 0.2s ease' }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.borderColor = 'var(--accent)';
+                                        e.currentTarget.style.color = 'var(--accent)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.borderColor = 'var(--border)';
+                                        e.currentTarget.style.color = 'var(--text-secondary)';
+                                    }}
+                                >
+                                    {social.icon}
+                                </a>
+                            ) : (
+                                <a
+                                    key={index}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`Follow on ${social.label}`}
+                                    className="w-9 h-9 inline-flex items-center justify-center rounded-full"
+                                    style={{ border: '1px solid var(--border)', color: 'var(--text-secondary)', transition: 'all 0.2s ease' }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.borderColor = 'var(--accent)';
+                                        e.currentTarget.style.color = 'var(--accent)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.borderColor = 'var(--border)';
+                                        e.currentTarget.style.color = 'var(--text-secondary)';
+                                    }}
+                                >
+                                    {social.icon}
+                                </a>
+                            )
+                        ))}
+                    </div>
                 </div>
 
-                {/* Copyright */}
-                <p className="text-text-secondary text-sm text-center">
-                    © {new Date().getFullYear()} Nabeel Ismail. All rights reserved.
-                </p>
+                <div className="mt-10 pt-5 flex flex-col sm:flex-row items-center justify-between gap-3" style={{ borderTop: '1px solid var(--border)' }}>
+                    <p style={{ fontSize: '13px', color: 'var(--text-tertiary)' }}>{footer.copyright}</p>
+                    <p style={{ fontSize: '13px', color: 'var(--text-tertiary)' }}>{footer.builtWith}</p>
+                </div>
             </div>
         </footer>
     );

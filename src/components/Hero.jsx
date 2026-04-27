@@ -1,113 +1,200 @@
-import React, { useState, useEffect } from 'react';
-import { MessageCircle, Facebook, Github } from 'lucide-react';
-
-// Custom TikTok icon since lucide-react doesn't have one
-const TikTokIcon = ({ size = 20 }) => (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
-    </svg>
-);
+import React from 'react';
+import { MessageCircle, Facebook, Github, Download, Music2 } from 'lucide-react';
+import siteContent from '../data/siteContent';
 
 const Hero = () => {
-    const [displayText, setDisplayText] = useState('');
-    const fullText = 'Computer Science Student';
-
-    useEffect(() => {
-        let index = 0;
-        const timer = setInterval(() => {
-            if (index <= fullText.length) {
-                setDisplayText(fullText.slice(0, index));
-                index++;
-            } else {
-                clearInterval(timer);
-            }
-        }, 100);
-
-        return () => clearInterval(timer);
-    }, []);
+    const { meta, hero } = siteContent;
 
     const socialLinks = [
         {
-            icon: <MessageCircle size={20} />,
-            href: "https://wa.me/2349136159701?text=Hi%20Nabeel,%20I%20just%20viewed%20your%20portfolio%20and%20I%E2%80%99d%20like%20to%20work%20with%20you",
-            label: "WhatsApp"
+            icon: <MessageCircle size={16} />,
+            href: meta.whatsapp,
+            label: meta.socialLabels.whatsapp
         },
         {
-            icon: <Facebook size={20} />,
-            href: "https://www.facebook.com/nabil.ismail.5855",
-            label: "Facebook"
+            icon: <Facebook size={16} />,
+            href: meta.facebook,
+            label: meta.socialLabels.facebook
         },
         {
-            icon: <TikTokIcon size={20} />,
-            href: "https://www.tiktok.com/i_nabeel_?_r=1&_t=ZS-92YGfy4oydl",
-            label: "TikTok"
+            icon: <Music2 size={16} />,
+            href: meta.tiktok,
+            label: meta.socialLabels.tiktok
         },
         {
-            icon: <Github size={20} />,
-            href: "https://github.com/Nabil-00",
-            label: "GitHub"
+            icon: <Github size={16} />,
+            href: meta.github,
+            label: meta.socialLabels.github
         }
     ];
 
     return (
-        <section id="home" className="hero-section min-h-screen flex items-center pt-24 pb-12 md:pt-20 relative overflow-hidden">
-            <div className="container grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <section
+            id="home"
+            className="hero-section relative overflow-hidden"
+            style={{
+                minHeight: 'calc(100vh - 64px)',
+                paddingTop: '80px',
+                background: 'var(--bg)',
+            }}
+        >
+            <div
+                aria-hidden="true"
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                    background:
+                        'radial-gradient(ellipse 60% 60% at 80% 50%, rgba(0,229,160,0.06) 0%, transparent 70%)',
+                }}
+            />
 
-                {/* Left Column - Text Content */}
-                <div className="space-y-5 md:space-y-6 animate-fade-in-left order-2 md:order-1 text-center md:text-left">
-                    <span className="text-white text-xs md:text-sm font-bold tracking-widest block">HELLO!</span>
+            <div className="container relative z-10 grid lg:grid-cols-[55%_45%] gap-10 lg:gap-6 items-center py-6 md:py-8">
+                <div
+                    className="order-2 lg:order-1"
+                    style={{ animation: 'fade-in-left 0.8s ease forwards' }}
+                >
+                    <div
+                        className="inline-flex items-center gap-2"
+                        style={{
+                            background: 'var(--accent-dim)',
+                            border: '1px solid var(--accent)',
+                            borderRadius: 'var(--radius-pill)',
+                            padding: '4px 14px',
+                            fontSize: '13px',
+                            color: 'var(--text-primary)',
+                        }}
+                    >
+                        <span style={{ color: 'var(--accent)' }}>●</span>
+                        <span>{hero.availability}</span>
+                    </div>
 
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                        I'm <span className="text-accent">Nabeel Ismail</span>
-                    </h1>
-
-                    <h2 className="text-lg md:text-xl text-accent font-medium">
-                        Problem solver | <span className="typewriter">{displayText}</span><span className="animate-blink">|</span>
-                    </h2>
-
-                    <p className="text-white/70 text-base md:text-lg max-w-lg leading-relaxed mx-auto md:mx-0">
-                        I build web systems that fix real business problems: faster workflows, cleaner dashboards, and smoother customer experiences.
+                    <p className="mt-6" style={{ fontSize: '18px', color: 'var(--text-secondary)' }}>
+                        {hero.greeting}
                     </p>
 
-                    <div className="pt-2 md:pt-4 flex flex-col items-center md:items-start gap-6 md:gap-8">
-                        {/* CTA Button */}
-                        <a href="#contact" className="w-44 py-3 bg-accent text-black text-center font-bold rounded-full hover:shadow-[0_0_20px_rgba(0,255,136,0.5)] hover:scale-105 transition-all duration-300">
-                            Let's talk
-                        </a>
+                    <h1
+                        className="mt-2"
+                        style={{
+                            fontSize: 'clamp(48px, 7vw, 80px)',
+                            fontWeight: 800,
+                            letterSpacing: '-0.03em',
+                            lineHeight: 1.1,
+                            color: 'var(--text-primary)',
+                        }}
+                    >
+                        {hero.headline[0]}
+                        <span style={{ color: 'var(--accent)' }}>{hero.highlightWord}</span>
+                        {hero.headline[2]}
+                    </h1>
 
-                        {/* Social Icons */}
-                        <div className="flex gap-3 md:gap-4">
-                            {socialLinks.map((social, i) => (
-                                <a
-                                    key={i}
-                                    href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label={social.label}
-                                    className="w-11 h-11 md:w-10 md:h-10 rounded-full border border-accent/30 flex items-center justify-center text-accent hover:bg-accent hover:text-black hover:scale-110 hover:shadow-[0_0_15px_rgba(0,255,136,0.4)] transition-all duration-300"
-                                >
-                                    {social.icon}
-                                </a>
-                            ))}
-                        </div>
+                    <p className="mt-4" style={{ fontSize: '16px', color: 'var(--text-secondary)' }}>
+                        {hero.tagline}
+                    </p>
+
+                    <p
+                        className="mt-5"
+                        style={{
+                            fontSize: '16px',
+                            color: 'var(--text-secondary)',
+                            lineHeight: 1.7,
+                            maxWidth: '480px',
+                        }}
+                    >
+                        {hero.bio}
+                    </p>
+
+                    <div className="mt-7 flex flex-wrap items-center gap-3">
+                        <a
+                            href="#contact"
+                            className="inline-flex items-center gap-2"
+                            style={{
+                                background: 'var(--accent)',
+                                color: '#000',
+                                fontWeight: 700,
+                                borderRadius: 'var(--radius-pill)',
+                                padding: '12px 28px',
+                            }}
+                        >
+                            <MessageCircle size={16} />
+                            {hero.cta.primary}
+                        </a>
+                        <a
+                            href={meta.cvPath}
+                            download
+                            className="inline-flex items-center gap-2"
+                            style={{
+                                background: 'transparent',
+                                border: '1px solid var(--border-hover)',
+                                color: 'var(--text-primary)',
+                                borderRadius: 'var(--radius-pill)',
+                                padding: '12px 28px',
+                                transition: 'border-color 0.2s ease',
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.borderColor = 'var(--accent)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.borderColor = 'var(--border-hover)';
+                            }}
+                        >
+                            <Download size={16} />
+                            {hero.cta.secondary}
+                        </a>
+                    </div>
+
+                    <div className="mt-6 flex items-center gap-3">
+                        {socialLinks.map((social) => (
+                            <a
+                                key={social.label}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={social.label}
+                                className="inline-flex items-center justify-center"
+                                style={{
+                                    width: '36px',
+                                    height: '36px',
+                                    borderRadius: '50%',
+                                    border: '1px solid var(--border)',
+                                    color: 'var(--text-secondary)',
+                                    transition: 'all 0.2s ease',
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.borderColor = 'var(--accent)';
+                                    e.currentTarget.style.color = 'var(--accent)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.borderColor = 'var(--border)';
+                                    e.currentTarget.style.color = 'var(--text-secondary)';
+                                }}
+                            >
+                                {social.icon}
+                            </a>
+                        ))}
                     </div>
                 </div>
 
-                {/* Right Column - Portrait */}
-                <div className="relative flex justify-center items-center order-1 md:order-2">
-                    <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]">
-                        {/* Glow Ring */}
-                        <div className="absolute inset-0 rounded-full bg-accent/20 blur-[80px] md:blur-[100px] animate-pulse"></div>
-                        <div className="absolute inset-3 md:inset-4 rounded-full border-2 border-accent/20"></div>
-
-                        {/* Image Container */}
-                        <div className="relative w-full h-full rounded-full overflow-hidden border-3 md:border-4 border-accent shadow-[0_0_30px_rgba(0,255,136,0.3)] md:shadow-[0_0_50px_rgba(0,255,136,0.3)]">
-                            <img
-                                src="/pic.jpg"
-                                alt="Nabeel Ismail"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
+                <div
+                    className="order-1 lg:order-2 flex justify-center"
+                    style={{ opacity: 0, animation: 'fade-in-up 0.8s ease 0.2s forwards' }}
+                >
+                    <div
+                        style={{
+                            width: 'clamp(280px, 35vw, 420px)',
+                            height: 'clamp(280px, 35vw, 420px)',
+                            borderRadius: '50%',
+                            border: '3px solid var(--accent)',
+                            boxShadow:
+                                '0 0 60px var(--accent-glow), 0 0 120px rgba(0,229,160,0.1)',
+                            overflow: 'hidden',
+                            background: 'var(--bg-2)',
+                        }}
+                    >
+                        <img
+                            src="/pic.jpg"
+                            alt="Nabeel Ismail at his workstation"
+                            fetchPriority="high"
+                            className="w-full h-full object-cover"
+                        />
                     </div>
                 </div>
             </div>

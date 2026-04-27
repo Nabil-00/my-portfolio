@@ -1,84 +1,185 @@
 import React from 'react';
-import { MessageCircle, Mail, Github, ArrowRight } from 'lucide-react';
+import { Mail, MessageCircle } from 'lucide-react';
+import siteContent from '../data/siteContent';
 
 const Contact = () => {
-    const contactLinks = [
-        {
-            icon: <MessageCircle size={22} />,
-            label: "WhatsApp",
-            description: "Chat with me",
-            href: "https://wa.me/2349136159701?text=Hi%20Nabeel,%20I%20just%20viewed%20your%20portfolio%20and%20I%E2%80%99d%20like%20to%20work%20with%20you",
-            color: "from-green-500 to-green-600"
-        },
-        {
-            icon: <Mail size={22} />,
-            label: "Email",
-            description: "Drop me a line",
-            href: "mailto:nabeelismailabdulkadir15@gmail.com",
-            color: "from-blue-500 to-blue-600"
-        },
-        {
-            icon: <Github size={22} />,
-            label: "GitHub",
-            description: "See my code",
-            href: "https://github.com/Nabil-00",
-            color: "from-purple-500 to-purple-600"
-        }
-    ];
+    const { meta, contact } = siteContent;
+    const { labels } = contact;
+    const [selectedService, setSelectedService] = React.useState(contact.serviceOptions[0]);
 
     return (
-        <section id="contact" className="section">
-            <div className="container max-w-4xl mx-auto px-4">
-                {/* Section Header */}
-                <div className="text-center mb-12 md:mb-16">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                        Let's <span className="text-accent">Connect</span>
+        <section id="contact" style={{ background: 'var(--bg)', padding: '120px 0' }}>
+            <div className="container">
+                <div className="text-center max-w-4xl mx-auto">
+                    <h2
+                        style={{
+                            fontSize: 'clamp(36px, 6vw, 64px)',
+                            fontWeight: 800,
+                            color: 'var(--text-primary)',
+                            letterSpacing: '-0.02em',
+                        }}
+                    >
+                        {contact.heading[0]}<span style={{ color: 'var(--accent)' }}>{contact.heading[1]}</span>{contact.heading[2]}
                     </h2>
-                    <p className="text-text-secondary text-lg md:text-xl max-w-md mx-auto">
-                        Ready to start a project? Let's make something amazing together.
+                    <p className="mt-3" style={{ fontSize: '18px', color: 'var(--text-secondary)' }}>
+                        {contact.subtext}
                     </p>
                 </div>
 
-                {/* Contact Cards Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
-                    {contactLinks.map((link, index) => (
-                        <a
-                            key={index}
-                            href={link.href}
-                            target={link.href.startsWith('mailto') ? '_self' : '_blank'}
-                            rel="noopener noreferrer"
-                            className="group relative overflow-hidden rounded-2xl bg-surface-color border border-white/5 p-6 md:p-8 text-center transition-all duration-500 hover:border-accent/30 hover:shadow-[0_0_40px_rgba(0,255,136,0.15)] hover:-translate-y-2"
-                        >
-                            {/* Gradient Background on Hover */}
-                            <div className={`absolute inset-0 bg-gradient-to-br ${link.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                <form className="max-w-[600px] mx-auto mt-[60px] space-y-5">
+                    <div>
+                        <label htmlFor="contact-name" className="block mb-2" style={{ color: 'var(--text-secondary)' }}>
+                            {labels.name}
+                        </label>
+                        <input
+                            id="contact-name"
+                            name="name"
+                            type="text"
+                            style={{
+                                background: 'var(--bg-2)',
+                                border: '1px solid var(--border)',
+                                borderRadius: 'var(--radius-md)',
+                                padding: '14px 18px',
+                                color: 'var(--text-primary)',
+                                fontSize: '16px',
+                                width: '100%',
+                            }}
+                            onFocus={(e) => {
+                                e.currentTarget.style.outline = 'none';
+                                e.currentTarget.style.borderColor = 'var(--accent)';
+                            }}
+                            onBlur={(e) => {
+                                e.currentTarget.style.borderColor = 'var(--border)';
+                            }}
+                        />
+                    </div>
 
-                            {/* Icon Container */}
-                            <div className="relative mb-4 mx-auto w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-black transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(0,255,136,0.4)]">
-                                {link.icon}
-                            </div>
+                    <div>
+                        <label htmlFor="contact-email" className="block mb-2" style={{ color: 'var(--text-secondary)' }}>
+                            {labels.email}
+                        </label>
+                        <input
+                            id="contact-email"
+                            name="email"
+                            type="email"
+                            style={{
+                                background: 'var(--bg-2)',
+                                border: '1px solid var(--border)',
+                                borderRadius: 'var(--radius-md)',
+                                padding: '14px 18px',
+                                color: 'var(--text-primary)',
+                                fontSize: '16px',
+                                width: '100%',
+                            }}
+                            onFocus={(e) => {
+                                e.currentTarget.style.outline = 'none';
+                                e.currentTarget.style.borderColor = 'var(--accent)';
+                            }}
+                            onBlur={(e) => {
+                                e.currentTarget.style.borderColor = 'var(--border)';
+                            }}
+                        />
+                    </div>
 
-                            {/* Text Content */}
-                            <h3 className="relative text-lg font-bold text-white mb-4 group-hover:text-accent transition-colors duration-300">
-                                {link.label}
-                            </h3>
+                    <div>
+                        <label htmlFor="contact-message" className="block mb-2" style={{ color: 'var(--text-secondary)' }}>
+                            {labels.message}
+                        </label>
+                        <textarea
+                            id="contact-message"
+                            name="message"
+                            style={{
+                                background: 'var(--bg-2)',
+                                border: '1px solid var(--border)',
+                                borderRadius: 'var(--radius-md)',
+                                padding: '14px 18px',
+                                color: 'var(--text-primary)',
+                                fontSize: '16px',
+                                width: '100%',
+                                minHeight: '120px',
+                            }}
+                            onFocus={(e) => {
+                                e.currentTarget.style.outline = 'none';
+                                e.currentTarget.style.borderColor = 'var(--accent)';
+                            }}
+                            onBlur={(e) => {
+                                e.currentTarget.style.borderColor = 'var(--border)';
+                            }}
+                        />
+                    </div>
 
-                            {/* Arrow Indicator */}
-                            <div className="relative flex items-center justify-center gap-1 text-accent text-sm font-medium opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                                <span>Get in touch</span>
-                                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
-                            </div>
-                        </a>
-                    ))}
-                </div>
+                    <div>
+                        <p className="mb-2" style={{ color: 'var(--text-secondary)' }}>{labels.service}</p>
+                        <div className="flex flex-wrap gap-2">
+                            {contact.serviceOptions.map((option) => {
+                                const isSelected = selectedService === option;
+                                return (
+                                    <button
+                                        key={option}
+                                        type="button"
+                                        onClick={() => setSelectedService(option)}
+                                        style={{
+                                            background: isSelected ? 'var(--accent)' : 'var(--bg-3)',
+                                            border: isSelected ? '1px solid var(--accent)' : '1px solid var(--border)',
+                                            color: isSelected ? '#000' : 'var(--text-secondary)',
+                                            borderRadius: 'var(--radius-pill)',
+                                            padding: '6px 16px',
+                                            cursor: 'pointer',
+                                        }}
+                                    >
+                                        {option}
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    </div>
 
-                {/* Email Display */}
-                <div className="mt-12 text-center">
-                    <p className="text-text-secondary text-sm mb-2">Or reach out directly</p>
-                    <a
-                        href="mailto:nabeelismailabdulkadir15@gmail.com"
-                        className="text-accent hover:text-white transition-colors duration-300 text-lg font-medium"
+                    <button
+                        type="submit"
+                        style={{
+                            width: '100%',
+                            background: 'var(--accent)',
+                            color: '#000',
+                            fontWeight: 700,
+                            borderRadius: 'var(--radius-pill)',
+                            padding: '16px',
+                            fontSize: '16px',
+                        }}
                     >
-                        nabeelismailabdulkadir15@gmail.com
+                        {labels.submit} →
+                    </button>
+                </form>
+
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-5" style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>
+                    <a
+                        href={`mailto:${meta.email}`}
+                        className="inline-flex items-center gap-2"
+                        style={{ color: 'var(--text-secondary)' }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.color = 'var(--text-primary)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.color = 'var(--text-secondary)';
+                        }}
+                    >
+                        <Mail size={14} />
+                        {meta.email}
+                    </a>
+                    <a
+                        href={meta.whatsapp}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2"
+                        style={{ color: 'var(--text-secondary)' }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.color = 'var(--text-primary)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.color = 'var(--text-secondary)';
+                        }}
+                    >
+                        <MessageCircle size={14} />
+                        {labels.whatsappCta}
                     </a>
                 </div>
             </div>

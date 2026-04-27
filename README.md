@@ -1,19 +1,21 @@
-# My Portfolio
+# Nabeel Ismail Portfolio
 
-Personal portfolio website built with React and Vite to showcase profile, skills, selected projects, and contact information.
+Personal portfolio website built with React and Vite to showcase profile, services, selected projects, and contact information.
 
 ## Sections
 
 - Hero and personal introduction
-- About and skills overview
-- Project showcase
+- About and creator profile
+- Services and skills overview
+- Featured project showcase
 - Contact section and footer
 
 ## Tech Stack
 
-- React
-- Vite
-- Tailwind CSS
+- React 19
+- Vite 5
+- Tailwind CSS 4
+- Lucide React
 - Vercel Analytics
 
 ## Getting Started
@@ -42,3 +44,7 @@ npm run preview
 ```bash
 npm run lint
 ```
+
+## Content Management
+
+Site content is centralized in `src/data/siteContent.js` and consumed by reusable components.
