@@ -66,7 +66,16 @@ const Hero = () => {
                             color: 'var(--text-primary)',
                         }}
                     >
-                        <span style={{ color: 'var(--accent)' }}>●</span>
+                        <span
+                            aria-hidden="true"
+                            style={{
+                                width: '8px',
+                                height: '8px',
+                                borderRadius: '50%',
+                                display: 'inline-block',
+                                backgroundColor: 'var(--accent)',
+                            }}
+                        />
                         <span>{hero.availability}</span>
                     </div>
 

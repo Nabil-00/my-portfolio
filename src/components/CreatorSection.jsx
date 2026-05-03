@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, Play } from 'lucide-react';
+import { CheckCircle, ExternalLink, Play } from 'lucide-react';
 import siteContent from '../data/siteContent';
 
 const CreatorSection = () => {
@@ -82,7 +82,8 @@ const CreatorSection = () => {
               }}
             >
               <Play size={16} />
-              {creator.buttonLabel} ↗
+              {creator.buttonLabel}
+              <ExternalLink size={14} />
             </a>
           </div>
 
@@ -140,10 +141,11 @@ const CreatorSection = () => {
                 href={meta.tiktok}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-4"
+                className="inline-flex items-center gap-1.5 mt-4"
                 style={{ color: 'var(--accent)', fontSize: '13px' }}
               >
-                {creator.profile.linkLabel} ↗
+                {creator.profile.linkLabel}
+                <ExternalLink size={13} />
               </a>
             </article>
           </div>

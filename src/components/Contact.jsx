@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, MessageCircle } from 'lucide-react';
+import { ArrowRight, Mail, MessageCircle } from 'lucide-react';
 import siteContent from '../data/siteContent';
 
 const Contact = () => {
@@ -136,6 +136,7 @@ const Contact = () => {
 
                     <button
                         type="submit"
+                        className="inline-flex items-center justify-center gap-1.5"
                         style={{
                             width: '100%',
                             background: 'var(--accent)',
@@ -146,7 +147,8 @@ const Contact = () => {
                             fontSize: '16px',
                         }}
                     >
-                        {labels.submit} →
+                        {labels.submit}
+                        <ArrowRight size={16} />
                     </button>
                 </form>
 

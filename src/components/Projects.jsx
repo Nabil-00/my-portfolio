@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe } from 'lucide-react';
+import { ArrowRight, ExternalLink, Globe } from 'lucide-react';
 import siteContent from '../data/siteContent';
 
 const Projects = () => {
@@ -125,10 +125,19 @@ const Projects = () => {
                             </div>
 
                             <div className={index % 2 === 0 ? 'order-2' : 'order-2 lg:order-1'}>
-                                <p style={{ fontSize: '12px', color: 'var(--text-secondary)', fontWeight: 600 }}>
-                                    <span style={{ color: (project.status || '').toLowerCase().includes('maintenance') ? 'var(--yellow)' : 'var(--accent)' }}>
-                                        ●
-                                    </span>{' '}
+                                <p className="inline-flex items-center gap-1.5" style={{ fontSize: '12px', color: 'var(--text-secondary)', fontWeight: 600 }}>
+                                    <span
+                                        aria-hidden="true"
+                                        style={{
+                                            width: '8px',
+                                            height: '8px',
+                                            borderRadius: '50%',
+                                            display: 'inline-block',
+                                            backgroundColor: (project.status || '').toLowerCase().includes('maintenance')
+                                                ? 'var(--yellow)'
+                                                : 'var(--accent)',
+                                        }}
+                                    />
                                     {project.status?.toUpperCase() || projectsSection.fallbackStatus}
                                 </p>
 
@@ -200,8 +209,10 @@ const Projects = () => {
                                             onMouseLeave={(e) => {
                                                 e.currentTarget.style.color = 'var(--text-primary)';
                                             }}
+                                            className="inline-flex items-center gap-1.5"
                                         >
-                                            {projectsSection.liveLinkLabel} ↗
+                                            {projectsSection.liveLinkLabel}
+                                            <ExternalLink size={14} />
                                         </a>
                                     )}
 
@@ -217,8 +228,10 @@ const Projects = () => {
                                             onMouseLeave={(e) => {
                                                 e.currentTarget.style.color = 'var(--text-secondary)';
                                             }}
+                                            className="inline-flex items-center gap-1.5"
                                         >
-                                            {projectsSection.githubLinkLabel} →
+                                            {projectsSection.githubLinkLabel}
+                                            <ArrowRight size={14} />
                                         </a>
                                     )}
                                 </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, Play, Wrench } from 'lucide-react';
+import { ArrowRight, Globe, Play, Wrench } from 'lucide-react';
 import siteContent from '../data/siteContent';
 
 const Services = () => {
@@ -82,8 +82,9 @@ const Services = () => {
                   {service.desc}
                 </p>
 
-                <a href="#contact" className="inline-block mt-5" style={{ color: 'var(--accent)', fontSize: '14px', fontWeight: 600 }}>
-                  {service.cta} →
+                <a href="#contact" className="inline-flex items-center gap-1.5 mt-5" style={{ color: 'var(--accent)', fontSize: '14px', fontWeight: 600 }}>
+                  {service.cta}
+                  <ArrowRight size={14} />
                 </a>
               </article>
             );
