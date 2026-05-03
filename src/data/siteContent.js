@@ -130,7 +130,7 @@ const siteContent = {
     {
       icon: "Wrench",
       title: "PC Repair & Builds",
-      desc: "Diagnostics, repairs, custom builds, OS installs. In-person in Abuja.",
+      desc: "Diagnostics, repairs, custom builds, OS installs. In-person in Kano.",
       cta: "Book a repair",
     },
   ],
@@ -165,7 +165,7 @@ const siteContent = {
       eyebrow: "ABOUT ME",
       heading: "The person behind the code.",
       paragraphs: [
-        "I'm a full-stack developer based in Abuja, Nigeria. I build web systems that solve real business problems — from custom CMS platforms to e-commerce stores and organization sites.",
+        "I'm a full-stack developer based in Kano, Nigeria. I build web systems that solve real business problems — from custom CMS platforms to e-commerce stores and organization sites.",
         "Outside of code, I break down tech on TikTok, and I'm equally comfortable rebuilding a PC from scratch. I work across every layer — UI, logic, database, hardware.",
       ],
       cta: "Let's work together",

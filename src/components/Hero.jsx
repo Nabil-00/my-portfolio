@@ -47,7 +47,10 @@ const Hero = () => {
                 }}
             />
 
-            <div className="container relative z-10 grid lg:grid-cols-[55%_45%] gap-10 lg:gap-6 items-center py-6 md:py-8">
+            <div
+                className="container relative z-10 grid lg:grid-cols-[55%_45%] gap-10 lg:gap-8 items-center py-6 md:py-8"
+                style={{ minHeight: 'calc(100vh - 64px - 80px)' }}
+            >
                 <div
                     className="order-2 lg:order-1"
                     style={{ animation: 'fade-in-left 0.8s ease forwards' }}
@@ -74,7 +77,7 @@ const Hero = () => {
                     <h1
                         className="mt-2"
                         style={{
-                            fontSize: 'clamp(48px, 7vw, 80px)',
+                            fontSize: 'clamp(48px, 7vw, 92px)',
                             fontWeight: 800,
                             letterSpacing: '-0.03em',
                             lineHeight: 1.1,
@@ -179,8 +182,8 @@ const Hero = () => {
                 >
                     <div
                         style={{
-                            width: 'clamp(280px, 35vw, 420px)',
-                            height: 'clamp(280px, 35vw, 420px)',
+                            width: 'clamp(280px, 30vw, 520px)',
+                            height: 'clamp(280px, 30vw, 520px)',
                             borderRadius: '50%',
                             border: '3px solid var(--accent)',
                             boxShadow:
