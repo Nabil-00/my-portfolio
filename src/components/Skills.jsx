@@ -37,7 +37,7 @@ const Skills = () => {
                     </p>
                 </div>
 
-                <div className="mt-10 grid md:grid-cols-2 gap-10">
+                <div className="mt-12 grid md:grid-cols-2 gap-10">
                     {groupedSkills.map(([group, items]) => (
                         <div key={group}>
                             <p
@@ -46,28 +46,48 @@ const Skills = () => {
                                     color: 'var(--text-tertiary)',
                                     letterSpacing: '0.1em',
                                     textTransform: 'uppercase',
-                                    marginBottom: '12px',
+                                    marginBottom: '14px',
+                                    fontWeight: 700,
                                 }}
                             >
                                 {group}
                             </p>
-                            <div className="flex flex-wrap gap-2">
-                                {items.map((item) => (
-                                    <span
-                                        key={item}
-                                        style={{
-                                            background: 'var(--bg-3)',
-                                            border: '1px solid var(--border)',
-                                            borderRadius: 'var(--radius-pill)',
-                                            padding: '6px 16px',
-                                            fontSize: '13px',
-                                            color: 'var(--text-secondary)',
-                                            fontFamily: 'monospace',
-                                        }}
-                                    >
-                                        {item}
-                                    </span>
-                                ))}
+                            <div className="flex flex-wrap gap-2.5">
+                                {items.map((item) => {
+                                    const content = (
+                                        <>
+                                            {item.icon && (
+                                                <img 
+                                                    src={item.icon} 
+                                                    alt={`${item.name} logo`} 
+                                                    style={{ width: '16px', height: '16px', objectFit: 'contain' }}
+                                                    loading="lazy"
+                                                />
+                                            )}
+                                            {item.name}
+                                        </>
+                                    );
+
+                                    if (item.url) {
+                                        return (
+                                            <a
+                                                key={item.name}
+                                                href={item.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="skill-pill skill-pill-link"
+                                            >
+                                                {content}
+                                            </a>
+                                        );
+                                    }
+
+                                    return (
+                                        <span key={item.name} className="skill-pill">
+                                            {content}
+                                        </span>
+                                    );
+                                })}
                             </div>
                         </div>
                     ))}

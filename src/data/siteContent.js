@@ -56,12 +56,45 @@ const siteContent = {
     },
   ],
   skills: {
-    Languages: ["TypeScript", "JavaScript", "Python", "Dart", "PHP", "SQL"],
-    Frontend: ["React", "Next.js", "Flutter", "Tailwind CSS"],
-    Backend: ["Node.js", "Express", "Fastify", "PostgreSQL", "REST APIs"],
-    "AI / ML": ["LLM Integration", "Document Processing", "Prompt Engineering"],
-    Infrastructure: ["Git", "Linux", "Docker", "Vercel", "CI/CD"],
-    Security: ["RBAC", "Authentication", "JWT", "SSL/TLS"],
+    Languages: [
+      { name: "TypeScript", url: "https://www.typescriptlang.org/", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
+      { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+      { name: "Python", url: "https://www.python.org/", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+      { name: "Dart", url: "https://dart.dev/", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" },
+      { name: "PHP", url: "https://www.php.net/", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" },
+      { name: "SQL", url: "https://en.wikipedia.org/wiki/SQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" }
+    ],
+    Frontend: [
+      { name: "React", url: "https://react.dev/", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+      { name: "Next.js", url: "https://nextjs.org/", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
+      { name: "Flutter", url: "https://flutter.dev/", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" },
+      { name: "Tailwind CSS", url: "https://tailwindcss.com/", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" }
+    ],
+    Backend: [
+      { name: "Node.js", url: "https://nodejs.org/", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+      { name: "Express", url: "https://expressjs.com/", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" },
+      { name: "Fastify", url: "https://fastify.dev/", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastify/fastify-plain.svg" },
+      { name: "PostgreSQL", url: "https://www.postgresql.org/", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+      { name: "REST APIs", url: "https://restfulapi.net/", icon: null }
+    ],
+    "AI / ML": [
+      { name: "LLM Integration", url: null, icon: null },
+      { name: "Document Processing", url: null, icon: null },
+      { name: "Prompt Engineering", url: null, icon: null }
+    ],
+    Infrastructure: [
+      { name: "Git", url: "https://git-scm.com/", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+      { name: "Linux", url: "https://www.linux.org/", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
+      { name: "Docker", url: "https://www.docker.com/", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+      { name: "Vercel", url: "https://vercel.com/", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" },
+      { name: "CI/CD", url: null, icon: null }
+    ],
+    Security: [
+      { name: "RBAC", url: null, icon: null },
+      { name: "Authentication", url: null, icon: null },
+      { name: "JWT", url: "https://jwt.io/", icon: null },
+      { name: "SSL/TLS", url: null, icon: null }
+    ]
   },
   projects: [
     {
