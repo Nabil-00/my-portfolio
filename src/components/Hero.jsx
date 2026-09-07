@@ -6,55 +6,29 @@ const Hero = () => {
     const { meta, hero } = siteContent;
 
     const socialLinks = [
-        {
-            icon: <MessageCircle size={16} />,
-            href: meta.whatsapp,
-            label: meta.socialLabels.whatsapp
-        },
-        {
-            icon: <Facebook size={16} />,
-            href: meta.facebook,
-            label: meta.socialLabels.facebook
-        },
-        {
-            icon: <Music2 size={16} />,
-            href: meta.tiktok,
-            label: meta.socialLabels.tiktok
-        },
-        {
-            icon: <Github size={16} />,
-            href: meta.github,
-            label: meta.socialLabels.github
-        }
+        { icon: <MessageCircle size={16} />, href: meta.whatsapp, label: meta.socialLabels.whatsapp },
+        { icon: <Facebook size={16} />, href: meta.facebook, label: meta.socialLabels.facebook },
+        { icon: <Music2 size={16} />, href: meta.tiktok, label: meta.socialLabels.tiktok },
+        { icon: <Github size={16} />, href: meta.github, label: meta.socialLabels.github }
     ];
 
     return (
         <section
             id="home"
             className="hero-section relative overflow-hidden"
-            style={{
-                minHeight: 'calc(100vh - 64px)',
-                paddingTop: '80px',
-                background: 'var(--bg)',
-            }}
+            style={{ minHeight: 'calc(100vh - 64px)', paddingTop: '80px', background: 'var(--bg)' }}
         >
             <div
                 aria-hidden="true"
                 className="absolute inset-0 pointer-events-none"
-                style={{
-                    background:
-                        'radial-gradient(ellipse 60% 60% at 80% 50%, rgba(0,229,160,0.06) 0%, transparent 70%)',
-                }}
+                style={{ background: 'radial-gradient(ellipse 60% 60% at 80% 50%, rgba(0,229,160,0.06) 0%, transparent 70%)' }}
             />
 
             <div
-                className="container relative z-10 grid lg:grid-cols-[55%_45%] gap-10 lg:gap-8 items-center py-6 md:py-8"
+                className="container relative z-10 grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] gap-10 lg:gap-8 items-center py-6 md:py-8"
                 style={{ minHeight: 'calc(100vh - 64px - 80px)' }}
             >
-                <div
-                    className="order-2 lg:order-1"
-                    style={{ animation: 'fade-in-left 0.8s ease forwards' }}
-                >
+                <div className="order-1 lg:order-1 hero-text-entrance">
                     <div
                         className="inline-flex items-center gap-2"
                         style={{
@@ -68,13 +42,7 @@ const Hero = () => {
                     >
                         <span
                             aria-hidden="true"
-                            style={{
-                                width: '8px',
-                                height: '8px',
-                                borderRadius: '50%',
-                                display: 'inline-block',
-                                backgroundColor: 'var(--accent)',
-                            }}
+                            style={{ width: '8px', height: '8px', borderRadius: '50%', display: 'inline-block', backgroundColor: 'var(--accent)' }}
                         />
                         <span>{hero.availability}</span>
                     </div>
@@ -104,12 +72,7 @@ const Hero = () => {
 
                     <p
                         className="mt-5"
-                        style={{
-                            fontSize: '16px',
-                            color: 'var(--text-secondary)',
-                            lineHeight: 1.7,
-                            maxWidth: '480px',
-                        }}
+                        style={{ fontSize: '16px', color: 'var(--text-secondary)', lineHeight: 1.7, maxWidth: '480px' }}
                     >
                         {hero.bio}
                     </p>
@@ -132,20 +95,12 @@ const Hero = () => {
                         <a
                             href={meta.cvPath}
                             download
-                            className="inline-flex items-center gap-2"
+                            className="cv-link inline-flex items-center gap-2"
                             style={{
                                 background: 'transparent',
-                                border: '1px solid var(--border-hover)',
                                 color: 'var(--text-primary)',
                                 borderRadius: 'var(--radius-pill)',
                                 padding: '12px 28px',
-                                transition: 'border-color 0.2s ease',
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.borderColor = 'var(--accent)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.borderColor = 'var(--border-hover)';
                             }}
                         >
                             <Download size={16} />
@@ -161,23 +116,7 @@ const Hero = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label={social.label}
-                                className="inline-flex items-center justify-center"
-                                style={{
-                                    width: '36px',
-                                    height: '36px',
-                                    borderRadius: '50%',
-                                    border: '1px solid var(--border)',
-                                    color: 'var(--text-secondary)',
-                                    transition: 'all 0.2s ease',
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.borderColor = 'var(--accent)';
-                                    e.currentTarget.style.color = 'var(--accent)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.borderColor = 'var(--border)';
-                                    e.currentTarget.style.color = 'var(--text-secondary)';
-                                }}
+                                className="social-link inline-flex items-center justify-center"
                             >
                                 {social.icon}
                             </a>
@@ -185,18 +124,14 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div
-                    className="order-1 lg:order-2 flex justify-center"
-                    style={{ opacity: 0, animation: 'fade-in-up 0.8s ease 0.2s forwards' }}
-                >
+                <div className="order-2 lg:order-2 flex justify-center hero-photo-entrance">
                     <div
                         style={{
                             width: 'clamp(280px, 30vw, 520px)',
                             height: 'clamp(280px, 30vw, 520px)',
                             borderRadius: '50%',
                             border: '3px solid var(--accent)',
-                            boxShadow:
-                                '0 0 60px var(--accent-glow), 0 0 120px rgba(0,229,160,0.1)',
+                            boxShadow: '0 0 60px var(--accent-glow), 0 0 120px rgba(0,229,160,0.1)',
                             overflow: 'hidden',
                             background: 'var(--bg-2)',
                         }}
@@ -205,6 +140,8 @@ const Hero = () => {
                             src="/pic.jpg"
                             alt="Nabeel Ismail at his workstation"
                             fetchPriority="high"
+                            width={520}
+                            height={520}
                             className="w-full h-full object-cover"
                         />
                     </div>

@@ -15,6 +15,21 @@ const Navbar = () => {
         setMobileMenuOpen(false);
     };
 
+    // Close on desktop breakpoint
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(min-width: 1024px)');
+        const handleResize = (e) => {
+            if (e.matches && mobileMenuOpen) {
+                setMobileMenuOpen(false);
+            }
+        };
+        
+        mediaQuery.addEventListener('change', handleResize);
+        
+        
+        return () => mediaQuery.removeEventListener('change', handleResize);
+    }, [mobileMenuOpen]);
+
     useEffect(() => {
         if (wasOpenRef.current && !mobileMenuOpen) {
             menuTriggerRef.current?.focus();
@@ -88,18 +103,7 @@ const Navbar = () => {
                             <a
                                 key={link.href}
                                 href={link.href}
-                                className="text-sm"
-                                style={{
-                                    fontSize: '14px',
-                                    color: 'var(--text-secondary)',
-                                    transition: 'color 0.2s ease',
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.color = 'var(--text-primary)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.color = 'var(--text-secondary)';
-                                }}
+                                className="text-sm nav-link-hover"
                             >
                                 {link.label}
                             </a>
@@ -137,8 +141,9 @@ const Navbar = () => {
             </nav>
 
             <div
+                inert={!mobileMenuOpen ? "" : undefined}
                 className={`fixed inset-0 lg:hidden transition-opacity duration-200 ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-                style={{ zIndex: 999, background: 'rgba(0,0,0,0.55)' }}
+                style={{ zIndex: 1001, background: 'rgba(0,0,0,0.55)' }}
                 onClick={() => setMobileMenuOpen(false)}
                 aria-hidden={!mobileMenuOpen}
             >
@@ -153,6 +158,7 @@ const Navbar = () => {
                     }}
                     role="dialog"
                     aria-modal="true"
+                    aria-label="Navigation menu"
                     onClick={(e) => e.stopPropagation()}
                 >
                     <div className="p-5 flex items-center justify-between" style={{ borderBottom: '1px solid var(--border)' }}>

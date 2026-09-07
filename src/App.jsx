@@ -1,30 +1,31 @@
 import React from 'react';
-import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Services from './components/Services';
+import Projects from './components/Projects';
 import About from './components/About';
 import Skills from './components/Skills';
-import Projects from './components/Projects';
-import CreatorSection from './components/CreatorSection';
+import TeachingSection from './components/TeachingSection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-function App() {
-  return (
-    <div className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <Services />
-      <About />
-      <Skills />
-      <Projects />
-      <CreatorSection />
-      <Contact />
-      <Footer />
-      <Analytics />
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <>
+            <a href="#main-content" className="skip-link sr-only focus:not-sr-only">
+                Skip to content
+            </a>
+            <Navbar />
+            <main id="main-content">
+                <Hero />
+                <Projects />
+                <About />
+                <Skills />
+                <TeachingSection />
+                <Contact />
+            </main>
+            <Footer />
+        </>
+    );
+};
 
 export default App;

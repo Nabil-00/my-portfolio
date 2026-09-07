@@ -63,15 +63,6 @@ const Skills = () => {
                                             fontSize: '13px',
                                             color: 'var(--text-secondary)',
                                             fontFamily: 'monospace',
-                                            transition: 'all 0.15s ease',
-                                        }}
-                                        onMouseEnter={(e) => {
-                                            e.currentTarget.style.borderColor = 'var(--accent)';
-                                            e.currentTarget.style.color = 'var(--text-primary)';
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            e.currentTarget.style.borderColor = 'var(--border)';
-                                            e.currentTarget.style.color = 'var(--text-secondary)';
                                         }}
                                     >
                                         {item}
