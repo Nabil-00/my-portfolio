@@ -206,7 +206,7 @@ const Projects = () => {
     };
 
     return (
-        <section id="projects" style={{ background: 'var(--bg-2)', padding: '120px 0' }}>
+        <section id="projects" className="section-bg-2 py-section">
             <div className="container">
                 <div className="max-w-3xl">
                     <p

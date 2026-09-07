@@ -9,7 +9,7 @@ const About = () => {
     const { about } = sections;
 
     return (
-        <section id="about" style={{ background: 'var(--bg)', padding: '120px 0' }}>
+        <section id="about" className="section-bg py-section">
             <div className="container">
                 <div className="grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-center">
                     <div className="order-2 lg:order-1">

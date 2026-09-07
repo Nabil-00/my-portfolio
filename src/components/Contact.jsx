@@ -215,17 +215,8 @@ const Contact = () => {
                             <button
                                 type="submit"
                                 disabled={status === 'submitting'}
-                                className="inline-flex items-center justify-center gap-1.5"
-                                style={{
-                                    width: '100%',
-                                    background: status === 'submitting' ? 'var(--bg-3)' : 'var(--accent)',
-                                    color: status === 'submitting' ? 'var(--text-secondary)' : '#000',
-                                    fontWeight: 700,
-                                    borderRadius: 'var(--radius-pill)',
-                                    padding: '16px',
-                                    fontSize: '16px',
-                                    cursor: status === 'submitting' ? 'not-allowed' : 'pointer'
-                                }}
+                                className="btn-primary"
+                                style={{ width: '100%', padding: '16px', fontSize: '16px' }}
                             >
                                 {status === 'submitting' ? 'Sending...' : labels.submit}
                                 {status !== 'submitting' && <ArrowRight size={16} />}

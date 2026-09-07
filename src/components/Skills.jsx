@@ -7,7 +7,7 @@ const Skills = () => {
     const groupedSkills = Object.entries(skills);
 
     return (
-        <section id="skills" style={{ background: 'var(--bg)', padding: '120px 0' }}>
+        <section id="skills" className="section-bg py-section">
             <div className="container">
                 <div className="max-w-3xl">
                     <p

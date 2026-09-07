@@ -9,7 +9,7 @@ const TeachingSection = () => {
     const { teaching } = sections;
 
     return (
-        <section id="teaching" style={{ background: 'var(--bg-2)', padding: '120px 0' }}>
+        <section id="teaching" className="section-bg-2 py-section">
             <div className="container">
                 <div className="max-w-4xl">
                     <p
@@ -133,33 +133,28 @@ const TeachingSection = () => {
                             ))}
                         </div>
 
-                        <a
-                            href={meta.tiktok}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 mt-6"
-                            style={{
-                                background: 'var(--accent)',
-                                color: '#000',
-                                fontWeight: 700,
-                                borderRadius: 'var(--radius-pill)',
-                                padding: '12px 28px',
-                            }}
-                        >
-                            <Play size={16} />
-                            {teaching.tiktok.buttonLabel}
-                            <ExternalLink size={14} />
-                        </a>
+                        <div className="mt-7">
+                            <a
+                                href={meta.tiktok}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn-primary"
+                            >
+                                <Play size={18} />
+                                {teaching.tiktok.buttonLabel}
+                                <ExternalLink size={16} />
+                            </a>
+                        </div>
 
                         <a
                             href={meta.tiktok}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 mt-4 block"
-                            style={{ color: 'var(--accent)', fontSize: '13px' }}
+                            className="inline-flex items-center gap-1.5 mt-5 block"
+                            style={{ color: 'var(--accent)', fontSize: '14px', fontWeight: 600 }}
                         >
                             {teaching.tiktok.linkLabel}
-                            <ExternalLink size={13} />
+                            <ExternalLink size={14} />
                         </a>
                     </article>
                 </div>

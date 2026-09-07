@@ -15,8 +15,8 @@ const Hero = () => {
     return (
         <section
             id="home"
-            className="hero-section relative overflow-hidden"
-            style={{ minHeight: 'calc(100vh - 64px)', paddingTop: '80px', background: 'var(--bg)' }}
+            className="hero-section relative overflow-hidden section-bg"
+            style={{ minHeight: 'calc(100vh - 64px)', display: 'flex', alignItems: 'center' }}
         >
             <div
                 aria-hidden="true"
@@ -24,10 +24,7 @@ const Hero = () => {
                 style={{ background: 'radial-gradient(ellipse 60% 60% at 80% 50%, rgba(0,229,160,0.06) 0%, transparent 70%)' }}
             />
 
-            <div
-                className="container relative z-10 grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] gap-10 lg:gap-8 items-center py-6 md:py-8"
-                style={{ minHeight: 'calc(100vh - 64px - 80px)' }}
-            >
+            <div className="container relative z-10 grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] gap-10 lg:gap-8 items-center py-12 md:py-20 w-full">
                 <div className="order-1 lg:order-1 hero-text-entrance">
                     <div
                         className="inline-flex items-center gap-2"
@@ -77,38 +74,18 @@ const Hero = () => {
                         {hero.bio}
                     </p>
 
-                    <div className="mt-7 flex flex-wrap items-center gap-3">
-                        <a
-                            href="#contact"
-                            className="inline-flex items-center gap-2"
-                            style={{
-                                background: 'var(--accent)',
-                                color: '#000',
-                                fontWeight: 700,
-                                borderRadius: 'var(--radius-pill)',
-                                padding: '12px 28px',
-                            }}
-                        >
-                            <MessageCircle size={16} />
+                    <div className="mt-8 flex flex-wrap items-center gap-4">
+                        <a href="#contact" className="btn-primary">
+                            <MessageCircle size={18} />
                             {hero.cta.primary}
                         </a>
-                        <a
-                            href={meta.cvPath}
-                            download
-                            className="cv-link inline-flex items-center gap-2"
-                            style={{
-                                background: 'transparent',
-                                color: 'var(--text-primary)',
-                                borderRadius: 'var(--radius-pill)',
-                                padding: '12px 28px',
-                            }}
-                        >
-                            <Download size={16} />
+                        <a href={meta.cvPath} download className="btn-secondary">
+                            <Download size={18} />
                             {hero.cta.secondary}
                         </a>
                     </div>
 
-                    <div className="mt-6 flex items-center gap-3">
+                    <div className="mt-8 flex items-center gap-3">
                         {socialLinks.map((social) => (
                             <a
                                 key={social.label}
@@ -127,8 +104,8 @@ const Hero = () => {
                 <div className="order-2 lg:order-2 flex justify-center hero-photo-entrance">
                     <div
                         style={{
-                            width: 'clamp(280px, 30vw, 520px)',
-                            height: 'clamp(280px, 30vw, 520px)',
+                            width: 'clamp(260px, 70vw, 520px)',
+                            height: 'clamp(260px, 70vw, 520px)',
                             borderRadius: '50%',
                             border: '3px solid var(--accent)',
                             boxShadow: '0 0 60px var(--accent-glow), 0 0 120px rgba(0,229,160,0.1)',
