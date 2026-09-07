@@ -3,9 +3,9 @@ import React from 'react';
 const clients = [
     { name: 'DefendHub Enterprise', logo: '/logos/defendhub.svg' },
     { name: 'Nexora LLC', logo: '/logos/nexora.png' },
-    { name: 'Neolife International', logo: '/logos/neolife.webp' },
-    { name: 'Hama Academy', logo: '/logos/hama.jpg' },
-    { name: 'Abrob Industry', logo: '/logos/abrob.jpeg' },
+    { name: 'Neolife International', logo: '/logos/neolife.png' },
+    { name: 'Hama Academy', logo: '/logos/hama.png' },
+    { name: 'Abrob Industry', logo: '/logos/abrob.png' },
     { name: 'Ramu', logo: '/logos/ramu.svg' },
 ];
 

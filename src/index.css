@@ -539,13 +539,11 @@ button:disabled {
 }
 
 .carousel-item img {
-  filter: grayscale(100%) brightness(1.6);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .carousel-item:hover img {
-    filter: grayscale(0%) brightness(1);
     transform: scale(1.08);
   }
 }
