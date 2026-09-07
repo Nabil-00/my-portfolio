@@ -15,8 +15,8 @@ const Hero = () => {
     return (
         <section
             id="home"
-            className="hero-section relative overflow-hidden section-bg"
-            style={{ minHeight: 'calc(100vh - 64px)', display: 'flex', alignItems: 'center' }}
+            className="hero-section snap-panel relative overflow-hidden section-bg"
+            style={{ scrollSnapAlign: 'start', minHeight: '100vh', display: 'flex', alignItems: 'center' }}
         >
             <div
                 aria-hidden="true"
@@ -101,7 +101,7 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div className="order-2 lg:order-2 flex justify-center hero-photo-entrance">
+                <div className="order-2 lg:order-2 flex justify-center hero-photo-entrance" style={{ position: 'sticky', top: '50%', transform: 'translateY(-50%)', alignSelf: 'start' }}>
                     <div
                         style={{
                             width: 'clamp(260px, 70vw, 520px)',

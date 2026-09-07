@@ -480,3 +480,72 @@ button:disabled {
   background: var(--accent-dim);
   transform: translateY(-2px);
 }
+
+/* ─── Scroll Snap Panels ─── */
+.snap-panel {
+  scroll-snap-align: start;
+}
+
+@media (max-width: 1023px) {
+  .snap-panel {
+    scroll-snap-align: unset !important;
+    min-height: auto !important;
+  }
+}
+
+/* ─── Client Logo Carousel ─── */
+@keyframes carousel-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.carousel-track {
+  animation: carousel-scroll 25s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    animation-play-state: paused;
+  }
+}
+
+.carousel-wrapper {
+  position: relative;
+}
+
+.carousel-wrapper::before,
+.carousel-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carousel-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-2), transparent);
+}
+
+.carousel-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-2), transparent);
+}
+
+.carousel-item img {
+  filter: grayscale(100%) brightness(1.6);
+  transition: all 0.3s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .carousel-item:hover img {
+    filter: grayscale(0%) brightness(1);
+    transform: scale(1.08);
+  }
+}

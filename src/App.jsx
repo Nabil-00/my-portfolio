@@ -4,9 +4,11 @@ import Hero from './components/Hero';
 import Projects from './components/Projects';
 import About from './components/About';
 import Skills from './components/Skills';
+import ClientsCarousel from './components/ClientsCarousel';
 import TeachingSection from './components/TeachingSection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollSnapContainer from './components/ScrollSnapContainer';
 
 const App = () => {
     return (
@@ -16,10 +18,13 @@ const App = () => {
             </a>
             <Navbar />
             <main id="main-content">
-                <Hero />
-                <Projects />
+                <ScrollSnapContainer>
+                    <Hero />
+                    <Projects />
+                </ScrollSnapContainer>
                 <About />
                 <Skills />
+                <ClientsCarousel />
                 <TeachingSection />
                 <Contact />
             </main>
