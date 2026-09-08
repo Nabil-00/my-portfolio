@@ -465,6 +465,9 @@ button:disabled {
 
 /* Skill Pills */
 .skill-pill {
+  position: relative;
+  min-height: 42px;
+  overflow: hidden;
   background: var(--bg-3);
   border: 1px solid var(--border);
   border-radius: var(--radius-pill);
@@ -478,11 +481,54 @@ button:disabled {
   transition: all 0.2s ease;
 }
 
+.skill-pill--motion {
+  padding-inline: 16px;
+}
+
+.skill-pill-icon {
+  position: absolute;
+  left: 16px;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  color: var(--accent);
+  transition: left 0.48s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.skill-pill-icon img,
+.skill-pill-icon svg {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.skill-pill-label {
+  margin-left: 32px;
+  transition: opacity 0.32s ease 0.15s, transform 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+.skill-pill--motion.is-ready:not(.is-visible) .skill-pill-icon {
+  left: calc(100% - 40px);
+}
+
+.skill-pill--motion.is-ready:not(.is-visible) .skill-pill-label {
+  opacity: 0;
+  transform: translateX(-12px);
+}
+
 .skill-pill-link:hover {
   border-color: var(--accent);
   color: var(--text-primary);
   background: var(--accent-dim);
   transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-pill-icon,
+  .skill-pill-label {
+    transition: none;
+  }
 }
 
 /* ─── Scroll story ─── */

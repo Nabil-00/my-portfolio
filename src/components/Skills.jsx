@@ -1,5 +1,6 @@
 import React from 'react';
 import siteContent from '../data/siteContent';
+import SkillBadge from './SkillBadge';
 
 const Skills = () => {
     const { skills, sections } = siteContent;
@@ -53,41 +54,7 @@ const Skills = () => {
                                 {group}
                             </p>
                             <div className="flex flex-wrap gap-2.5">
-                                {items.map((item) => {
-                                    const content = (
-                                        <>
-                                            {item.icon && (
-                                                <img 
-                                                    src={item.icon} 
-                                                    alt={`${item.name} logo`} 
-                                                    style={{ width: '16px', height: '16px', objectFit: 'contain' }}
-                                                    loading="lazy"
-                                                />
-                                            )}
-                                            {item.name}
-                                        </>
-                                    );
-
-                                    if (item.url) {
-                                        return (
-                                            <a
-                                                key={item.name}
-                                                href={item.url}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="skill-pill skill-pill-link"
-                                            >
-                                                {content}
-                                            </a>
-                                        );
-                                    }
-
-                                    return (
-                                        <span key={item.name} className="skill-pill">
-                                            {content}
-                                        </span>
-                                    );
-                                })}
+                                {items.map((item) => <SkillBadge key={item.name} item={item} />)}
                             </div>
                         </div>
                     ))}
