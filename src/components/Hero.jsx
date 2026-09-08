@@ -114,7 +114,7 @@ const Hero = () => {
                         }}
                     >
                         <img
-                            src="/pic.jpg"
+                            src="/pic.webp"
                             alt="Nabeel Ismail at his workstation"
                             fetchPriority="high"
                             width={520}
