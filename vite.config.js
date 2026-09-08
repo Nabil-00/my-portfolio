@@ -4,4 +4,23 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  build: {
+    cssCodeSplit: true,
+    modulePreload: { polyfill: false },
+    chunkSizeWarningLimit: 700,
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('/react/') || id.includes('/react-dom/')) return 'react-vendor'
+            if (id.includes('lucide-react')) return 'icons'
+            return 'vendor'
+          }
+        },
+      },
+    },
+  },
 })
