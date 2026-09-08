@@ -493,7 +493,7 @@ button:disabled {
   height: 24px;
   place-items: center;
   color: var(--accent);
-  transition: left 0.48s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: left 0.87s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .skill-pill-icon img,
@@ -505,7 +505,7 @@ button:disabled {
 
 .skill-pill-label {
   margin-left: 32px;
-  transition: opacity 0.32s ease 0.15s, transform 0.38s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+  transition: opacity 0.58s ease 0.27s, transform 0.69s cubic-bezier(0.22, 1, 0.36, 1) 0.27s;
 }
 
 .skill-pill--motion.is-ready:not(.is-visible) .skill-pill-icon {
