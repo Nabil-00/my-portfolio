@@ -500,90 +500,6 @@ button:disabled {
   display: flex;
   align-items: center;
   z-index: 1;
-  padding-top: 64px;
-}
-
-.hero-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-  align-items: center;
-  gap: clamp(2.5rem, 6vw, 6rem);
-  width: 100%;
-  padding-block: clamp(3rem, 7vh, 6rem);
-}
-
-.hero-heading {
-  max-width: 10ch;
-}
-
-.hero-portrait-shell {
-  position: relative;
-  width: min(100%, 500px);
-  margin-inline: auto;
-  padding: 1.15rem;
-  border: 1px solid var(--border-hover);
-  background: linear-gradient(145deg, #101613, #050706);
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.55), 0 10px 30px rgba(0, 229, 160, 0.08);
-}
-
-.hero-portrait-shell::before,
-.hero-portrait-shell::after {
-  content: '';
-  position: absolute;
-  width: 44px;
-  height: 44px;
-  border-color: var(--accent);
-  pointer-events: none;
-}
-
-.hero-portrait-shell::before {
-  top: -8px;
-  left: -8px;
-  border-top: 2px solid var(--accent);
-  border-left: 2px solid var(--accent);
-}
-
-.hero-portrait-shell::after {
-  right: -8px;
-  bottom: -8px;
-  border-right: 2px solid var(--accent);
-  border-bottom: 2px solid var(--accent);
-}
-
-.hero-portrait-label {
-  position: absolute;
-  top: 2rem;
-  right: -1.25rem;
-  z-index: 2;
-  writing-mode: vertical-rl;
-  padding: 0.75rem 0.45rem;
-  background: var(--accent);
-  color: #00150f;
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-}
-
-.hero-portrait-frame {
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  background: var(--bg-2);
-}
-
-.hero-portrait-frame img {
-  object-position: 52% center;
-  filter: saturate(0.85) contrast(1.04);
-}
-
-.hero-portrait-caption {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  margin: 0.9rem 0 0;
-  color: var(--text-tertiary);
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
 }
 
 .project-panel {
@@ -947,7 +863,6 @@ button:disabled {
 }
 
 @media (max-width: 1023px), (max-height: 699px) {
-  .hero-layout,
   .project-layout {
     grid-template-columns: 1fr;
   }
@@ -955,14 +870,6 @@ button:disabled {
   .hero-section,
   .project-panel {
     min-height: auto;
-  }
-
-  .hero-layout {
-    padding-block: 5rem 4rem;
-  }
-
-  .hero-portrait-shell {
-    width: min(86vw, 500px);
   }
 
   .project-panel-inner {
@@ -975,15 +882,6 @@ button:disabled {
 }
 
 @media (max-width: 639px) {
-  .hero-heading {
-    font-size: clamp(2.8rem, 14vw, 4.5rem) !important;
-  }
-
-  .hero-portrait-caption {
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
   .project-panel-header {
     align-items: start;
   }
