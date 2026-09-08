@@ -687,55 +687,157 @@ button:disabled {
   box-shadow: 0 0 0 38px color-mix(in srgb, var(--stage-accent) 5%, transparent), 0 0 0 80px color-mix(in srgb, var(--stage-accent) 3%, transparent);
 }
 
-.project-window {
+.architecture-canvas {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+  padding: clamp(1rem, 2.4vw, 2rem);
   overflow: hidden;
-  background: #07101a;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 10px;
+  background: rgba(4, 9, 14, 0.78);
+  border: 1px solid color-mix(in srgb, var(--stage-accent) 32%, transparent);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
   transform: rotate(-1.2deg);
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
 }
 
-.project-window-bar {
+.architecture-canvas::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background: linear-gradient(90deg, transparent 0 49.8%, color-mix(in srgb, var(--stage-accent) 18%, transparent) 50%, transparent 50.2%), linear-gradient(0deg, transparent 0 49.8%, color-mix(in srgb, var(--stage-accent) 18%, transparent) 50%, transparent 50.2%);
+  background-size: 50% 50%;
+  pointer-events: none;
+}
+
+.architecture-canvas--classify { --stage-accent: #38d69f; }
+.architecture-canvas--examflow { --stage-accent: #bd82ff; }
+
+.architecture-head,
+.architecture-foot {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
-  gap: 5px;
-  height: 27px;
-  padding-inline: 10px;
+  justify-content: space-between;
+  gap: 1rem;
+  color: color-mix(in srgb, var(--stage-accent) 70%, white);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.architecture-head {
+  padding-right: clamp(4.5rem, 8vw, 6.5rem);
+}
+
+.architecture-safe-label {
+  padding: 0.35rem 0.55rem;
+  color: #07100d;
+  background: var(--stage-accent);
+  font-weight: 800;
+}
+
+.architecture-canvas h4 {
+  position: relative;
+  z-index: 1;
+  max-width: 15ch;
+  margin: clamp(1rem, 2vw, 1.7rem) 0 clamp(0.8rem, 1.6vw, 1.4rem);
+  color: var(--text-primary);
+  font-size: clamp(1rem, 2vw, 1.8rem);
+  letter-spacing: -0.035em;
+}
+
+.architecture-flow {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: clamp(0.45rem, 1.3vw, 1rem);
+  margin: auto 0;
+}
+
+.architecture-layer {
+  position: relative;
+  display: grid;
+  grid-template-columns: clamp(3.8rem, 7vw, 6rem) 1fr;
+  align-items: center;
+  gap: clamp(0.5rem, 1.5vw, 1.25rem);
+}
+
+.architecture-layer-label {
+  color: color-mix(in srgb, var(--stage-accent) 80%, white);
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.architecture-nodes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.35rem, 1vw, 0.7rem);
+}
+
+.architecture-node {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+  min-height: clamp(2rem, 4vw, 3rem);
+  padding: 0.45rem 0.6rem;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.8);
   background: rgba(255, 255, 255, 0.055);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  font-size: clamp(0.52rem, 0.85vw, 0.72rem);
+  line-height: 1.2;
 }
 
-.project-window-bar span {
-  width: 6px;
-  height: 6px;
+.architecture-node-dot {
+  flex: 0 0 auto;
+  width: 0.42rem;
+  height: 0.42rem;
+  border: 1px solid var(--stage-accent);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--stage-accent) 60%, transparent);
 }
 
-.project-window-bar small {
-  margin-left: auto;
-  color: rgba(255, 255, 255, 0.42);
-  font-size: 0.6rem;
+.architecture-arrow {
+  position: absolute;
+  bottom: -0.8rem;
+  left: calc(clamp(3.8rem, 7vw, 6rem) + 0.5rem);
+  color: color-mix(in srgb, var(--stage-accent) 70%, white);
+}
+
+.architecture-foot {
+  margin-top: clamp(0.8rem, 1.6vw, 1.4rem);
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.52rem;
   letter-spacing: 0.08em;
 }
 
-.project-window img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  object-position: top;
+.architecture-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: color-mix(in srgb, var(--stage-accent) 80%, white);
+}
+
+.architecture-status span {
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: var(--stage-accent);
 }
 
 .project-mark {
   position: absolute;
   z-index: 2;
   right: clamp(0.6rem, 1.7vw, 1.5rem);
-  bottom: clamp(0.6rem, 1.7vw, 1.5rem);
+  top: clamp(0.6rem, 1.7vw, 1.5rem);
   display: grid;
   width: clamp(82px, 9vw, 118px);
   aspect-ratio: 1;
@@ -830,7 +932,7 @@ button:disabled {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .project-panel:hover .project-window {
+  .project-panel:hover .architecture-canvas {
     transform: rotate(0) translateY(-4px);
     box-shadow: 0 28px 70px rgba(0, 0, 0, 0.65);
   }
@@ -888,10 +990,6 @@ button:disabled {
 
   .project-stage {
     padding: 1.1rem 1.1rem 2rem;
-  }
-
-  .project-window-bar {
-    height: 22px;
   }
 
   .project-mark {
