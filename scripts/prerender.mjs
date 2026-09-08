@@ -8,12 +8,22 @@ const distDir = resolve('dist')
 const ssrDir = resolve('dist-ssr')
 
 // 1. Build an SSR bundle of App.jsx (JSX transformed, deps externalized)
+// NOTE: vite.config.js sets client-only rollupOptions.output file naming
+// (assets/[name]-[hash].js) + manualChunks. Override them here so the SSR
+// entry lands at the deterministic path dist-ssr/App.js imported below.
 await build({
   logLevel: 'error',
   build: {
     ssr: resolve('src/App.jsx'),
     outDir: ssrDir,
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        entryFileNames: '[name].js',
+        chunkFileNames: '[name].js',
+        assetFileNames: '[name].[ext]',
+      },
+    },
   },
 })
 
