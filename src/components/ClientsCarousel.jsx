@@ -1,7 +1,7 @@
 import React from 'react';
 
 const clients = [
-    { name: 'DefendHub Enterprise', logo: '/logos/defendhub.svg' },
+    { name: 'DefendHub Enterprise', logo: '/logos/defendhub.svg', className: 'client-logo--defendhub' },
     { name: 'Nexora LLC', logo: '/logos/nexora.png' },
     { name: 'Neolife International', logo: '/logos/neolife.png' },
     { name: 'Hama Academy', logo: '/logos/hama.png' },
@@ -10,69 +10,30 @@ const clients = [
 ];
 
 const ClientsCarousel = () => {
-    const doubled = [...clients, ...clients];
-
     return (
-        <section className="section-bg-2 py-section" aria-label="Companies I've worked with">
-            <div className="container">
-                <p
-                    style={{
-                        fontSize: '12px',
-                        letterSpacing: '0.12em',
-                        color: 'var(--accent)',
-                        textTransform: 'uppercase',
-                        fontWeight: 600,
-                        textAlign: 'center',
-                        marginBottom: '40px',
-                    }}
-                >
-                    Who I&rsquo;ve Worked With
-                </p>
+        <section className="clients-section section-bg-2 py-section" aria-labelledby="clients-heading">
+            <div className="container clients-heading-wrap">
+                <h2 id="clients-heading">Who I&rsquo;ve worked with</h2>
+                <p>Teams and organizations I&rsquo;ve helped move from an idea to working software.</p>
             </div>
 
-            <div className="carousel-wrapper" style={{ overflow: 'hidden', position: 'relative' }}>
-                <div
-                    className="carousel-track"
-                    style={{
-                        display: 'flex',
-                        gap: '80px',
-                        alignItems: 'center',
-                        width: 'max-content',
-                        paddingLeft: '40px',
-                    }}
-                >
-                    {doubled.map((client, i) => (
-                        <div
-                            key={`${client.name}-${i}`}
-                            className="carousel-item"
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: 'center',
-                                gap: '10px',
-                                flexShrink: 0,
-                            }}
-                        >
-                            <img
-                                src={client.logo}
-                                alt={`${client.name} logo`}
-                                loading="lazy"
-                                style={{
-                                    height: '48px',
-                                    width: 'auto',
-                                    maxWidth: '140px',
-                                    objectFit: 'contain',
-                                }}
-                            />
-                            <span
-                                style={{
-                                    fontSize: '12px',
-                                    color: 'var(--text-tertiary)',
-                                    whiteSpace: 'nowrap',
-                                }}
-                            >
-                                {client.name}
-                            </span>
+            <div className="carousel-wrapper">
+                <div className="carousel-track">
+                    {[false, true].map((duplicate) => (
+                        <div className="carousel-group" aria-hidden={duplicate || undefined} key={duplicate ? 'duplicate' : 'original'}>
+                            {clients.map((client) => (
+                                <div className="carousel-item" key={`${duplicate ? 'copy-' : ''}${client.name}`}>
+                                    <div className="client-logo-frame">
+                                        <img
+                                            className={client.className || undefined}
+                                            src={client.logo}
+                                            alt={duplicate ? '' : `${client.name} logo`}
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                    <span>{client.name}</span>
+                                </div>
+                            ))}
                         </div>
                     ))}
                 </div>

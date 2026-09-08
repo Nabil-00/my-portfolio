@@ -8,7 +8,6 @@ import ClientsCarousel from './components/ClientsCarousel';
 import TeachingSection from './components/TeachingSection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ScrollSnapContainer from './components/ScrollSnapContainer';
 
 const App = () => {
     return (
@@ -18,10 +17,10 @@ const App = () => {
             </a>
             <Navbar />
             <main id="main-content">
-                <ScrollSnapContainer>
+                <div className="scroll-story">
                     <Hero />
                     <Projects />
-                </ScrollSnapContainer>
+                </div>
                 <About />
                 <Skills />
                 <ClientsCarousel />

@@ -15,8 +15,7 @@ const Hero = () => {
     return (
         <section
             id="home"
-            className="hero-section snap-panel relative overflow-hidden section-bg"
-            style={{ scrollSnapAlign: 'start', minHeight: '100vh', display: 'flex', alignItems: 'center' }}
+            className="hero-section story-panel relative overflow-hidden section-bg"
         >
             <div
                 aria-hidden="true"
@@ -24,7 +23,7 @@ const Hero = () => {
                 style={{ background: 'radial-gradient(ellipse 60% 60% at 80% 50%, rgba(0,229,160,0.06) 0%, transparent 70%)' }}
             />
 
-            <div className="container relative z-10 grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] gap-10 lg:gap-8 items-center py-12 md:py-20 w-full">
+            <div className="container hero-layout relative z-10">
                 <div className="order-1 lg:order-1 hero-text-entrance">
                     <div
                         className="inline-flex items-center gap-2"
@@ -49,7 +48,7 @@ const Hero = () => {
                     </p>
 
                     <h1
-                        className="mt-2"
+                        className="hero-heading mt-2"
                         style={{
                             fontSize: 'clamp(48px, 7vw, 92px)',
                             fontWeight: 800,
@@ -101,18 +100,10 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div className="order-2 lg:order-2 flex justify-center hero-photo-entrance" style={{ position: 'sticky', top: '50%', transform: 'translateY(-50%)', alignSelf: 'start' }}>
-                    <div
-                        style={{
-                            width: 'clamp(260px, 70vw, 520px)',
-                            height: 'clamp(260px, 70vw, 520px)',
-                            borderRadius: '50%',
-                            border: '3px solid var(--accent)',
-                            boxShadow: '0 0 60px var(--accent-glow), 0 0 120px rgba(0,229,160,0.1)',
-                            overflow: 'hidden',
-                            background: 'var(--bg-2)',
-                        }}
-                    >
+                <div className="order-2 lg:order-2 hero-photo-entrance">
+                    <div className="hero-portrait-shell">
+                        <span className="hero-portrait-label" aria-hidden="true">N / 00</span>
+                        <div className="hero-portrait-frame">
                         <img
                             src="/pic.jpg"
                             alt="Nabeel Ismail at his workstation"
@@ -121,6 +112,11 @@ const Hero = () => {
                             height={520}
                             className="w-full h-full object-cover"
                         />
+                        </div>
+                        <p className="hero-portrait-caption">
+                            <span>Based in Kano, Nigeria</span>
+                            <span>Building useful systems</span>
+                        </p>
                     </div>
                 </div>
             </div>
