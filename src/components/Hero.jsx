@@ -105,7 +105,7 @@ const Hero = () => {
                         <span className="hero-portrait-label" aria-hidden="true">N / 00</span>
                         <div className="hero-portrait-frame">
                         <img
-                            src="/pic.jpg"
+                            src="/pic.webp"
                             alt="Nabeel Ismail at his workstation"
                             fetchPriority="high"
                             width={520}

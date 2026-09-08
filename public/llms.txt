@@ -1,0 +1,26 @@
+# Nabeel Ismail
+
+> Software engineer and technical educator based in Kano, Nigeria. Builds enterprise systems, AI-powered tools, and full-stack applications for real organizations. Computer science undergraduate at Northwest University, Kano.
+
+Nabeel Ismail designs and ships production software: MRTB Operations Management System, an office-management platform with approval workflows, procurement, document verification, and geofenced attendance built with React, TypeScript, Fastify, Prisma, and PostgreSQL; ClassiFy, an intelligent attendance and classroom management system with web and mobile interfaces (Flutter, React, Node.js); and ExamFlow AI, an AI-driven examination workflow tool for question generation and grading assistance.
+
+His stack: TypeScript, JavaScript, Python, Dart, PHP, SQL on the language side; React, Next.js, Flutter, Tailwind CSS on the frontend; Node.js, Express, Fastify, PostgreSQL on the backend; plus LLM integration, document processing, and prompt engineering for AI features, and Git, Linux, Docker, and CI/CD for infrastructure.
+
+He teaches as well: annual SIWES industrial-training workshops, an ongoing AI-assisted web development class, and tech education content on TikTok.
+
+## Pages
+
+- [Portfolio home](https://nabil.is-a.dev/): projects, skills, about, and contact
+- [This site in markdown](https://nabil.is-a.dev/index.md): LLM-friendly text version of the portfolio
+
+## Profiles
+
+- [GitHub](https://github.com/Nabil-00): source code and open work
+- [TikTok](https://www.tiktok.com/@i_nabeel_): tech education content (@i_nabeel_)
+- [Facebook](https://www.facebook.com/nabil.ismail.5855): personal profile
+
+## Contact
+
+- Email: nabeelismailabdulkadir15@gmail.com
+- WhatsApp: +234 913 615 9701
+- CV: [Nabil-Ismail-Abdulkadir-Resume.pdf](https://nabil.is-a.dev/Nabil-Ismail-Abdulkadir-Resume.pdf)
