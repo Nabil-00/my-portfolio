@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Github, ExternalLink, Sparkles, Terminal, Swords, Heart } from 'lucide-react';
 import siteContent from '../data/siteContent';
 
@@ -6,6 +6,62 @@ const projectIcons = {
     'gleam-automation': Terminal,
     'battlenet-live': Swords,
     'buddy': Heart,
+};
+
+const useInViewOnce = (options) => {
+    const ref = useRef(null);
+    const [inView, setInView] = useState(() => typeof IntersectionObserver === 'undefined');
+    useEffect(() => {
+        const el = ref.current;
+        if (!el || inView) return;
+        const obs = new IntersectionObserver(
+            (entries) => {
+                if (entries[0].isIntersecting) { setInView(true); obs.disconnect(); }
+            },
+            { rootMargin: '200px', threshold: 0.1, ...(options || {}) }
+        );
+        obs.observe(el);
+        return () => obs.disconnect();
+    }, [inView, options]);
+    return [ref, inView];
+};
+
+const LazyVideo = ({ poster, src, title }) => {
+    const [ref, inView] = useInViewOnce();
+    const [reducedMotion] = useState(() =>
+        typeof window !== 'undefined' && window.matchMedia
+            ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            : false
+    );
+    return (
+        <div ref={ref} style={{ width: '100%', height: '100%' }}>
+            {!inView || reducedMotion ? (
+                <img
+                    src={poster}
+                    alt={`${title} preview`}
+                    loading="lazy"
+                    decoding="async"
+                    width={1280}
+                    height={720}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
+                    className="hobby-card-img"
+                />
+            ) : (
+                <video
+                    src={src}
+                    poster={poster}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="none"
+                    aria-hidden="true"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
+                    className="hobby-card-img"
+                />
+            )}
+        </div>
+    );
 };
 
 const HobbyProjects = () => {
@@ -77,26 +133,15 @@ const HobbyProjects = () => {
                                         }}
                                     >
                                         {project.video ? (
-                                            <video
-                                                src={project.video}
-                                                poster={project.media || undefined}
-                                                autoPlay
-                                                loop
-                                                muted
-                                                playsInline
-                                                style={{
-                                                    width: '100%',
-                                                    height: '100%',
-                                                    objectFit: project.mediaFit || 'cover',
-                                                    objectPosition: 'top',
-                                                }}
-                                                className="hobby-card-img"
-                                            />
+                                            <LazyVideo poster={project.poster || project.media} src={project.video} title={project.title} />
                                         ) : project.media ? (
                                             <img
                                                 src={project.media}
                                                 alt={`${project.title} preview`}
                                                 loading="lazy"
+                                                decoding="async"
+                                                width={1280}
+                                                height={720}
                                                 style={{
                                                     width: '100%',
                                                     height: '100%',
