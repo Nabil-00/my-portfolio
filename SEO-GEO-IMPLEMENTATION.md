@@ -89,6 +89,27 @@ In Vercel → my-portfolio → Settings → Domains: set `nabeelismail.vercel.ap
 
 ---
 
+## Round 2 — Follow-through (2026-09-08, same day)
+
+### 13. Old-domain 301 redirect — done ✓
+`nabeelismail.vercel.app` now 301-redirects to `https://nabil.is-a.dev/` (set via Vercel API, `redirectStatusCode: 301`). Verified live: `HTTP/2 301 → HTTP/2 200`. All legacy link equity and bookmarks flow to the canonical domain; zero duplicate-content risk.
+
+### 14. Hydration-safety audit — passed ✓
+Grep-verified no nondeterministic values (`Date.now`, `Math.random`, `new Date`) at render time in any component — `hydrateRoot` will produce markup identical to the prerendered HTML. Browser APIs remain confined to effects/handlers.
+
+### 15. IndexNow — done ✓ (instant Bing indexing accelerator)
+- Key: `4fef8243f1f940efb4d6d18e290e7537`, key file committed at `/4fef8243f1f940efb4d6d18e290e7537.txt` (verified 200 live)
+- Submitted `https://nabil.is-a.dev/` to `api.indexnow.org` → **202 Accepted** (twice: pre-deploy + post-deploy validation)
+- Effect: Bing (and Yandex/Seznam; Bing feeds DuckDuckGo) get near-instant indexing signals — no need to wait for organic crawl discovery.
+
+### Remaining manual steps (unchanged)
+1. GitHub profile website → `https://nabil.is-a.dev` (needs `user` scope token or browser)
+2. Google Search Console: verify property, submit sitemap (IndexNow does NOT cover Google)
+3. Bing Webmaster Tools: optional import — IndexNow already pushes Bing; BWT adds query analytics
+4. Update LinkedIn (if any) to point at the new domain
+
+---
+
 ## Verification snapshot (post-deploy, 2026-09-08)
 
 | Check | Result |
