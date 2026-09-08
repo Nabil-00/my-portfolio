@@ -1,11 +1,76 @@
 import React from 'react';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowDown, ArrowRight, ExternalLink } from 'lucide-react';
 import siteContent from '../data/siteContent';
 
 const projectMarks = {
     mrtb: { letters: 'MRTB', label: 'Institutional system' },
     classify: { letters: 'CF', label: 'Custom monogram' },
     examflow: { letters: 'EF', label: 'Custom monogram' },
+};
+
+const architectureBlueprints = {
+    mrtb: {
+        title: 'Operations control plane',
+        layers: [
+            { label: 'Surfaces', nodes: ['Staff portal', 'Approvals', 'Field attendance'] },
+            { label: 'Services', nodes: ['Identity + RBAC', 'Workflow engine', 'Document checks'] },
+            { label: 'Trust', nodes: ['PostgreSQL', 'Audit trail', 'Geofence rules'] },
+        ],
+    },
+    classify: {
+        title: 'Attendance intelligence',
+        layers: [
+            { label: 'Surfaces', nodes: ['Web console', 'Flutter mobile', 'AI attendance'] },
+            { label: 'Services', nodes: ['Session service', 'Risk scoring', 'Realtime API'] },
+            { label: 'Trust', nodes: ['PostgreSQL', 'Model gateway', 'Signed events'] },
+        ],
+    },
+    examflow: {
+        title: 'Assessment workflow',
+        layers: [
+            { label: 'Surfaces', nodes: ['Exam authoring', 'Review workspace', 'Results portal'] },
+            { label: 'Services', nodes: ['LLM orchestration', 'Grading assistant', 'Access control'] },
+            { label: 'Trust', nodes: ['Prompt + version log', 'Encrypted store', 'Audit events'] },
+        ],
+    },
+};
+
+const ArchitectureVisual = ({ project }) => {
+    const blueprint = architectureBlueprints[project.id];
+
+    return (
+        <div
+            className={`architecture-canvas architecture-canvas--${project.id}`}
+            role="img"
+            aria-label={`${project.title} conceptual system architecture: ${blueprint.layers.map((layer) => `${layer.label}: ${layer.nodes.join(', ')}`).join('; ')}`}
+        >
+            <div className="architecture-head">
+                <span className="architecture-safe-label">Safe system view</span>
+                <span>Conceptual / 0{project.id === 'mrtb' ? 1 : project.id === 'classify' ? 2 : 3}</span>
+            </div>
+            <h4>{blueprint.title}</h4>
+            <div className="architecture-flow">
+                {blueprint.layers.map((layer, layerIndex) => (
+                    <div className="architecture-layer" key={layer.label}>
+                        <span className="architecture-layer-label">{layer.label}</span>
+                        <div className="architecture-nodes">
+                            {layer.nodes.map((node) => (
+                                <span className="architecture-node" key={node}>
+                                    <span className="architecture-node-dot" aria-hidden="true" />
+                                    {node}
+                                </span>
+                            ))}
+                        </div>
+                        {layerIndex < blueprint.layers.length - 1 && <ArrowDown className="architecture-arrow" size={16} aria-hidden="true" />}
+                    </div>
+                ))}
+            </div>
+            <div className="architecture-foot">
+                <span>Inputs are abstracted for privacy</span>
+                <span className="architecture-status"><span aria-hidden="true" /> Publish-safe</span>
+            </div>
+        </div>
+    );
 };
 
 const ProjectVisual = ({ project }) => {
@@ -17,19 +82,7 @@ const ProjectVisual = ({ project }) => {
     return (
         <div className={`project-stage project-stage--${project.id}`}>
             <div className="project-orbit" aria-hidden="true" />
-            <div className="project-window">
-                <div className="project-window-bar" aria-hidden="true">
-                    <span /><span /><span />
-                    <small>{project.id}.work</small>
-                </div>
-                <img
-                    src={project.media}
-                    alt={`${project.title} interface preview`}
-                    width="1376"
-                    height="768"
-                    loading="lazy"
-                />
-            </div>
+            <ArchitectureVisual project={project} />
             <div className="project-mark" aria-label={`${project.title} identity`}>
                 <strong>{mark.letters}</strong>
                 <span>{mark.label}</span>

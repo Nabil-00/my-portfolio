@@ -914,7 +914,7 @@ button:disabled {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-25%);
   }
 }
 
@@ -938,12 +938,14 @@ button:disabled {
   position: relative;
   overflow: hidden;
   padding-block: 1rem 2rem;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
 .carousel-track {
   display: flex;
   width: max-content;
-  animation: carousel-scroll 32s linear infinite;
+  animation: carousel-scroll 50s linear infinite;
 }
 
 .carousel-group {
@@ -995,27 +997,6 @@ button:disabled {
   }
 }
 
-.carousel-wrapper::before,
-.carousel-wrapper::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.carousel-wrapper::before {
-  left: 0;
-  background: linear-gradient(to right, var(--bg-2), transparent);
-}
-
-.carousel-wrapper::after {
-  right: 0;
-  background: linear-gradient(to left, var(--bg-2), transparent);
-}
-
 @media (hover: hover) and (pointer: fine) {
   .carousel-item:hover .client-logo-frame {
     transform: translateY(-6px);
@@ -1024,8 +1005,8 @@ button:disabled {
 }
 
 @media (max-width: 639px) {
-  .carousel-wrapper::before,
-  .carousel-wrapper::after {
-    width: 36px;
+  .carousel-wrapper {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
   }
 }

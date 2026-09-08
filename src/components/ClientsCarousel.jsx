@@ -19,15 +19,15 @@ const ClientsCarousel = () => {
 
             <div className="carousel-wrapper">
                 <div className="carousel-track">
-                    {[false, true].map((duplicate) => (
-                        <div className="carousel-group" aria-hidden={duplicate || undefined} key={duplicate ? 'duplicate' : 'original'}>
+                    {[0, 1, 2, 3].map((copy) => (
+                        <div className="carousel-group" aria-hidden={copy > 0 || undefined} key={`group-${copy}`}>
                             {clients.map((client) => (
-                                <div className="carousel-item" key={`${duplicate ? 'copy-' : ''}${client.name}`}>
+                                <div className="carousel-item" key={`${copy}-${client.name}`}>
                                     <div className="client-logo-frame">
                                         <img
                                             className={client.className || undefined}
                                             src={client.logo}
-                                            alt={duplicate ? '' : `${client.name} logo`}
+                                            alt={copy === 0 ? `${client.name} logo` : ''}
                                             loading="lazy"
                                         />
                                     </div>
