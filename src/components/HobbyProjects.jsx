@@ -68,21 +68,41 @@ const HobbyProjects = () => {
                                         style={{
                                             position: 'relative',
                                             aspectRatio: '16 / 9',
-                                            background: '#07101a',
+                                            background: project.mediaBg || '#07101a',
                                             borderBottom: '1px solid var(--border)',
                                             overflow: 'hidden',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
                                         }}
                                     >
-                                        {project.media ? (
+                                        {project.video ? (
+                                            <video
+                                                src={project.video}
+                                                poster={project.media || undefined}
+                                                autoPlay
+                                                loop
+                                                muted
+                                                playsInline
+                                                style={{
+                                                    width: '100%',
+                                                    height: '100%',
+                                                    objectFit: project.mediaFit || 'cover',
+                                                    objectPosition: 'top',
+                                                }}
+                                                className="hobby-card-img"
+                                            />
+                                        ) : project.media ? (
                                             <img
                                                 src={project.media}
-                                                alt={`${project.title} screenshot`}
+                                                alt={`${project.title} preview`}
                                                 loading="lazy"
                                                 style={{
                                                     width: '100%',
                                                     height: '100%',
-                                                    objectFit: 'cover',
-                                                    objectPosition: 'top',
+                                                    objectFit: project.mediaFit || 'cover',
+                                                    objectPosition: 'center',
+                                                    padding: project.mediaFit === 'contain' ? '20px' : '0',
                                                     transition: 'transform 0.5s ease',
                                                 }}
                                                 className="hobby-card-img"

@@ -138,15 +138,16 @@ const siteContent = {
   hobbyProjects: [
     {
       id: "gleam-automation",
-      title: "Gleam Daily Automation",
+      title: "GleamBot — Daily Automation",
       subtitle: "Headless Browser · Systemd User Timer · Linux",
-      badge: "Automation Tool",
+      badge: "Automation Bot",
       context:
         "Built to automate repetitive daily giveaway entries on Gleam.io so daily check-ins are never missed. Uses a dedicated Chromium profile via Playwright, runs idempotently on a systemd user timer, and exits safely if human verification is required.",
       stack: ["Playwright", "Node.js", "Linux Systemd", "Chromium", "State Machines"],
       github: "https://github.com/Nabil-00/gleam-daily-entry",
       live: null,
-      media: "/projects/gleam.png",
+      media: "/projects/gleamie.webp",
+      mediaFit: "cover",
       funFact: "Runs silently via a local Linux systemd timer every morning.",
     },
     {
@@ -160,6 +161,8 @@ const siteContent = {
       github: "https://github.com/Nabil-00/battlenet-live-frontend",
       live: null,
       media: "/projects/battlenet.png",
+      video: "/projects/battlenet.webm",
+      mediaFit: "cover",
       funFact: "Simulates full arena matches with live-calculated win probabilities and round commentary.",
     },
     {
@@ -173,6 +176,8 @@ const siteContent = {
       github: "https://github.com/Nabil-00/ai-mental-health-companion",
       live: "https://khadija-port.vercel.app",
       media: "/projects/buddy.png",
+      mediaFit: "contain",
+      mediaBg: "#fbfdfa",
       funFact: "Collaborative design exploration focused on gentle, non-clinical mental health interactions.",
     },
   ],
