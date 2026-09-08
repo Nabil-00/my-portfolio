@@ -33,6 +33,7 @@ const siteContent = {
     { label: "Work", href: "#projects" },
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
+    { label: "Play", href: "#hobby-projects" },
     { label: "Contact", href: "#contact" },
   ],
   pillars: [
@@ -134,6 +135,47 @@ const siteContent = {
       media: "/projects/examflow.png",
     },
   ],
+  hobbyProjects: [
+    {
+      id: "gleam-automation",
+      title: "Gleam Daily Automation",
+      subtitle: "Headless Browser · Systemd User Timer · Linux",
+      badge: "Automation Tool",
+      context:
+        "Built to automate repetitive daily giveaway entries on Gleam.io so daily check-ins are never missed. Uses a dedicated Chromium profile via Playwright, runs idempotently on a systemd user timer, and exits safely if human verification is required.",
+      stack: ["Playwright", "Node.js", "Linux Systemd", "Chromium", "State Machines"],
+      github: "https://github.com/Nabil-00/gleam-daily-entry",
+      live: null,
+      media: "/projects/gleam.png",
+      funFact: "Runs silently via a local Linux systemd timer every morning.",
+    },
+    {
+      id: "battlenet-live",
+      title: "Battle.net Live",
+      subtitle: "Realtime Arena · Supabase RLS · Fight Simulation",
+      badge: "Realtime Gaming",
+      context:
+        "A live robot combat arena and fight telemetry dashboard. Features simulated round-by-round fight playback, live damage meters, automated event commentary streams, and strict PostgreSQL Row Level Security across match tables.",
+      stack: ["React", "Vite", "Tailwind CSS", "Supabase", "PostgreSQL RLS"],
+      github: "https://github.com/Nabil-00/battlenet-live-frontend",
+      live: null,
+      media: "/projects/battlenet.png",
+      funFact: "Simulates full arena matches with live-calculated win probabilities and round commentary.",
+    },
+    {
+      id: "buddy",
+      title: "Buddy",
+      subtitle: "AI Emotional Wellness · Conversational UX",
+      badge: "AI Companion",
+      context:
+        "An AI emotional wellness companion and mood check-in app. Designed to make self-reflection approachable through empathetic conversation, gentle routines, and a warm, design-forward interface instead of sterile medical forms.",
+      stack: ["React", "Tailwind CSS", "AI / LLMs", "Conversational UI"],
+      github: "https://github.com/Nabil-00/ai-mental-health-companion",
+      live: "https://khadija-port.vercel.app",
+      media: "/projects/buddy.png",
+      funFact: "Collaborative design exploration focused on gentle, non-clinical mental health interactions.",
+    },
+  ],
   contact: {
     heading: ["Say ", "Hi", " and let's build"],
     subtext: "Have a project or opportunity in mind? Let's talk about it.",
@@ -202,6 +244,12 @@ const siteContent = {
         buttonLabel: "Follow on TikTok",
         linkLabel: "View profile",
       },
+    },
+    hobbyProjects: {
+      eyebrow: "EXPERIMENTS & PLAY",
+      heading: "Weekend builds & fun tools.",
+      subtext:
+        "Beyond client and enterprise systems, I tinker on side quests for the sheer joy of coding, automating annoyances, and playing with new tools.",
     },
     footer: {
       copyright: "© 2026 Nabeel Ismail. All rights reserved.",

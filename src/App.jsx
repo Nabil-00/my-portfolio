@@ -6,6 +6,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import ClientsCarousel from './components/ClientsCarousel';
 import TeachingSection from './components/TeachingSection';
+import HobbyProjects from './components/HobbyProjects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -25,6 +26,7 @@ const App = () => {
                 <Skills />
                 <ClientsCarousel />
                 <TeachingSection />
+                <HobbyProjects />
                 <Contact />
             </main>
             <Footer />

@@ -1006,3 +1006,20 @@ button:disabled {
     mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
   }
 }
+
+/* ─── Hobby Projects ─── */
+.hobby-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hobby-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 229, 160, 0.4);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6), 0 0 24px var(--accent-dim);
+  }
+
+  .hobby-card:hover .hobby-card-img {
+    transform: scale(1.04);
+  }
+}
