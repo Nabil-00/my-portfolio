@@ -1023,13 +1023,3 @@ button:disabled {
     transform: scale(1.04);
   }
 }
-
-/* perf: skip offscreen rendering work */
-#projects, #hobby-projects, #teaching {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 1200px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #projects, #hobby-projects, #teaching { content-visibility: visible; }
-}
