@@ -7,14 +7,19 @@ import React from 'react'
 const distDir = resolve('dist')
 const ssrDir = resolve('dist-ssr')
 
-// 1. Build an SSR bundle of App.jsx (JSX transformed, deps externalized)
+// 1. Build an SSR bundle of the EAGER prerender entry (JSX transformed, deps
+// externalized). The client App.jsx code-splits below-fold sections with
+// React.lazy, which renderToString cannot resolve (it would emit only the
+// Suspense fallbacks) and streaming SSR would hide inside <div hidden> flight
+// payloads. Rendering the eager twin guarantees prerendered DOM identical to
+// the interactive app: full SEO/no-JS/first-paint content.
 // NOTE: vite.config.js sets client-only rollupOptions.output file naming
 // (assets/[name]-[hash].js) + manualChunks. Override them here so the SSR
-// entry lands at the deterministic path dist-ssr/App.js imported below.
+// entry lands at the deterministic path dist-ssr/prerender-entry.js.
 await build({
   logLevel: 'error',
   build: {
-    ssr: resolve('src/App.jsx'),
+    ssr: resolve('src/prerender-entry.jsx'),
     outDir: ssrDir,
     emptyOutDir: true,
     rollupOptions: {
@@ -27,10 +32,25 @@ await build({
   },
 })
 
-const { default: App } = await import(`../dist-ssr/App.js`)
+const { default: PrerenderApp } = await import(`../dist-ssr/prerender-entry.js`)
 
-// 2. Render to static HTML
-const appHtml = renderToString(React.createElement(App))
+// 2. Render to static HTML (fully eager tree — no Suspense boundaries).
+const appHtml = renderToString(React.createElement(PrerenderApp))
+
+// 3. Regression tripwires: fail loudly if the prerender ever degrades to
+// fallbacks/hidden streaming payloads or shrinks far below the ~69KB baseline.
+if (appHtml.includes('min-height:40vh')) {
+  console.error('prerender: BelowFoldFallback spacer leaked into static HTML — lazy boundary unresolved')
+  process.exit(1)
+}
+if (appHtml.includes('<div hidden id="S:')) {
+  console.error('prerender: hidden Suspense payload in static HTML — use the eager entry, not streaming SSR')
+  process.exit(1)
+}
+if (appHtml.length < 50000) {
+  console.error(`prerender: suspiciously small output (${appHtml.length} bytes, expected ~69000) — below-fold content missing?`)
+  process.exit(1)
+}
 
 // 3. Inject into the built client index.html
 const indexPath = resolve(distDir, 'index.html')
