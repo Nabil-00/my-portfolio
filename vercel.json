@@ -14,7 +14,7 @@
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=86400" }]
     },
     {
-      "source": "/:file(.*\\.(webp|avif|png|jpg|jpeg|svg|ico|webm))",
+      "source": "/.*\\.(webp|avif|png|jpg|jpeg|svg|ico|webm)$",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=86400" }]
     },
     {
