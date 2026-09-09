@@ -101,7 +101,7 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div className="order-2 lg:order-2 flex justify-center hero-photo-entrance" style={{ position: 'sticky', top: '50%', transform: 'translateY(-50%)', alignSelf: 'start' }}>
+                <div className="order-2 lg:order-2 flex justify-center hero-photo-entrance">
                     <div
                         style={{
                             width: 'clamp(260px, 70vw, 520px)',

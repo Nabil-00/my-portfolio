@@ -548,14 +548,6 @@ button:disabled {
   z-index: 1;
 }
 
-@media (min-width: 1024px) and (min-height: 700px) and (prefers-reduced-motion: no-preference) {
-  .story-panel {
-    position: sticky;
-    top: 0;
-    height: 100svh;
-  }
-}
-
 /* ─── Selected work — editorial system stories ─── */
 .project-story {
   position: relative;
