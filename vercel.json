@@ -14,7 +14,15 @@
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=86400" }]
     },
     {
-      "source": "/.*\\.(webp|avif|png|jpg|jpeg|svg|ico|webm)$",
+      "source": "/og/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=86400" }]
+    },
+    {
+      "source": "/pic.webp",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=86400" }]
+    },
+    {
+      "source": "/pic.jpg",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=86400" }]
     },
     {
