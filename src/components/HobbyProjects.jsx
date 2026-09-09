@@ -10,7 +10,7 @@ const projectIcons = {
 
 const useInViewOnce = (options) => {
     const ref = useRef(null);
-    const [inView, setInView] = useState(() => typeof IntersectionObserver === 'undefined');
+    const [inView, setInView] = useState(false);
     useEffect(() => {
         const el = ref.current;
         if (!el || inView) return;
@@ -28,11 +28,12 @@ const useInViewOnce = (options) => {
 
 const LazyVideo = ({ poster, src, title }) => {
     const [ref, inView] = useInViewOnce();
-    const [reducedMotion] = useState(() =>
-        typeof window !== 'undefined' && window.matchMedia
-            ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
-            : false
-    );
+    const [reducedMotion, setReducedMotion] = useState(false);
+    useEffect(() => {
+        if (typeof window !== 'undefined' && window.matchMedia) {
+            setReducedMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+        }
+    }, []);
     return (
         <div ref={ref} style={{ width: '100%', height: '100%' }}>
             {!inView || reducedMotion ? (
