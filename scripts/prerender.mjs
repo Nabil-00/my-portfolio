@@ -65,6 +65,13 @@ if (!html.includes(marker)) {
   process.exit(1)
 }
 html = html.replace(marker, `<div id="root">${appHtml}</div>`)
+
+// 4. Auto-stamp dateModified in ProfilePage JSON-LD so Google always sees current time
+html = html.replace(
+  /"dateModified": "[^"]*"/,
+  `"dateModified": "${new Date().toISOString()}"`
+)
+
 writeFileSync(indexPath, html)
 
 // 4. Clean up the SSR bundle
