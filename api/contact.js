@@ -26,7 +26,7 @@ export default async function handler(req, res) {
 
   try {
     await transporter.sendMail({
-      from: `"Portfolio Contact Form" <${smtpUser}>`,
+      from: `"Portfolio Contact Form" <nabeelismailabdulkadir15@gmail.com>`,
       to: 'nabeelismailabdulkadir15@gmail.com',
       replyTo: `"${name}" <${email}>`,
       subject: `[Portfolio] ${inquiryType || 'General'} — ${name}`,
