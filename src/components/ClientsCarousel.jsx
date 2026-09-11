@@ -1,7 +1,7 @@
 import React from 'react';
 
 const clients = [
-    { name: 'DefendHub Enterprise', logo: '/logos/defendhub.jpg', url: 'https://www.defendhub.ng/' },
+    { name: 'DefendHub Enterprise', logo: '/logos/defendhub.png', url: 'https://www.defendhub.ng/' },
     { name: 'Nexora LLC', logo: '/logos/nexora.png', url: 'https://www.nexoraglobalholdings.com/' },
     { name: 'Neolife International', logo: '/logos/neolife.png', url: 'https://neolife.com/' },
     { name: 'Hama Academy', logo: '/logos/hama.png' },
