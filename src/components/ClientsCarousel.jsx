@@ -4,7 +4,7 @@ const clients = [
     { name: 'DefendHub Enterprise', logo: '/logos/defendhub.png', url: 'https://www.defendhub.ng/' },
     { name: 'Nexora LLC', logo: '/logos/nexora.png', url: 'https://www.nexoraglobalholdings.com/' },
     { name: 'Neolife International', logo: '/logos/neolife.png', url: 'https://neolife.com/' },
-    { name: 'Hama Academy', logo: '/logos/hama.png' },
+    { name: 'Hama Academy', logo: '/logos/hama.png', url: 'https://hamaacademy.com/' },
     { name: 'Abrob Industry', logo: '/logos/abrob.png', url: 'https://www.abrobindustry.com/' },
     { name: 'Ramu', logo: '/logos/ramu.svg' },
 ];
