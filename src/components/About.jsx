@@ -54,7 +54,7 @@ const About = () => {
 
                     <div className="order-1 lg:order-2">
                         <img
-                            src="/newpic.webp"
+                            src="/pic.webp"
                             alt={about.imageAlt}
                             loading="lazy"
                             width={600}
