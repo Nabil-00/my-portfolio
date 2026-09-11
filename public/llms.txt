@@ -1,12 +1,12 @@
-# Nabeel Ismail
+# Nabil Ismail
 
 > Software engineer and technical educator based in Kano, Nigeria. Builds enterprise systems, AI-powered tools, and full-stack applications for real organizations. Computer science undergraduate at Northwest University, Kano.
 
-Nabeel Ismail designs and ships production software: MRTB Operations Management System, an office-management platform with approval workflows, procurement, document verification, and geofenced attendance built with React, TypeScript, Fastify, Prisma, and PostgreSQL; ClassiFy, an intelligent attendance and classroom management system with web and mobile interfaces (Flutter, React, Node.js); and ExamFlow AI, an AI-driven examination workflow tool for question generation and grading assistance.
+Nabil Ismail designs and ships production software: MRTB Operations Management System, an office-management platform with approval workflows, procurement, document verification, and geofenced attendance built with React, TypeScript, Fastify, Prisma, and PostgreSQL; ClassiFy, an intelligent attendance and classroom management system with web and mobile interfaces (Flutter, React, Node.js); and ExamFlow AI, an AI-driven examination workflow tool for question generation and grading assistance.
 
-His stack: TypeScript, JavaScript, Python, Dart, PHP, SQL on the language side; React, Next.js, Flutter, Tailwind CSS on the frontend; Node.js, Express, Fastify, PostgreSQL on the backend; plus LLM integration, document processing, and prompt engineering for AI features, and Git, Linux, Docker, and CI/CD for infrastructure.
+His stack: TypeScript, JavaScript, Python, Dart, PHP, SQL on the language side; React, Next.js, Flutter, Tailwind CSS on the frontend; Node.js, Express, Fastify, PostgreSQL on the backend; plus Large Language Model (LLM) integration, document processing, and prompt engineering for AI features, and Git, Linux, Docker, and CI/CD for infrastructure.
 
-He teaches as well: annual SIWES industrial-training workshops, an ongoing AI-assisted web development class, and tech education content on TikTok.
+He teaches as well: annual Supervised Industrial Work Experience Scheme (SIWES) workshops, an ongoing AI-assisted web development class, and tech education content on TikTok.
 
 ## Pages
 

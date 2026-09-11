@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "skills": {
+    "geo-audit": {
+      "source": "Cognitic-Labs/geoskills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-audit/SKILL.md",
+      "computedHash": "b9d7626be47000170628b1c6bb90e84112b43f461b8912c2da8bff9e4138fb97"
+    },
+    "geo-compare": {
+      "source": "Cognitic-Labs/geoskills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-compare/SKILL.md",
+      "computedHash": "baac7b1e274a17a6a67530e21f350b780692f27c647d6bf0aff20ad6b4ab3f66"
+    },
+    "geo-fix-content": {
+      "source": "Cognitic-Labs/geoskills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-fix-content/SKILL.md",
+      "computedHash": "1678e7d0ad96d163bc58445b6dbdc985a1e9fc2ca52c7c8cb209d00ecf5ced12"
+    },
+    "geo-fix-llmstxt": {
+      "source": "Cognitic-Labs/geoskills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-fix-llmstxt/SKILL.md",
+      "computedHash": "7da560de96ce715dece5402b7c733955993ef300edeb6fc44a926e71a6714121"
+    },
+    "geo-fix-schema": {
+      "source": "Cognitic-Labs/geoskills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-fix-schema/SKILL.md",
+      "computedHash": "591504e1a9f23fdc3671d2c529fd77d1a7b0da0d2c82ccc0d4ce2c9e434d0bd1"
+    },
+    "geo-monitor": {
+      "source": "Cognitic-Labs/geoskills",
+      "sourceType": "github",
+      "skillPath": "skills/geo-monitor/SKILL.md",
+      "computedHash": "d024be19a4924ec116cb9d2d9710f63f70b2a37bd5aec27194e50106a4d801dc"
+    },
+    "seo-landing": {
+      "source": "aleksandr-alhoff/seo-landing",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "187003515b0eb3c805a409c1e2dad9208fddb918e88e40befcbc33a6a1ea47b8"
+    }
+  }
+}

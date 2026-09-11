@@ -9,6 +9,7 @@ const ClientsCarousel = lazy(() => import('./components/ClientsCarousel'));
 const TeachingSection = lazy(() => import('./components/TeachingSection'));
 const HobbyProjects = lazy(() => import('./components/HobbyProjects'));
 const Contact = lazy(() => import('./components/Contact'));
+const FAQ = lazy(() => import('./components/FAQ'));
 const Footer = lazy(() => import('./components/Footer'));
 
 class SectionErrorBoundary extends React.Component {
@@ -44,6 +45,7 @@ const App = () => {
                             <ClientsCarousel />
                             <TeachingSection />
                             <HobbyProjects />
+                            <FAQ />
                             <Contact />
                         </Suspense>
                     </SectionErrorBoundary>

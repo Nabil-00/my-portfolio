@@ -1,6 +1,6 @@
 const siteContent = {
   meta: {
-    name: "Nabeel Ismail",
+    name: "Nabil Ismail",
     title: "Software Engineer · AI Builder · Technical Educator",
     description:
       "I design and build enterprise systems, AI-powered tools, and full-stack applications. Currently developing an operations management platform and an intelligent attendance system.",
@@ -21,10 +21,10 @@ const siteContent = {
   },
   hero: {
     greeting: "Hello!",
-    headline: ["I'm ", "Nabeel", " Ismail"],
-    highlightWord: "Nabeel",
+    headline: ["I'm ", "Nabil", " Ismail"],
+    highlightWord: "Nabil",
     tagline: "Software Engineer · AI Builder · Based in Kano, Nigeria",
-    bio: "I design and build enterprise systems, AI-powered tools, and full-stack web applications for organizations in Kano and beyond. Currently developing an operations management platform and an intelligent attendance system.",
+    bio: "I'm Nabil Ismail, a software engineer in Kano, Nigeria. I've built 5+ production systems — enterprise platforms, AI-powered tools, and full-stack web apps — for organizations including DefendHub Enterprise and Hama Academy. I specialize in React, Node.js, PostgreSQL, and Large Language Model (LLM) integration.",
     cta: { primary: "Let's Talk", secondary: "Download CV" },
     availability: "CS Undergraduate · Open to opportunities",
   },
@@ -41,19 +41,19 @@ const siteContent = {
       id: "systems",
       icon: "Code2",
       title: "Systems Engineering",
-      desc: "Enterprise platforms with RBAC, approval workflows, document management, and PostgreSQL.",
+      desc: "Enterprise platforms with Role-Based Access Control (RBAC), approval workflows, document management, and PostgreSQL.",
     },
     {
       id: "ai",
       icon: "Cpu",
       title: "AI & Automation",
-      desc: "AI-powered tools, document processing, workflow automation, and LLM integration.",
+      desc: "AI-powered tools, document processing, workflow automation, and Large Language Model (LLM) integration.",
     },
     {
       id: "educator",
       icon: "Video",
       title: "Technical Education",
-      desc: "SIWES workshops, AI-assisted web development instruction, and tech content creation.",
+      desc: "Supervised Industrial Work Experience Scheme (SIWES) workshops, AI-assisted web development instruction, and tech content creation.",
     },
   ],
   skills: {
@@ -206,11 +206,11 @@ const siteContent = {
       eyebrow: "ABOUT ME",
       heading: "The person behind the code.",
       paragraphs: [
-        "I'm a computer science undergraduate at Northwest University, Kano, building software that solves real operational problems — from enterprise management platforms to AI-powered workflow tools. Based in Kano, Nigeria, I work with organizations looking for custom software, AI integration, and web development.",
-        "Outside of code, I teach — running annual SIWES workshops and an AI-assisted web development class in Kano. I also break down tech concepts on TikTok and am equally comfortable rebuilding a PC from scratch.",
+        "I'm a computer science undergraduate at Northwest University, Kano, building software that solves real operational problems. I've delivered 5+ production systems for organizations in Kano, including enterprise management platforms, AI-powered workflow tools, and full-stack web applications.",
+        "Outside of code, I teach — running annual Supervised Industrial Work Experience Scheme (SIWES) workshops and an AI-assisted web development class in Kano. I also break down tech concepts on TikTok and am equally comfortable rebuilding a PC from scratch.",
       ],
       cta: "Get in touch",
-      imageAlt: "Nabeel Ismail, software engineer",
+      imageAlt: "Nabil Ismail, software engineer in Kano, Nigeria",
     },
     skills: {
       eyebrow: "CAPABILITIES",
@@ -232,7 +232,7 @@ const siteContent = {
       activities: [
         {
           title: "SIWES Workshop",
-          desc: "Annual industrial training workshop for students. Most recently held 2026.",
+          desc: "Annual Supervised Industrial Work Experience Scheme (SIWES) training workshop for students. Most recently held 2026.",
         },
         {
           title: "AI Web Development Class",
@@ -258,8 +258,34 @@ const siteContent = {
         "Beyond client and enterprise systems, I tinker on side quests for the sheer joy of coding, automating annoyances, and playing with new tools.",
     },
     footer: {
-      copyright: "© 2026 Nabeel Ismail. All rights reserved.",
+      copyright: "© 2026 Nabil Ismail. All rights reserved.",
       builtWith: "Built with React + Vite",
+    },
+    faq: {
+      eyebrow: "FAQ",
+      heading: "Frequently asked questions.",
+      items: [
+        {
+          question: "What services does Nabil Ismail offer?",
+          answer: "Nabil Ismail offers software engineering, AI integration, and web development services in Kano, Nigeria. Services include enterprise systems with Role-Based Access Control (RBAC) and approval workflows, AI-powered tools using Large Language Models (LLMs), full-stack web applications, and technical education workshops."
+        },
+        {
+          question: "How to hire a web developer in Kano, Nigeria?",
+          answer: "You can hire Nabil Ismail, a software engineer based in Kano, Nigeria, by reaching out via the contact form at nabil.is-a.dev or messaging on WhatsApp at +234 913 615 9701. Nabil specializes in React, Node.js, PostgreSQL, and AI integration for organizations in Kano and beyond."
+        },
+        {
+          question: "What is the MRTB Operations Management System?",
+          answer: "The MRTB Operations Management System is an office-management platform built by Nabil Ismail using React, TypeScript, Fastify, Prisma, and PostgreSQL. It features approval workflows, procurement management, document verification, geofenced attendance, and performance tracking for enterprise organizations."
+        },
+        {
+          question: "What technologies does Nabil Ismail use?",
+          answer: "Nabil Ismail's tech stack includes TypeScript, JavaScript, Python, and Dart for languages; React, Next.js, Flutter, and Tailwind CSS for frontend; Node.js, Express, Fastify, and PostgreSQL for backend; plus LLM integration, prompt engineering, and workflow automation for AI features."
+        },
+        {
+          question: "Does Nabil Ismail offer AI integration services in Kano?",
+          answer: "Yes, Nabil Ismail offers AI integration services in Kano, Nigeria. Services include Large Language Model (LLM) integration, document processing, prompt engineering, and workflow automation for organizations looking to adopt AI-powered tools."
+        }
+      ],
     },
   },
 };

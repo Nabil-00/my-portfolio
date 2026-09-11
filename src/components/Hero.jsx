@@ -119,7 +119,7 @@ const Hero = () => {
                     >
                         <img
                             src="/newpic.webp"
-                            alt="Nabeel Ismail at his workstation"
+                            alt="Nabil Ismail, software engineer in Kano, Nigeria"
                             fetchPriority="high"
                             width={520}
                             height={520}
