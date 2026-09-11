@@ -8,60 +8,56 @@ draft: false
 
 ## Enterprise Software in Kano: Beyond Spreadsheets
 
-Enterprise software development in Kano is helping organizations move beyond spreadsheets and manual processes to integrated, automated systems that scale with their operations. According to a 2026 IDC report, Nigerian enterprises that implement custom software solutions see 32% improvement in operational efficiency and 28% reduction in administrative costs within the first year<sup><a href="#sources">1</a></sup>.
+Enterprise software development in Kano helps organizations replace spreadsheets and manual processes with integrated, automated systems built to scale. According to a 2026 IDC report, Nigerian enterprises that implement custom software see 32% improvement in operational efficiency and 28% reduction in administrative costs within the first year<sup><a href="#sources">1</a></sup>.
 
-Kano's enterprise sector — spanning manufacturing, agriculture, healthcare, education, and government — generates massive volumes of data that manual processes cannot efficiently manage. Custom enterprise software automates workflows, enforces business rules, provides real-time visibility, and integrates disparate systems into a unified platform.
+Kano's enterprise sector, which includes manufacturing, agriculture, healthcare, education, and government, produces data volumes that manual processes cannot manage well. Custom enterprise software automates workflows, enforces business rules, provides real-time visibility, and integrates separate systems into a single platform.
 
 ## What Enterprise Software Do Kano Organizations Need?
 
 Common enterprise software requirements in Kano include:
 
-**Operations Management Systems:** Platforms that handle approval workflows, procurement, document management, and performance tracking. The MRTB Operations Management System, built by Kano developer Nabil Ismail using React, TypeScript, Fastify, Prisma, and PostgreSQL, exemplifies this category — featuring role-based access control, geofenced attendance, and automated approval chains.
+Operations Management Systems handle approval workflows, procurement, document management, and performance tracking. The MRTB Operations Management System, built by Kano developer Nabil Ismail using React, TypeScript, Fastify, Prisma, and PostgreSQL, is one example. It includes role-based access control, geofenced attendance, and automated approval chains.
 
-**Human Resource Management (HRM):** Employee records, payroll, leave management, performance reviews, and recruitment tracking. Nigerian labor law compliance features are essential for local implementations.
+Human Resource Management (HRM) covers employee records, payroll, leave management, performance reviews, and recruitment tracking. Nigerian labor law compliance features are needed for local implementations.
 
-**Enterprise Resource Planning (ERP):** Integrated systems managing finance, inventory, procurement, sales, and customer relationships. Custom ERPs outperform off-the-shelf solutions for organizations with unique workflows.
+Enterprise Resource Planning (ERP) integrates finance, inventory, procurement, sales, and customer relationships. Custom ERPs suit organizations with unique workflows better than off-the-shelf solutions.
 
-**Customer Relationship Management (CRM):** Lead tracking, sales pipeline management, customer communication history, and reporting. WhatsApp integration is critical for Nigerian businesses where 89% of customer communication happens through the platform<sup><a href="#sources">2</a></sup>.
+Customer Relationship Management (CRM) handles lead tracking, sales pipeline management, customer communication history, and reporting. WhatsApp integration matters for Nigerian businesses, where 89% of customer communication happens through the platform<sup><a href="#sources">2</a></sup>.
 
-**Learning Management Systems (LMS):** Course delivery, student tracking, assessment management, and certification — particularly valuable for Kano's growing education sector.
+Learning Management Systems (LMS) support course delivery, student tracking, assessment management, and certification. Kano's growing education sector has driven demand for these systems.
 
 ## Enterprise Software Development Costs in Kano
 
-Enterprise software pricing in Kano reflects the complexity and scope of business systems:
+Enterprise software pricing in Kano depends on complexity and scope:
 
-- **Department-specific tools:** ₦3,000,000 – ₦8,000,000 ($3,600 – $9,600)
-- **Cross-department systems:** ₦8,000,000 – ₦25,000,000 ($9,600 – $30,000)
-- **Enterprise-wide platforms:** ₦20,000,000 – ₦80,000,000 ($24,000 – $96,000)
-- **Custom ERP systems:** ₦30,000,000 – ₦150,000,000 ($36,000 – $180,000)<sup><a href="#sources">3</a></sup>
+- Department-specific tools: ₦3,000,000 to ₦8,000,000 ($3,600 to $9,600)
+- Cross-department systems: ₦8,000,000 to ₦25,000,000 ($9,600 to $30,000)
+- Enterprise-wide platforms: ₦20,000,000 to ₦80,000,000 ($24,000 to $96,000)
+- Custom ERP systems: ₦30,000,000 to ₦150,000,000 ($36,000 to $180,000)<sup><a href="#sources">3</a></sup>
 
-These prices are 50-70% lower than international equivalents, according to a 2026 Deloitte African technology cost comparison<sup><a href="#sources">4</a></sup>. Kano's lower cost of living and growing developer talent pool enable competitive pricing for complex enterprise projects.
+A 2026 Deloitte African technology cost comparison found these prices are 50-70% lower than international equivalents<sup><a href="#sources">4</a></sup>. Kano's lower cost of living and growing developer talent pool make competitive pricing possible for complex enterprise projects.
 
 ## Choosing an Enterprise Software Partner in Kano
 
-Enterprise software requires a development partner with specific capabilities:
+Enterprise software needs a development partner with certain capabilities.
 
-**Domain expertise:** Partners who understand your industry can anticipate requirements, avoid common pitfalls, and deliver solutions that fit your workflows. Ask for case studies from similar organizations.
+Domain expertise matters because partners who understand your industry can anticipate requirements, avoid common pitfalls, and build solutions that fit your workflows. Ask for case studies from similar organizations.
 
-**Technical architecture:** Enterprise systems need scalable, maintainable architecture. Look for partners using modern stacks (React, Node.js, PostgreSQL) with experience in microservices, API design, and database optimization.
+Technical architecture should be scalable and maintainable. Look for partners using modern stacks like React, Node.js, and PostgreSQL with experience in microservices, API design, and database optimization.
 
-**Security and compliance:** Enterprise software handles sensitive data. Ensure your partner implements role-based access control, encryption, audit logging, and complies with Nigeria Data Protection Regulation (NDPR)<sup><a href="#sources">5</a></sup>.
+Security and compliance are non-negotiable since enterprise software handles sensitive data. Your partner should implement role-based access control, encryption, and audit logging, and comply with Nigeria Data Protection Regulation (NDPR)<sup><a href="#sources">5</a></sup>.
 
-**Long-term partnership:** Enterprise software requires ongoing maintenance, updates, and feature enhancements. Choose a partner who offers support agreements and has a track record of long-term client relationships.
+Long-term partnership matters because enterprise software needs ongoing maintenance, updates, and feature work. Choose a partner who offers support agreements and has a track record of long-term client relationships.
 
-A 2026 McKinsey study found that enterprises choosing development partners based on domain expertise and long-term partnership potential (rather than lowest cost) reported 45% higher project success rates and 38% lower total cost of ownership over 5 years<sup><a href="#sources">6</a></sup>.
+A 2026 McKinsey study found that enterprises choosing development partners based on domain expertise and long-term partnership potential rather than lowest cost reported 45% higher project success rates and 38% lower total cost of ownership over 5 years<sup><a href="#sources">6</a></sup>.
 
-## Case Study: Enterprise Software in Action
+## Case Study: The MRTB Operations Management System
 
-The MRTB Operations Management System demonstrates enterprise software development in Kano at its best. Built as a solo project by developer Nabil Ismail, the system features:
+The MRTB Operations Management System is an example of enterprise software built in Kano. Developer Nabil Ismail built it as a solo project with the following features:
 
-- **Role-Based Access Control (RBAC):** Granular permissions ensuring users see only relevant data
-- **Approval workflows:** Multi-step approval chains with notification and escalation
-- **Document management:** Upload, verification, and audit trails for organizational documents
-- **Geofenced attendance:** GPS-verified check-in/check-out for remote workers
-- **Performance tracking:** Real-time dashboards with exportable reports
+Role-Based Access Control (RBAC) provides granular permissions so users see only relevant data. Approval workflows run through multi-step chains with notification and escalation. Document management handles upload, verification, and audit trails for organizational documents. Geofenced attendance uses GPS-verified check-in and check-out for remote workers. Performance tracking offers real-time dashboards with exportable reports.
 
-The system was built with React, TypeScript, Fastify, Prisma, and PostgreSQL — a modern, maintainable stack that scales with organizational growth. Development took approximately 12 weeks, with ongoing enhancements based on user feedback.
+The system uses React, TypeScript, Fastify, Prisma, and PostgreSQL, a modern stack that supports growth. Development took approximately 12 weeks, with ongoing enhancements based on user feedback.
 
 ---
 
