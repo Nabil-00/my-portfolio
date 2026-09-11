@@ -1008,10 +1008,6 @@ button:disabled {
   transform: scale(2.6);
 }
 
-.client-logo--ramu {
-  transform: scale(1.4);
-}
-
 .carousel-item > span {
   color: var(--text-tertiary);
   font-size: 0.72rem;
