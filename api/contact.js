@@ -1,3 +1,5 @@
+import nodemailer from 'nodemailer';
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ ok: false, error: 'Method not allowed' });
@@ -9,46 +11,37 @@ export default async function handler(req, res) {
     return res.status(400).json({ ok: false, error: 'Name, email, and message are required.' });
   }
 
-  const apiKey = process.env.BREVO_API_KEY;
-  if (!apiKey) {
+  const smtpUser = process.env.BREVO_SMTP_USER;
+  const smtpPass = process.env.BREVO_SMTP_KEY;
+  if (!smtpUser || !smtpPass) {
     return res.status(500).json({ ok: false, error: 'Server misconfigured.' });
   }
 
-  const htmlBody = `
-    <h2>New contact form submission</h2>
-    <p><strong>Name:</strong> ${name}</p>
-    <p><strong>Email:</strong> ${email}</p>
-    ${inquiryType ? `<p><strong>Inquiry type:</strong> ${inquiryType}</p>` : ''}
-    <p><strong>Message:</strong></p>
-    <p>${message.replace(/\n/g, '<br>')}</p>
-  `;
+  const transporter = nodemailer.createTransport({
+    host: 'smtp-relay.brevo.com',
+    port: 587,
+    secure: false,
+    auth: { user: smtpUser, pass: smtpPass },
+  });
 
   try {
-    const response = await fetch('https://api.brevo.com/v3/smtp/email', {
-      method: 'POST',
-      headers: {
-        'accept': 'application/json',
-        'content-type': 'application/json',
-        'api-key': apiKey,
-      },
-      body: JSON.stringify({
-        sender: { name: 'Portfolio Contact Form', email: 'noreply@nabil.is-a.dev' },
-        to: [{ email: 'nabeelismailabdulkadir15@gmail.com', name: 'Nabeel Ismail' }],
-        replyTo: { email, name },
-        subject: `[Portfolio] ${inquiryType || 'General'} — ${name}`,
-        htmlContent: htmlBody,
-      }),
+    await transporter.sendMail({
+      from: `"Portfolio Contact Form" <${smtpUser}>`,
+      to: 'nabeelismailabdulkadir15@gmail.com',
+      replyTo: `"${name}" <${email}>`,
+      subject: `[Portfolio] ${inquiryType || 'General'} — ${name}`,
+      html: `
+        <h2>New contact form submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        ${inquiryType ? `<p><strong>Inquiry type:</strong> ${inquiryType}</p>` : ''}
+        <p><strong>Message:</strong></p>
+        <p>${message.replace(/\n/g, '<br>')}</p>
+      `,
     });
-
-    if (!response.ok) {
-      const err = await response.text();
-      console.error('Brevo error:', response.status, err);
-      return res.status(502).json({ ok: false, error: 'Email service error.' });
-    }
-
     return res.status(200).json({ ok: true });
   } catch (err) {
     console.error('Contact form error:', err);
-    return res.status(500).json({ ok: false, error: 'Server error.' });
+    return res.status(500).json({ ok: false, error: 'Email service error.' });
   }
 }
