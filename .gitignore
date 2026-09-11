@@ -26,3 +26,4 @@ dist-ssr
 
 # git worktrees (isolated agent workspaces)
 .worktrees/
+.env*

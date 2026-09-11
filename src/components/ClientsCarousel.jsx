@@ -1,12 +1,12 @@
 import React from 'react';
 
 const clients = [
-    { name: 'DefendHub Enterprise', logo: '/logos/defendhub.svg', className: 'client-logo--defendhub' },
-    { name: 'Nexora LLC', logo: '/logos/nexora.png' },
-    { name: 'Neolife International', logo: '/logos/neolife.png' },
+    { name: 'DefendHub Enterprise', logo: '/logos/defendhub.png', url: 'https://www.defendhub.ng/' },
+    { name: 'Nexora LLC', logo: '/logos/nexora.png', url: 'https://www.nexoraglobalholdings.com/' },
+    { name: 'Neolife International', logo: '/logos/neolife.png', url: 'https://neolife.com/' },
     { name: 'Hama Academy', logo: '/logos/hama.png' },
-    { name: 'Abrob Industry', logo: '/logos/abrob.png' },
-    { name: 'Ramu', logo: '/logos/ramu.svg' },
+    { name: 'Abrob Industry', logo: '/logos/abrob.png', url: 'https://www.abrobindustry.com/' },
+    { name: 'Ramu', logo: '/logos/ramu.svg', className: 'client-logo--ramu' },
 ];
 
 const ClientsCarousel = () => {
@@ -24,12 +24,23 @@ const ClientsCarousel = () => {
                             {clients.map((client) => (
                                 <div className="carousel-item" key={`${copy}-${client.name}`}>
                                     <div className="client-logo-frame">
-                                        <img
-                                            className={client.className || undefined}
-                                            src={client.logo}
-                                            alt={copy === 0 ? `${client.name} logo` : ''}
-                                            loading="lazy"
-                                        />
+                                        {client.url ? (
+                                            <a href={client.url} target="_blank" rel="noopener noreferrer" aria-label={`${client.name} website`}>
+                                                <img
+                                                    className={client.className || undefined}
+                                                    src={client.logo}
+                                                    alt={copy === 0 ? `${client.name} logo` : ''}
+                                                    loading="lazy"
+                                                />
+                                            </a>
+                                        ) : (
+                                            <img
+                                                className={client.className || undefined}
+                                                src={client.logo}
+                                                alt={copy === 0 ? `${client.name} logo` : ''}
+                                                loading="lazy"
+                                            />
+                                        )}
                                     </div>
                                     <span>{client.name}</span>
                                 </div>
