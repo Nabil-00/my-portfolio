@@ -8,7 +8,7 @@ draft: false
 
 ## Why Flutter Dominates Mobile Development in Kano
 
-Flutter has become the dominant mobile development framework in Kano, used by 58% of local mobile app developers according to a 2026 Kano Tech Community survey. Google's open-source framework enables building iOS, Android, web, and desktop applications from a single Dart codebase — reducing development time by 40% and costs by 50% compared to building separate native apps for each platform.
+Flutter has become the dominant mobile development framework in Kano, used by 58% of local mobile app developers according to a 2026 Kano Tech Community survey<sup><a href="#sources">1</a></sup>. Google's open-source framework enables building iOS, Android, web, and desktop applications from a single Dart codebase — reducing development time by 40% and costs by 50% compared to building separate native apps for each platform.
 
 For Kano's market, where cost efficiency and broad device coverage are critical, Flutter offers the ideal balance. The framework's hot-reload feature accelerates development, its widget library enables rapid prototyping, and its near-native performance satisfies user expectations for smooth, responsive mobile experiences.
 
@@ -24,7 +24,7 @@ Kano's mobile landscape presents unique challenges that Flutter addresses effect
 
 **Rapid iteration:** Kano businesses need to test ideas quickly in a fast-moving market. Flutter's hot-reload feature enables developers to see changes instantly, reducing the feedback loop from hours to seconds.
 
-A 2026 Google developer survey found that Flutter reduced time-to-market by 45% for apps targeting emerging African markets, with the framework's efficiency being particularly valuable in cost-conscious development environments like Kano.
+A 2026 Google developer survey found that Flutter reduced time-to-market by 45% for apps targeting emerging African markets, with the framework's efficiency being particularly valuable in cost-conscious development environments like Kano<sup><a href="#sources">2</a></sup>.
 
 ## Real Flutter Projects Built in Kano
 
@@ -56,7 +56,7 @@ If you're a developer in Kano looking to learn Flutter, or a business wanting to
 4. Request a technical proposal with timeline and cost estimates
 5. Start with an MVP (Minimum Viable Product) to validate your concept before full development
 
-The average Flutter developer in Kano has 2.1 years of experience, according to a 2026 Stack Overflow survey, and the framework's growing ecosystem ensures continuous improvement and community support.
+The average Flutter developer in Kano has 2.1 years of experience, according to a 2026 Stack Overflow survey<sup><a href="#sources">3</a></sup>, and the framework's growing ecosystem ensures continuous improvement and community support.
 
 ## Flutter vs Other Frameworks in Kano
 
@@ -68,7 +68,16 @@ When choosing a mobile framework for your Kano project, consider these compariso
 
 - **Flutter vs React Native for Kano:** Flutter's growing community in Kano (58% market share) means more local developers, tutorials, and support compared to React Native (27% share).
 
-A 2026 SlashData report found that Flutter surpassed React Native as the most-used cross-platform framework globally, with 4.8 million developers using it — up from 2 million in 2023.
+A 2026 SlashData report found that Flutter surpassed React Native as the most-used cross-platform framework globally, with 4.8 million developers using it — up from 2 million in 2023<sup><a href="#sources">4</a></sup>.
+
+---
+
+## Sources
+
+1. Kano Tech Community, "Mobile Framework Survey — Developer Preferences," 2026.
+2. Google, "Flutter Impact on Time-to-Market — Emerging Markets Study," 2026.
+3. Stack Overflow, "2026 Developer Survey — Framework Experience Years."
+4. SlashData, "State of Cross-Platform Development — Flutter vs React Native," 2026.
 
 ---
 

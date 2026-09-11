@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link, useParams, Navigate } from 'react-router-dom'
 import useSEO from '../hooks/useSEO'
 
@@ -6,6 +7,18 @@ const siteUrl = 'https://nabil.is-a.dev'
 export default function BlogPost({ posts }) {
   const { slug } = useParams()
   const post = posts.find(p => p.slug === slug)
+
+  // Add id="sources" to the Sources heading for anchor links
+  useEffect(() => {
+    if (!post) return
+    const headings = document.querySelectorAll('.blog-prose h2')
+    for (const h of headings) {
+      if (h.textContent.trim() === 'Sources') {
+        h.id = 'sources'
+        break
+      }
+    }
+  }, [post])
 
   // Compute SEO data (hooks must be called unconditionally)
   const canonical = post ? `${siteUrl}/blog/${post.slug}` : `${siteUrl}/blog`
@@ -68,8 +81,14 @@ export default function BlogPost({ posts }) {
   }
 
   return (
-    <article className="container py-section" style={{ paddingTop: '100px' }}>
-      <div style={{ maxWidth: '740px', margin: '0 auto' }}>
+    <article style={{ paddingTop: '100px', paddingBottom: '80px' }}>
+      {/* Full-bleed header */}
+      <header style={{
+        maxWidth: '820px',
+        margin: '0 auto',
+        padding: '0 1.25rem',
+        marginBottom: '3rem',
+      }}>
         <Link
           to="/blog"
           className="nav-link-hover"
@@ -78,113 +97,195 @@ export default function BlogPost({ posts }) {
           ← All Posts
         </Link>
 
-        {/* Post header */}
-        <header style={{ marginBottom: '2.5rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1rem' }}>
-            <time style={{ color: 'var(--text-tertiary)', fontSize: '0.85rem' }}>
+        {/* Tags */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '1.25rem' }}>
+          {post.tags?.map(tag => (
+            <span
+              key={tag}
+              style={{
+                fontSize: '0.65rem',
+                padding: '3px 10px',
+                borderRadius: 'var(--radius-pill)',
+                background: 'var(--accent-dim)',
+                color: 'var(--accent)',
+                fontWeight: 700,
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase',
+              }}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Title */}
+        <h1 style={{
+          fontSize: 'clamp(2.2rem, 5vw, 3.2rem)',
+          fontWeight: 900,
+          letterSpacing: '-0.04em',
+          lineHeight: 1.1,
+          margin: '0 0 1.5rem',
+          color: 'var(--text-primary)',
+        }}>
+          {post.title}
+        </h1>
+
+        {/* Meta row */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '1rem',
+          paddingBottom: '1.5rem',
+          borderBottom: '1px solid var(--border)',
+        }}>
+          {/* Author chip */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+          }}>
+            <div style={{
+              width: '36px',
+              height: '36px',
+              borderRadius: '50%',
+              background: 'var(--accent-dim)',
+              border: '1.5px solid var(--accent)',
+              display: 'grid',
+              placeItems: 'center',
+              fontSize: '14px',
+              fontWeight: 800,
+              color: 'var(--accent)',
+            }}>
+              NI
+            </div>
+            <div>
+              <p style={{ margin: 0, fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+                Nabil Ismail
+              </p>
+              <p style={{ margin: 0, fontSize: '0.72rem', color: 'var(--text-tertiary)' }}>
+                Software Engineer · Kano
+              </p>
+            </div>
+          </div>
+
+          <div style={{ flex: 1 }} />
+
+          {/* Date + reading time */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <time style={{ color: 'var(--text-tertiary)', fontSize: '0.8rem' }}>
               {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
             </time>
-            <span style={{ color: 'var(--text-tertiary)', fontSize: '0.85rem' }}>·</span>
-            <span style={{ color: 'var(--text-tertiary)', fontSize: '0.85rem' }}>{post.readingTime} min read</span>
+            <span style={{ color: 'var(--text-tertiary)', fontSize: '0.8rem' }}>·</span>
+            <span style={{ color: 'var(--text-tertiary)', fontSize: '0.8rem' }}>{post.readingTime} min read</span>
           </div>
+        </div>
+      </header>
 
-          <h1 style={{
-            fontSize: 'clamp(2rem, 4vw, 2.8rem)',
-            fontWeight: 800,
-            letterSpacing: '-0.03em',
-            lineHeight: 1.15,
-            margin: '0 0 1rem',
-          }}>
-            {post.title}
-          </h1>
+      {/* Post body */}
+      <div
+        className="blog-prose"
+        dangerouslySetInnerHTML={{ __html: post.body }}
+        style={{
+          maxWidth: '740px',
+          margin: '0 auto',
+          padding: '0 1.25rem',
+        }}
+      />
 
-          <p style={{
-            color: 'var(--text-secondary)',
-            fontSize: '1.15rem',
-            lineHeight: 1.6,
-            margin: 0,
-          }}>
-            {post.summary}
-          </p>
-
-          {/* Tags */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: '1.25rem' }}>
-            {post.tags?.map(tag => (
-              <span
-                key={tag}
-                style={{
-                  fontSize: '0.75rem',
-                  padding: '4px 12px',
-                  borderRadius: 'var(--radius-pill)',
-                  background: 'var(--accent-dim)',
-                  color: 'var(--accent)',
-                  fontWeight: 600,
-                }}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </header>
-
+      {/* Footer */}
+      <footer style={{
+        maxWidth: '740px',
+        margin: '4rem auto 0',
+        padding: '0 1.25rem',
+      }}>
         {/* Divider */}
         <div style={{
           height: '1px',
           background: 'linear-gradient(90deg, transparent, var(--border-hover) 20%, var(--border-hover) 80%, transparent)',
-          marginBottom: '2.5rem',
+          marginBottom: '2rem',
         }} />
 
-        {/* Post body — styled prose */}
-        <div
-          className="blog-prose"
-          dangerouslySetInnerHTML={{ __html: post.body }}
-          style={{
-            color: 'var(--text-secondary)',
-            fontSize: '1.05rem',
-            lineHeight: 1.8,
-          }}
-        />
-
-        {/* Back to blog */}
+        {/* Author card */}
         <div style={{
-          marginTop: '3rem',
-          paddingTop: '2rem',
-          borderTop: '1px solid var(--border)',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '1rem',
+          padding: '1.5rem',
+          background: 'var(--bg-3)',
+          border: '1px solid var(--border)',
+          borderRadius: 'var(--radius-md)',
+          marginBottom: '2rem',
         }}>
-          <Link
-            to="/blog"
-            className="btn-secondary"
-            style={{ fontSize: '0.9rem' }}
-          >
-            ← All Posts
-          </Link>
+          <div style={{
+            width: '48px',
+            height: '48px',
+            borderRadius: '50%',
+            background: 'var(--accent-dim)',
+            border: '2px solid var(--accent)',
+            display: 'grid',
+            placeItems: 'center',
+            fontSize: '18px',
+            fontWeight: 800,
+            color: 'var(--accent)',
+            flexShrink: 0,
+          }}>
+            NI
+          </div>
+          <div>
+            <p style={{ margin: '0 0 0.25rem', fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+              Written by Nabil Ismail
+            </p>
+            <p style={{ margin: 0, fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+              Software engineer in Kano, Nigeria. Building enterprise systems, AI tools, and full-stack web apps.
+              <Link to="/" style={{ color: 'var(--accent)', marginLeft: '6px' }}>Portfolio →</Link>
+            </p>
+          </div>
         </div>
-      </div>
 
-      {/* Blog prose styles */}
+        {/* Back link */}
+        <Link
+          to="/blog"
+          className="btn-secondary"
+          style={{ fontSize: '0.88rem' }}
+        >
+          ← All Posts
+        </Link>
+      </footer>
+
+      {/* Prose styles */}
       <style>{`
         .blog-prose h2 {
           color: var(--text-primary);
-          font-size: clamp(1.5rem, 3vw, 1.8rem);
-          font-weight: 700;
-          margin: 2.5rem 0 1rem;
+          font-size: clamp(1.5rem, 3vw, 1.85rem);
+          font-weight: 800;
+          margin: 3rem 0 1rem;
           letter-spacing: -0.02em;
+          line-height: 1.2;
         }
         .blog-prose h3 {
           color: var(--text-primary);
           font-size: 1.25rem;
           font-weight: 700;
           margin: 2rem 0 0.75rem;
+          line-height: 1.3;
         }
         .blog-prose p {
           margin: 0 0 1.25rem;
+          color: var(--text-secondary);
+          font-size: 1.05rem;
+          line-height: 1.8;
         }
         .blog-prose ul, .blog-prose ol {
           margin: 0 0 1.25rem;
           padding-left: 1.5rem;
+          color: var(--text-secondary);
         }
         .blog-prose li {
           margin-bottom: 0.5rem;
+          line-height: 1.7;
+        }
+        .blog-prose li strong {
+          color: var(--text-primary);
         }
         .blog-prose strong {
           color: var(--text-primary);
@@ -231,7 +332,86 @@ export default function BlogPost({ posts }) {
           border: none;
           height: 1px;
           background: linear-gradient(90deg, transparent, var(--border-hover) 20%, var(--border-hover) 80%, transparent);
-          margin: 2.5rem 0;
+          margin: 3rem 0;
+        }
+
+        /* Citation superscript links */
+        .blog-prose sup {
+          font-size: 0.7em;
+          line-height: 0;
+          vertical-align: super;
+        }
+        .blog-prose sup a {
+          color: var(--accent);
+          text-decoration: none;
+          font-weight: 700;
+          padding: 1px 4px;
+          border-radius: 3px;
+          background: var(--accent-dim);
+          transition: background 0.15s ease, color 0.15s ease;
+        }
+        .blog-prose sup a:hover {
+          background: var(--accent);
+          color: #000;
+          text-decoration: none;
+        }
+
+        /* Sources section */
+        .blog-prose h2:last-of-type {
+          margin-top: 3.5rem;
+          padding-top: 2rem;
+          border-top: 1px solid var(--border);
+        }
+        .blog-prose h2:last-of-type + ol,
+        .blog-prose h2:last-of-type ~ ol {
+          counter-reset: none;
+          list-style: none;
+          padding-left: 0;
+          margin-top: 1rem;
+        }
+        .blog-prose h2:last-of-type + ol li,
+        .blog-prose h2:last-of-type ~ ol li {
+          position: relative;
+          padding-left: 2rem;
+          margin-bottom: 0.6rem;
+          font-size: 0.88rem;
+          line-height: 1.6;
+          color: var(--text-tertiary);
+        }
+        .blog-prose h2:last-of-type + ol li::before,
+        .blog-prose h2:last-of-type ~ ol li::before {
+          content: counter(list-item) ".";
+          position: absolute;
+          left: 0;
+          color: var(--accent);
+          font-weight: 700;
+          font-size: 0.82rem;
+        }
+        .blog-prose h2:last-of-type + ol li a,
+        .blog-prose h2:last-of-type ~ ol li a {
+          color: var(--text-secondary);
+          text-decoration: underline;
+          text-decoration-color: rgba(255,255,255,0.15);
+          text-underline-offset: 2px;
+        }
+        .blog-prose h2:last-of-type + ol li a:hover,
+        .blog-prose h2:last-of-type ~ ol li a:hover {
+          color: var(--accent);
+          text-decoration-color: var(--accent);
+        }
+
+        /* FAQ section */
+        .blog-prose h3 {
+          color: var(--text-primary);
+        }
+
+        @media (max-width: 640px) {
+          .blog-prose p {
+            font-size: 1rem;
+          }
+          .blog-prose h2 {
+            font-size: 1.4rem;
+          }
         }
       `}</style>
     </article>

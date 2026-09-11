@@ -10,8 +10,8 @@
       "hiring",
       "guide"
     ],
-    "readingTime": 5,
-    "wordCount": 934
+    "readingTime": 6,
+    "wordCount": 1076
   },
   {
     "slug": "website-design-in-kano",
@@ -25,7 +25,7 @@
       "ux"
     ],
     "readingTime": 5,
-    "wordCount": 828
+    "wordCount": 968
   },
   {
     "slug": "ai-company-in-kano",
@@ -39,7 +39,7 @@
       "technology"
     ],
     "readingTime": 5,
-    "wordCount": 838
+    "wordCount": 968
   },
   {
     "slug": "mobile-app-developer-kano",
@@ -52,8 +52,8 @@
       "flutter",
       "android"
     ],
-    "readingTime": 5,
-    "wordCount": 841
+    "readingTime": 6,
+    "wordCount": 1008
   },
   {
     "slug": "software-developer-in-kano",
@@ -67,7 +67,7 @@
       "guide"
     ],
     "readingTime": 5,
-    "wordCount": 846
+    "wordCount": 974
   },
   {
     "slug": "hire-web-developer-kano",
@@ -80,8 +80,8 @@
       "kano",
       "guide"
     ],
-    "readingTime": 5,
-    "wordCount": 925
+    "readingTime": 6,
+    "wordCount": 1005
   },
   {
     "slug": "flutter-developer-kano",
@@ -94,8 +94,8 @@
       "kano",
       "cross-platform"
     ],
-    "readingTime": 5,
-    "wordCount": 957
+    "readingTime": 6,
+    "wordCount": 1008
   },
   {
     "slug": "chatbot-developer-kano",
@@ -108,8 +108,8 @@
       "kano",
       "customer-service"
     ],
-    "readingTime": 4,
-    "wordCount": 783
+    "readingTime": 5,
+    "wordCount": 870
   },
   {
     "slug": "enterprise-software-kano",
@@ -122,8 +122,8 @@
       "kano",
       "business-systems"
     ],
-    "readingTime": 4,
-    "wordCount": 797
+    "readingTime": 5,
+    "wordCount": 881
   },
   {
     "slug": "react-developer-kano",
@@ -137,6 +137,6 @@
       "javascript"
     ],
     "readingTime": 5,
-    "wordCount": 867
+    "wordCount": 950
   }
 ]

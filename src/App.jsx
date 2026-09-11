@@ -15,6 +15,7 @@ const FAQ = lazy(() => import('./components/FAQ'));
 const Footer = lazy(() => import('./components/Footer'));
 const BlogList = lazy(() => import('./components/BlogList'));
 const BlogPost = lazy(() => import('./components/BlogPost'));
+const BlogTeaser = lazy(() => import('./components/BlogTeaser'));
 const NotFound = lazy(() => import('./components/NotFound'));
 
 class SectionErrorBoundary extends React.Component {
@@ -44,6 +45,7 @@ function HomePage() {
                     <ClientsCarousel />
                     <TeachingSection />
                     <HobbyProjects />
+                    <BlogTeaser posts={postsData} />
                     <FAQ />
                     <Contact />
                 </Suspense>

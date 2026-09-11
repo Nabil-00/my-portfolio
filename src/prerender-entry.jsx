@@ -17,6 +17,7 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import BlogList from './components/BlogList';
 import BlogPost from './components/BlogPost';
+import BlogTeaser from './components/BlogTeaser';
 import NotFound from './components/NotFound';
 
 let postsData = []
@@ -36,6 +37,7 @@ function HomePage() {
             <ClientsCarousel />
             <TeachingSection />
             <HobbyProjects />
+            <BlogTeaser posts={postsData} />
             <FAQ />
             <Contact />
         </>
