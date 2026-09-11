@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import siteContent from '../data/siteContent';
 
 const Navbar = () => {
@@ -10,6 +11,8 @@ const Navbar = () => {
     const closeButtonRef = useRef(null);
     const menuTriggerRef = useRef(null);
     const wasOpenRef = useRef(false);
+    const location = useLocation();
+    const isHome = location.pathname === '/';
 
     const handleLinkClick = () => {
         setMobileMenuOpen(false);
@@ -99,15 +102,20 @@ const Navbar = () => {
                     </a>
 
                     <div className="hidden lg:flex items-center gap-6">
-                        {navigation.map((link) => (
-                            <a
-                                key={link.href}
-                                href={link.href}
-                                className="text-sm nav-link-hover"
-                            >
-                                {link.label}
-                            </a>
-                        ))}
+                        {isHome ? (
+                            navigation.map((link) => (
+                                <a
+                                    key={link.href}
+                                    href={link.href}
+                                    className="text-sm nav-link-hover"
+                                >
+                                    {link.label}
+                                </a>
+                            ))
+                        ) : (
+                            <Link to="/" className="text-sm nav-link-hover">Home</Link>
+                        )}
+                        <Link to="/blog" className="text-sm nav-link-hover">Blog</Link>
                     </div>
 
                     <div className="hidden lg:flex items-center">
@@ -175,17 +183,36 @@ const Navbar = () => {
                     </div>
 
                     <div className="p-5 flex flex-col gap-2">
-                        {navigation.map((link) => (
-                            <a
-                                key={link.href}
-                                href={link.href}
+                        {isHome ? (
+                            navigation.map((link) => (
+                                <a
+                                    key={link.href}
+                                    href={link.href}
+                                    onClick={handleLinkClick}
+                                    className="px-3 py-3 rounded-lg text-base"
+                                    style={{ color: 'var(--text-secondary)', border: '1px solid transparent' }}
+                                >
+                                    {link.label}
+                                </a>
+                            ))
+                        ) : (
+                            <Link
+                                to="/"
                                 onClick={handleLinkClick}
                                 className="px-3 py-3 rounded-lg text-base"
                                 style={{ color: 'var(--text-secondary)', border: '1px solid transparent' }}
                             >
-                                {link.label}
-                            </a>
-                        ))}
+                                Home
+                            </Link>
+                        )}
+                        <Link
+                            to="/blog"
+                            onClick={handleLinkClick}
+                            className="px-3 py-3 rounded-lg text-base"
+                            style={{ color: 'var(--text-secondary)', border: '1px solid transparent' }}
+                        >
+                            Blog
+                        </Link>
 
                         <a
                             href={meta.cvPath}

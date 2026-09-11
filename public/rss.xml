@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Nabil Ismail — Blog</title>
+  <link>https://nabil.is-a.dev/blog</link>
+  <description>Articles on web development, AI, and software engineering by Nabil Ismail in Kano, Nigeria.</description>
+  <language>en</language>
+  <lastBuildDate>Fri, 11 Sep 2026 16:21:44 GMT</lastBuildDate>
+  <atom:link href="https://nabil.is-a.dev/rss.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title><![CDATA[How to Find a Web Developer in Kano, Nigeria]]></title>
+    <link>https://nabil.is-a.dev/blog/web-developer-in-kano</link>
+    <guid isPermaLink="true">https://nabil.is-a.dev/blog/web-developer-in-kano</guid>
+    <pubDate>Thu, 10 Sep 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[Finding a skilled web developer in Kano requires knowing what to look for — from technical expertise to local market understanding. A complete guide for Kano businesses.]]></description>
+    <category>web-development</category>
+    <category>kano</category>
+    <category>hiring</category>
+    <category>guide</category>
+  </item>
+  <item>
+    <title><![CDATA[Website Design in Kano: What Local Businesses Need to Know]]></title>
+    <link>https://nabil.is-a.dev/blog/website-design-in-kano</link>
+    <guid isPermaLink="true">https://nabil.is-a.dev/blog/website-design-in-kano</guid>
+    <pubDate>Wed, 09 Sep 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[Website design in Kano combines global best practices with local market knowledge. Learn what makes an effective website for Kano's business landscape.]]></description>
+    <category>website-design</category>
+    <category>kano</category>
+    <category>business</category>
+    <category>ux</category>
+  </item>
+  <item>
+    <title><![CDATA[AI Companies in Kano: The Growing Tech Ecosystem]]></title>
+    <link>https://nabil.is-a.dev/blog/ai-company-in-kano</link>
+    <guid isPermaLink="true">https://nabil.is-a.dev/blog/ai-company-in-kano</guid>
+    <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[Kano's AI ecosystem is growing rapidly with startups and developers building real solutions. Explore what AI companies are doing in Kano, Nigeria.]]></description>
+    <category>artificial-intelligence</category>
+    <category>kano</category>
+    <category>startups</category>
+    <category>technology</category>
+  </item>
+  <item>
+    <title><![CDATA[Hiring a Mobile App Developer in Kano: A Complete Guide]]></title>
+    <link>https://nabil.is-a.dev/blog/mobile-app-developer-kano</link>
+    <guid isPermaLink="true">https://nabil.is-a.dev/blog/mobile-app-developer-kano</guid>
+    <pubDate>Mon, 07 Sep 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[Kano has talented mobile app developers building iOS, Android, and cross-platform apps. Learn how to hire the right mobile developer for your project.]]></description>
+    <category>mobile-development</category>
+    <category>kano</category>
+    <category>flutter</category>
+    <category>android</category>
+  </item>
+  <item>
+    <title><![CDATA[Software Development in Kano: A Complete Guide for 2026]]></title>
+    <link>https://nabil.is-a.dev/blog/software-developer-in-kano</link>
+    <guid isPermaLink="true">https://nabil.is-a.dev/blog/software-developer-in-kano</guid>
+    <pubDate>Sun, 06 Sep 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[Kano's software development industry is growing rapidly with talented developers building enterprise systems, web apps, and AI tools. Here's what you need to know.]]></description>
+    <category>software-development</category>
+    <category>kano</category>
+    <category>enterprise</category>
+    <category>guide</category>
+  </item>
+  <item>
+    <title><![CDATA[How to Hire a Web Developer in Kano: Step-by-Step]]></title>
+    <link>https://nabil.is-a.dev/blog/hire-web-developer-kano</link>
+    <guid isPermaLink="true">https://nabil.is-a.dev/blog/hire-web-developer-kano</guid>
+    <pubDate>Sat, 05 Sep 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[A practical, step-by-step guide to hiring a web developer in Kano — from defining your project to signing a contract and launching your website.]]></description>
+    <category>hiring</category>
+    <category>web-development</category>
+    <category>kano</category>
+    <category>guide</category>
+  </item>
+  <item>
+    <title><![CDATA[Flutter Development in Kano: Building Cross-Platform Mobile Apps]]></title>
+    <link>https://nabil.is-a.dev/blog/flutter-developer-kano</link>
+    <guid isPermaLink="true">https://nabil.is-a.dev/blog/flutter-developer-kano</guid>
+    <pubDate>Fri, 04 Sep 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[Flutter is the most popular cross-platform framework in Kano for building mobile apps. Learn why Kano developers prefer Flutter and how to get started.]]></description>
+    <category>flutter</category>
+    <category>mobile-development</category>
+    <category>kano</category>
+    <category>cross-platform</category>
+  </item>
+  <item>
+    <title><![CDATA[Chatbot Development in Kano: AI-Powered Customer Service]]></title>
+    <link>https://nabil.is-a.dev/blog/chatbot-developer-kano</link>
+    <guid isPermaLink="true">https://nabil.is-a.dev/blog/chatbot-developer-kano</guid>
+    <pubDate>Thu, 03 Sep 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[AI chatbots are transforming customer service in Kano. Learn how businesses are using chatbots to handle 60-80% of customer inquiries automatically.]]></description>
+    <category>chatbot</category>
+    <category>artificial-intelligence</category>
+    <category>kano</category>
+    <category>customer-service</category>
+  </item>
+  <item>
+    <title><![CDATA[Enterprise Software Development in Kano: Building Systems That Scale]]></title>
+    <link>https://nabil.is-a.dev/blog/enterprise-software-kano</link>
+    <guid isPermaLink="true">https://nabil.is-a.dev/blog/enterprise-software-kano</guid>
+    <pubDate>Wed, 02 Sep 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[Enterprise software development in Kano helps organizations build custom systems for operations, HR, finance, and more. Learn what enterprise software costs and how to choose a partner.]]></description>
+    <category>enterprise</category>
+    <category>software-development</category>
+    <category>kano</category>
+    <category>business-systems</category>
+  </item>
+  <item>
+    <title><![CDATA[React Development in Kano: Building Modern Web Applications]]></title>
+    <link>https://nabil.is-a.dev/blog/react-developer-kano</link>
+    <guid isPermaLink="true">https://nabil.is-a.dev/blog/react-developer-kano</guid>
+    <pubDate>Tue, 01 Sep 2026 00:00:00 GMT</pubDate>
+    <description><![CDATA[React is the most popular web framework in Kano for building modern, interactive web applications. Learn why Kano developers choose React and what it costs.]]></description>
+    <category>react</category>
+    <category>web-development</category>
+    <category>kano</category>
+    <category>javascript</category>
+  </item>
+</channel>
+</rss>

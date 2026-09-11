@@ -1,6 +1,8 @@
 import React, { Suspense, lazy } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import postsData from './data/posts.json';
 
 const Projects = lazy(() => import('./components/Projects'));
 const About = lazy(() => import('./components/About'));
@@ -11,6 +13,9 @@ const HobbyProjects = lazy(() => import('./components/HobbyProjects'));
 const Contact = lazy(() => import('./components/Contact'));
 const FAQ = lazy(() => import('./components/FAQ'));
 const Footer = lazy(() => import('./components/Footer'));
+const BlogList = lazy(() => import('./components/BlogList'));
+const BlogPost = lazy(() => import('./components/BlogPost'));
+const NotFound = lazy(() => import('./components/NotFound'));
 
 class SectionErrorBoundary extends React.Component {
     state = { failed: false };
@@ -27,6 +32,34 @@ const BelowFoldFallback = () => (
     <div className="container py-12" aria-hidden="true" style={{ minHeight: '40vh' }} />
 );
 
+function HomePage() {
+    return (
+        <>
+            <Hero />
+            <SectionErrorBoundary>
+                <Suspense fallback={<BelowFoldFallback />}>
+                    <Projects />
+                    <About />
+                    <Skills />
+                    <ClientsCarousel />
+                    <TeachingSection />
+                    <HobbyProjects />
+                    <FAQ />
+                    <Contact />
+                </Suspense>
+            </SectionErrorBoundary>
+        </>
+    );
+}
+
+function ScrollToTop() {
+    const { pathname } = useLocation();
+    React.useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+    return null;
+}
+
 const App = () => {
     return (
         <>
@@ -35,21 +68,25 @@ const App = () => {
             </a>
             <Navbar />
             <main id="main-content">
-                <div className="scroll-story">
-                    <Hero />
-                    <SectionErrorBoundary>
+                <ScrollToTop />
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/blog" element={
                         <Suspense fallback={<BelowFoldFallback />}>
-                            <Projects />
-                            <About />
-                            <Skills />
-                            <ClientsCarousel />
-                            <TeachingSection />
-                            <HobbyProjects />
-                            <FAQ />
-                            <Contact />
+                            <BlogList posts={postsData} />
                         </Suspense>
-                    </SectionErrorBoundary>
-                </div>
+                    } />
+                    <Route path="/blog/:slug" element={
+                        <Suspense fallback={<BelowFoldFallback />}>
+                            <BlogPost posts={postsData} />
+                        </Suspense>
+                    } />
+                    <Route path="*" element={
+                        <Suspense fallback={<BelowFoldFallback />}>
+                            <NotFound />
+                        </Suspense>
+                    } />
+                </Routes>
                 <SectionErrorBoundary>
                     <Suspense fallback={null}>
                         <Footer />

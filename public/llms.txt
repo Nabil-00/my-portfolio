@@ -24,3 +24,21 @@ He teaches as well: annual Supervised Industrial Work Experience Scheme (SIWES) 
 - Email: nabeelismailabdulkadir15@gmail.com
 - WhatsApp: +234 913 615 9701
 - CV: [Nabil-Ismail-Abdulkadir-Resume.pdf](https://nabil.is-a.dev/Nabil-Ismail-Abdulkadir-Resume.pdf)
+
+
+
+
+
+
+## Writing
+
+- [How to Find a Web Developer in Kano, Nigeria](https://nabil.is-a.dev/blog/web-developer-in-kano) — Finding a skilled web developer in Kano requires knowing what to look for — from technical expertise to local market understanding. A complete guide for Kano businesses. (Thu Sep 10 2026 01:00:00 GMT+0100 (West Africa Time))
+- [Website Design in Kano: What Local Businesses Need to Know](https://nabil.is-a.dev/blog/website-design-in-kano) — Website design in Kano combines global best practices with local market knowledge. Learn what makes an effective website for Kano's business landscape. (Wed Sep 09 2026 01:00:00 GMT+0100 (West Africa Time))
+- [AI Companies in Kano: The Growing Tech Ecosystem](https://nabil.is-a.dev/blog/ai-company-in-kano) — Kano's AI ecosystem is growing rapidly with startups and developers building real solutions. Explore what AI companies are doing in Kano, Nigeria. (Tue Sep 08 2026 01:00:00 GMT+0100 (West Africa Time))
+- [Hiring a Mobile App Developer in Kano: A Complete Guide](https://nabil.is-a.dev/blog/mobile-app-developer-kano) — Kano has talented mobile app developers building iOS, Android, and cross-platform apps. Learn how to hire the right mobile developer for your project. (Mon Sep 07 2026 01:00:00 GMT+0100 (West Africa Time))
+- [Software Development in Kano: A Complete Guide for 2026](https://nabil.is-a.dev/blog/software-developer-in-kano) — Kano's software development industry is growing rapidly with talented developers building enterprise systems, web apps, and AI tools. Here's what you need to know. (Sun Sep 06 2026 01:00:00 GMT+0100 (West Africa Time))
+- [How to Hire a Web Developer in Kano: Step-by-Step](https://nabil.is-a.dev/blog/hire-web-developer-kano) — A practical, step-by-step guide to hiring a web developer in Kano — from defining your project to signing a contract and launching your website. (Sat Sep 05 2026 01:00:00 GMT+0100 (West Africa Time))
+- [Flutter Development in Kano: Building Cross-Platform Mobile Apps](https://nabil.is-a.dev/blog/flutter-developer-kano) — Flutter is the most popular cross-platform framework in Kano for building mobile apps. Learn why Kano developers prefer Flutter and how to get started. (Fri Sep 04 2026 01:00:00 GMT+0100 (West Africa Time))
+- [Chatbot Development in Kano: AI-Powered Customer Service](https://nabil.is-a.dev/blog/chatbot-developer-kano) — AI chatbots are transforming customer service in Kano. Learn how businesses are using chatbots to handle 60-80% of customer inquiries automatically. (Thu Sep 03 2026 01:00:00 GMT+0100 (West Africa Time))
+- [Enterprise Software Development in Kano: Building Systems That Scale](https://nabil.is-a.dev/blog/enterprise-software-kano) — Enterprise software development in Kano helps organizations build custom systems for operations, HR, finance, and more. Learn what enterprise software costs and how to choose a partner. (Wed Sep 02 2026 01:00:00 GMT+0100 (West Africa Time))
+- [React Development in Kano: Building Modern Web Applications](https://nabil.is-a.dev/blog/react-developer-kano) — React is the most popular web framework in Kano for building modern, interactive web applications. Learn why Kano developers choose React and what it costs. (Tue Sep 01 2026 01:00:00 GMT+0100 (West Africa Time))

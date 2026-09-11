@@ -288,6 +288,30 @@ const siteContent = {
         {
           question: "Does Nabil Ismail make mobile apps?",
           answer: "Yes, Nabil Ismail builds mobile applications using Flutter and React. His ClassiFy project is an intelligent attendance and classroom management system with both web and mobile interfaces built with Flutter, React, Node.js, and PostgreSQL."
+        },
+        {
+          question: "How much does website design cost in Kano?",
+          answer: "Website design in Kano ranges from ₦150,000 ($180) for a simple landing page to ₦15,000,000 ($18,000) for a custom web application. A professional business website with 5-10 pages typically costs between ₦400,000 and ₦1,200,000 depending on features and complexity."
+        },
+        {
+          question: "What is Flutter and why is it used for mobile apps?",
+          answer: "Flutter is Google's open-source framework for building cross-platform mobile apps from a single Dart codebase. It's popular in Kano because it reduces development costs by 50%, builds for iOS and Android simultaneously, and delivers near-native performance on budget devices common in the Nigerian market."
+        },
+        {
+          question: "How can my Kano business use AI chatbots?",
+          answer: "AI chatbots can handle 60-80% of routine customer inquiries automatically, reducing support costs by 45%. In Kano, WhatsApp-integrated chatbots are particularly effective since 89% of smartphone users have WhatsApp installed. Chatbot development costs range from ₦200,000 to ₦3,000,000."
+        },
+        {
+          question: "What enterprise software does Nabil Ismail build?",
+          answer: "Nabil Ismail builds enterprise software including operations management systems with Role-Based Access Control (RBAC), approval workflows, document management, and performance tracking. His MRTB Operations Management System is built with React, TypeScript, Fastify, Prisma, and PostgreSQL."
+        },
+        {
+          question: "How long does it take to build a website in Kano?",
+          answer: "A standard business website takes 2-4 weeks to build. More complex projects like e-commerce platforms or custom web applications typically require 6-12 weeks. The timeline depends on content readiness, feedback speed, and project scope."
+        },
+        {
+          question: "What is the tech stack for web development in Kano?",
+          answer: "The most common web development stack in Kano is React 19 + TypeScript + Tailwind CSS for frontend, Node.js + Fastify/Express for backend, and PostgreSQL for databases. This stack powers production applications built by Kano developers including Nabil Ismail's enterprise systems."
         }
       ],
     },
