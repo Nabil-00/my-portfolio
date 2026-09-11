@@ -103,7 +103,7 @@ const HobbyProjects = () => {
                     </p>
                 </div>
 
-                <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+                <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
                     {hobbyProjects.map((project) => {
                         const ProjectIcon = projectIcons[project.id] || Sparkles;
 
@@ -124,7 +124,7 @@ const HobbyProjects = () => {
                                     <div
                                         style={{
                                             position: 'relative',
-                                            aspectRatio: '16 / 9',
+                                            aspectRatio: '16 / 10',
                                             background: project.mediaBg || '#07101a',
                                             borderBottom: '1px solid var(--border)',
                                             overflow: 'hidden',
@@ -163,19 +163,19 @@ const HobbyProjects = () => {
                                         <div
                                             style={{
                                                 position: 'absolute',
-                                                top: '12px',
-                                                right: '12px',
+                                                top: '10px',
+                                                right: '10px',
                                                 background: 'rgba(0, 0, 0, 0.75)',
                                                 backdropFilter: 'blur(8px)',
                                                 border: '1px solid var(--border)',
                                                 borderRadius: 'var(--radius-pill)',
-                                                padding: '4px 12px',
-                                                fontSize: '11px',
+                                                padding: '3px 10px',
+                                                fontSize: '10px',
                                                 fontWeight: 600,
                                                 color: 'var(--accent)',
                                                 display: 'inline-flex',
                                                 alignItems: 'center',
-                                                gap: '5px',
+                                                gap: '4px',
                                             }}
                                         >
                                             <ProjectIcon size={12} />
@@ -184,15 +184,15 @@ const HobbyProjects = () => {
                                     </div>
 
                                     {/* Content */}
-                                    <div className="p-6">
+                                    <div className="p-5">
                                         <p
                                             style={{
-                                                fontSize: '12px',
+                                                fontSize: '11px',
                                                 color: 'var(--text-tertiary)',
                                                 letterSpacing: '0.06em',
                                                 textTransform: 'uppercase',
                                                 fontFamily: 'monospace',
-                                                marginBottom: '6px',
+                                                marginBottom: '4px',
                                             }}
                                         >
                                             {project.subtitle}
@@ -200,7 +200,7 @@ const HobbyProjects = () => {
 
                                         <h3
                                             style={{
-                                                fontSize: '22px',
+                                                fontSize: '19px',
                                                 fontWeight: 800,
                                                 color: 'var(--text-primary)',
                                                 letterSpacing: '-0.02em',
@@ -210,11 +210,11 @@ const HobbyProjects = () => {
                                         </h3>
 
                                         <p
-                                            className="mt-3"
+                                            className="mt-2"
                                             style={{
-                                                fontSize: '14px',
+                                                fontSize: '13px',
                                                 color: 'var(--text-secondary)',
-                                                lineHeight: 1.65,
+                                                lineHeight: 1.6,
                                             }}
                                         >
                                             {project.context}
@@ -223,13 +223,13 @@ const HobbyProjects = () => {
                                         {/* Fun fact callout */}
                                         {project.funFact && (
                                             <div
-                                                className="mt-4 flex items-start gap-2.5"
+                                                className="mt-3 flex items-start gap-2"
                                                 style={{
                                                     background: 'var(--bg-2)',
                                                     border: '1px solid rgba(255, 255, 255, 0.05)',
                                                     borderRadius: 'var(--radius-sm)',
-                                                    padding: '10px 12px',
-                                                    fontSize: '12px',
+                                                    padding: '8px 10px',
+                                                    fontSize: '11px',
                                                     color: 'var(--text-secondary)',
                                                     lineHeight: 1.5,
                                                 }}
@@ -240,7 +240,7 @@ const HobbyProjects = () => {
                                         )}
 
                                         {/* Tech stack */}
-                                        <div className="mt-5 flex flex-wrap gap-1.5">
+                                        <div className="mt-3 flex flex-wrap gap-1">
                                             {project.stack.map((tech) => (
                                                 <span
                                                     key={tech}
@@ -263,8 +263,8 @@ const HobbyProjects = () => {
 
                                 {/* Actions */}
                                 <div
-                                    className="p-6 pt-0 mt-2 flex items-center justify-between gap-4"
-                                    style={{ borderTop: '1px solid rgba(255, 255, 255, 0.04)', paddingTop: '16px' }}
+                                    className="p-5 pt-0 mt-1 flex items-center justify-between gap-4"
+                                    style={{ borderTop: '1px solid rgba(255, 255, 255, 0.04)', paddingTop: '12px' }}
                                 >
                                     {project.github && (
                                         <a
