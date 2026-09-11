@@ -15,7 +15,6 @@ export default defineConfig({
         assetFileNames: 'assets/[name]-[hash].[ext]',
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            if (id.includes('/react/') || id.includes('/react-dom/')) return 'react-vendor'
             if (id.includes('lucide-react')) return 'icons'
             return 'vendor'
           }
