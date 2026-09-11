@@ -6,7 +6,7 @@ const clients = [
     { name: 'Neolife International', logo: '/logos/neolife.png', url: 'https://neolife.com/' },
     { name: 'Hama Academy', logo: '/logos/hama.png' },
     { name: 'Abrob Industry', logo: '/logos/abrob.png', url: 'https://www.abrobindustry.com/' },
-    { name: 'Ramu', logo: '/logos/ramu.svg' },
+    { name: 'Ramu', logo: '/logos/ramu.svg', className: 'client-logo--ramu' },
 ];
 
 const ClientsCarousel = () => {

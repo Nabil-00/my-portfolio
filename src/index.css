@@ -1004,8 +1004,9 @@ button:disabled {
   object-fit: contain;
 }
 
-.client-logo--defendhub {
-  transform: scale(5.5);
+.client-logo--defendhub,
+.client-logo--ramu {
+  transform: scale(8);
 }
 
 .carousel-item > span {
