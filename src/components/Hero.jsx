@@ -44,6 +44,10 @@ const Hero = () => {
                         <span>{hero.availability}</span>
                     </div>
 
+                    <p className="mt-3" style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
+                        Based in Kano, Nigeria
+                    </p>
+
                     <p className="mt-6" style={{ fontSize: '18px', color: 'var(--text-secondary)' }}>
                         {hero.greeting}
                     </p>
