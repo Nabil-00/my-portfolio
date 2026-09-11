@@ -77,14 +77,13 @@ const Contact = () => {
         
         const form = e.target;
         const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
         
         try {
-            const response = await fetch(form.action, {
-                method: form.method,
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: { 'Content-Type': 'application/json' }
             });
             if (response.ok) {
                 setStatus('accepted');
@@ -125,8 +124,6 @@ const Contact = () => {
 
                 <form 
                     className="max-w-[600px] mx-auto mt-[60px] space-y-5"
-                    action="https://formspree.io/f/PLACEHOLDER"
-                    method="POST"
                     onSubmit={handleSubmit}
                 >
                     {status === 'accepted' ? (
