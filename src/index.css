@@ -1004,8 +1004,7 @@ button:disabled {
   object-fit: contain;
 }
 
-.client-logo--defendhub,
-.client-logo--ramu {
+.client-logo--defendhub {
   transform: scale(8);
 }
 
