@@ -53,6 +53,7 @@ function readPosts() {
       readingTime,
       body: html,
       wordCount,
+      cover: `/covers/${slug}.jpg`,
     })
   }
 

@@ -58,10 +58,10 @@ export default function BlogTeaser({ posts }) {
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '0.6rem',
-                  padding: '1.25rem',
                   background: 'var(--bg-2)',
                   border: '1px solid var(--border)',
                   borderRadius: 'var(--radius-md)',
+                  overflow: 'hidden',
                   height: '100%',
                   transition: 'border-color 0.25s ease, transform 0.25s ease',
                 }}
@@ -74,6 +74,18 @@ export default function BlogTeaser({ posts }) {
                   e.currentTarget.style.transform = 'translateY(0)'
                 }}
               >
+                {/* Cover thumbnail */}
+                {post.cover && (
+                  <div style={{ aspectRatio: '1200 / 630', overflow: 'hidden' }}>
+                    <img
+                      src={post.cover}
+                      alt={post.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    />
+                  </div>
+                )}
+
+                <div style={{ padding: '0 1.25rem 1.25rem', display: 'flex', flexDirection: 'column', gap: '0.6rem', flex: 1 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <time style={{ color: 'var(--text-tertiary)', fontSize: '0.72rem' }}>
                     {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
@@ -113,6 +125,7 @@ export default function BlogTeaser({ posts }) {
                 }}>
                   Read more →
                 </span>
+                </div>
               </article>
             </Link>
           ))}

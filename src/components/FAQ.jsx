@@ -41,9 +41,10 @@ const FAQItem = ({ question, answer }) => {
             </button>
             <div
                 style={{
-                    maxHeight: open ? '200px' : '0',
+                    maxHeight: open ? '600px' : '0',
                     overflow: 'hidden',
-                    transition: 'max-height 0.3s ease',
+                    transition: 'max-height 0.35s ease, opacity 0.25s ease',
+                    opacity: open ? 1 : 0,
                 }}
             >
                 <p

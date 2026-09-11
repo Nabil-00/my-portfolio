@@ -277,14 +277,7 @@ const siteContent = {
           question: "What is the MRTB Operations Management System?",
           answer: "The MRTB Operations Management System is an office-management platform built by Nabil Ismail using React, TypeScript, Fastify, Prisma, and PostgreSQL. It features approval workflows, procurement management, document verification, geofenced attendance, and performance tracking for enterprise organizations."
         },
-        {
-          question: "What technologies does Nabil Ismail use?",
-          answer: "Nabil Ismail's tech stack includes TypeScript, JavaScript, Python, and Dart for languages; React, Next.js, Flutter, and Tailwind CSS for frontend; Node.js, Express, Fastify, and PostgreSQL for backend; plus LLM integration, prompt engineering, and workflow automation for AI features."
-        },
-        {
-          question: "Does Nabil Ismail offer AI integration services in Kano?",
-          answer: "Yes, Nabil Ismail offers AI integration services in Kano, Nigeria. Services include Large Language Model (LLM) integration, document processing, prompt engineering, and workflow automation for organizations looking to adopt AI-powered tools."
-        },
+
         {
           question: "Does Nabil Ismail make mobile apps?",
           answer: "Yes, Nabil Ismail builds mobile applications using Flutter and React. His ClassiFy project is an intelligent attendance and classroom management system with both web and mobile interfaces built with Flutter, React, Node.js, and PostgreSQL."

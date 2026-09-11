@@ -116,10 +116,10 @@ export default function BlogList({ posts }) {
                 display: 'grid',
                 gridTemplateColumns: '1fr',
                 gap: '1.5rem',
-                padding: '2rem',
                 background: 'var(--bg-3)',
                 border: '1px solid var(--border)',
                 borderRadius: 'var(--radius-lg)',
+                overflow: 'hidden',
                 transition: 'border-color 0.3s ease, transform 0.3s ease',
               }}
               onMouseEnter={e => {
@@ -131,6 +131,18 @@ export default function BlogList({ posts }) {
                 e.currentTarget.style.transform = 'translateY(0)'
               }}
             >
+              {/* Cover image */}
+              {featured.cover && (
+                <div style={{ aspectRatio: '1200 / 630', overflow: 'hidden' }}>
+                  <img
+                    src={featured.cover}
+                    alt={featured.title}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
+                </div>
+              )}
+
+              <div style={{ padding: '0 2rem 2rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                 <span style={{
                   fontSize: '0.65rem',
@@ -189,6 +201,7 @@ export default function BlogList({ posts }) {
                   </span>
                 ))}
               </div>
+              </div>
             </article>
           </Link>
         )}
@@ -220,10 +233,10 @@ export default function BlogList({ posts }) {
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '0.75rem',
-                    padding: '1.5rem',
                     background: 'var(--bg-2)',
                     border: '1px solid var(--border)',
                     borderRadius: 'var(--radius-md)',
+                    overflow: 'hidden',
                     height: '100%',
                     transition: 'border-color 0.25s ease, transform 0.25s ease',
                   }}
@@ -236,6 +249,18 @@ export default function BlogList({ posts }) {
                     e.currentTarget.style.transform = 'translateY(0)'
                   }}
                 >
+                  {/* Cover thumbnail */}
+                  {post.cover && (
+                    <div style={{ aspectRatio: '1200 / 630', overflow: 'hidden' }}>
+                      <img
+                        src={post.cover}
+                        alt={post.title}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                      />
+                    </div>
+                  )}
+
+                  <div style={{ padding: '0 1.5rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', flex: 1 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <time style={{ color: 'var(--text-tertiary)', fontSize: '0.75rem' }}>
                       {new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
@@ -280,6 +305,7 @@ export default function BlogList({ posts }) {
                         {tag}
                       </span>
                     ))}
+                  </div>
                   </div>
                 </article>
               </Link>

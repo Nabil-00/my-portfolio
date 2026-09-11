@@ -82,6 +82,33 @@ export default function BlogPost({ posts }) {
 
   return (
     <article style={{ paddingTop: '100px', paddingBottom: '80px' }}>
+      {/* Cover image */}
+      {post.cover && (
+        <div style={{
+          maxWidth: '900px',
+          margin: '0 auto 2.5rem',
+          padding: '0 1.25rem',
+        }}>
+          <div style={{
+            borderRadius: 'var(--radius-lg)',
+            overflow: 'hidden',
+            border: '1px solid var(--border)',
+            aspectRatio: '1200 / 630',
+          }}>
+            <img
+              src={post.cover}
+              alt={post.title}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                display: 'block',
+              }}
+            />
+          </div>
+        </div>
+      )}
+
       {/* Full-bleed header */}
       <header style={{
         maxWidth: '820px',

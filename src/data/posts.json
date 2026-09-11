@@ -11,7 +11,8 @@
       "guide"
     ],
     "readingTime": 6,
-    "wordCount": 1105
+    "wordCount": 1105,
+    "cover": "/covers/web-developer-in-kano.jpg"
   },
   {
     "slug": "website-design-in-kano",
@@ -25,7 +26,8 @@
       "ux"
     ],
     "readingTime": 5,
-    "wordCount": 864
+    "wordCount": 864,
+    "cover": "/covers/website-design-in-kano.jpg"
   },
   {
     "slug": "ai-company-in-kano",
@@ -39,7 +41,8 @@
       "technology"
     ],
     "readingTime": 5,
-    "wordCount": 916
+    "wordCount": 916,
+    "cover": "/covers/ai-company-in-kano.jpg"
   },
   {
     "slug": "mobile-app-developer-kano",
@@ -53,7 +56,8 @@
       "android"
     ],
     "readingTime": 5,
-    "wordCount": 1000
+    "wordCount": 1000,
+    "cover": "/covers/mobile-app-developer-kano.jpg"
   },
   {
     "slug": "software-developer-in-kano",
@@ -67,7 +71,8 @@
       "guide"
     ],
     "readingTime": 5,
-    "wordCount": 961
+    "wordCount": 961,
+    "cover": "/covers/software-developer-in-kano.jpg"
   },
   {
     "slug": "hire-web-developer-kano",
@@ -81,7 +86,8 @@
       "guide"
     ],
     "readingTime": 5,
-    "wordCount": 992
+    "wordCount": 992,
+    "cover": "/covers/hire-web-developer-kano.jpg"
   },
   {
     "slug": "flutter-developer-kano",
@@ -95,7 +101,8 @@
       "cross-platform"
     ],
     "readingTime": 6,
-    "wordCount": 1023
+    "wordCount": 1023,
+    "cover": "/covers/flutter-developer-kano.jpg"
   },
   {
     "slug": "chatbot-developer-kano",
@@ -109,7 +116,8 @@
       "customer-service"
     ],
     "readingTime": 5,
-    "wordCount": 856
+    "wordCount": 856,
+    "cover": "/covers/chatbot-developer-kano.jpg"
   },
   {
     "slug": "enterprise-software-kano",
@@ -123,7 +131,8 @@
       "business-systems"
     ],
     "readingTime": 5,
-    "wordCount": 878
+    "wordCount": 878,
+    "cover": "/covers/enterprise-software-kano.jpg"
   },
   {
     "slug": "react-developer-kano",
@@ -137,6 +146,7 @@
       "javascript"
     ],
     "readingTime": 5,
-    "wordCount": 918
+    "wordCount": 918,
+    "cover": "/covers/react-developer-kano.jpg"
   }
 ]
