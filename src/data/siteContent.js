@@ -284,6 +284,10 @@ const siteContent = {
         {
           question: "Does Nabil Ismail offer AI integration services in Kano?",
           answer: "Yes, Nabil Ismail offers AI integration services in Kano, Nigeria. Services include Large Language Model (LLM) integration, document processing, prompt engineering, and workflow automation for organizations looking to adopt AI-powered tools."
+        },
+        {
+          question: "Does Nabil Ismail make mobile apps?",
+          answer: "Yes, Nabil Ismail builds mobile applications using Flutter and React. His ClassiFy project is an intelligent attendance and classroom management system with both web and mobile interfaces built with Flutter, React, Node.js, and PostgreSQL."
         }
       ],
     },
