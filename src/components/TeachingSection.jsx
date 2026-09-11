@@ -90,7 +90,7 @@ const TeachingSection = () => {
                         <div className="flex items-center gap-3">
                             <img
                                 src="/creator-photo.webp"
-                                alt="Nabeel Ismail"
+                                alt="Nabil Ismail"
                                 loading="lazy"
                                 width={52}
                                 height={52}
