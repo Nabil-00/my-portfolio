@@ -18,16 +18,19 @@
 Solo developer · In development
 An office-management system with approval workflows, procurement, document verification, geofenced attendance, and performance tracking for a real organization.
 Stack: React, TypeScript, Fastify, Prisma, PostgreSQL
+Case study: https://github.com/Nabil-00/mrtb-oms-case-study
 
 ### ClassiFy
 Solo developer (final-year project) · In development
 An intelligent attendance and classroom management system with web and mobile interfaces, backend services, and AI integration.
 Stack: Flutter, React, Node.js, PostgreSQL
+Case study: https://github.com/Nabil-00/classify-case-study
 
 ### ExamFlow AI
 Lead Developer · Prototyping
 An AI-driven examination workflow tool designed to automate question generation, grading assistance, and securely manage examination data.
 Stack: Python, React, LLMs, PostgreSQL
+Case study: https://github.com/Nabil-00/examflow-ai-case-study
 
 ## Skills
 

@@ -55,20 +55,23 @@ const Projects = () => {
                                 ))}
                             </p>
 
-                            {(project.links?.live || project.links?.source) && (
-                                <div className="project-actions">
-                                    {project.links.live && (
-                                        <a href={project.links.live} target="_blank" rel="noopener noreferrer" className="project-link">
-                                            {projectsSection.liveLinkLabel}<ExternalLink size={15} />
-                                        </a>
-                                    )}
-                                    {project.links.source && (
-                                        <a href={project.links.source} target="_blank" rel="noopener noreferrer" className="project-link project-link--secondary">
-                                            {projectsSection.githubLinkLabel}<ArrowRight size={15} />
-                                        </a>
-                                    )}
-                                </div>
-                            )}
+                            <div className="project-actions">
+                                {project.links?.caseStudy && (
+                                    <a href={project.links.caseStudy} target="_blank" rel="noopener noreferrer" className="project-link">
+                                        {projectsSection.caseStudyLabel}<ArrowRight size={15} />
+                                    </a>
+                                )}
+                                {project.links?.live && (
+                                    <a href={project.links.live} target="_blank" rel="noopener noreferrer" className="project-link project-link--secondary">
+                                        {projectsSection.liveLinkLabel}<ExternalLink size={15} />
+                                    </a>
+                                )}
+                                {project.links?.source && (
+                                    <a href={project.links.source} target="_blank" rel="noopener noreferrer" className="project-link project-link--secondary">
+                                        {projectsSection.githubLinkLabel}<ArrowRight size={15} />
+                                    </a>
+                                )}
+                            </div>
                         </div>
                     </article>
                 ))}

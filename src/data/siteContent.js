@@ -109,7 +109,7 @@ const siteContent = {
       summary:
         "An office-management system with approval workflows, procurement, document verification, geofenced attendance, and performance tracking for a real organization.",
       stack: ["React", "TypeScript", "Fastify", "Prisma", "PostgreSQL"],
-      links: { live: null, source: null, caseStudy: null },
+      links: { live: null, source: null, caseStudy: "https://github.com/Nabil-00/mrtb-oms-case-study" },
       media: "/projects/mrtb.webp",
     },
     {
@@ -121,7 +121,7 @@ const siteContent = {
       summary:
         "An intelligent attendance and classroom management system with web and mobile interfaces, backend services, and AI integration.",
       stack: ["Flutter", "React", "Node.js", "PostgreSQL"],
-      links: { live: null, source: null, caseStudy: null },
+      links: { live: null, source: null, caseStudy: "https://github.com/Nabil-00/classify-case-study" },
       media: "/projects/classify.webp",
     },
     {
@@ -133,7 +133,7 @@ const siteContent = {
       summary:
         "An AI-driven examination workflow tool designed to automate question generation, grading assistance, and securely manage examination data.",
       stack: ["Python", "React", "LLMs", "PostgreSQL"],
-      links: { live: null, source: null, caseStudy: null },
+      links: { live: null, source: null, caseStudy: "https://github.com/Nabil-00/examflow-ai-case-study" },
       media: "/projects/examflow.webp",
     },
   ],
@@ -225,6 +225,7 @@ const siteContent = {
       subtext: "Real projects for real organizations.",
       liveLinkLabel: "Visit Site",
       githubLinkLabel: "GitHub",
+      caseStudyLabel: "Read more",
     },
     teaching: {
       eyebrow: "TEACHING & COMMUNITY",

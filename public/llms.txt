@@ -13,6 +13,12 @@ He teaches as well: annual Supervised Industrial Work Experience Scheme (SIWES) 
 - [Portfolio home](https://nabil.is-a.dev/): projects, skills, about, and contact
 - [This site in markdown](https://nabil.is-a.dev/index.md): LLM-friendly text version of the portfolio
 
+## Case studies
+
+- [MRTB office management system](https://github.com/Nabil-00/mrtb-oms-case-study): product shape, architecture, performance work, and tradeoffs
+- [ClassiFy attendance platform](https://github.com/Nabil-00/classify-case-study): product shape, architecture, verification, and tradeoffs
+- [ExamFlow AI examination workflow](https://github.com/Nabil-00/examflow-ai-case-study): product shape, planned architecture, and open questions
+
 ## Profiles
 
 - [GitHub](https://github.com/Nabil-00): source code and open work
