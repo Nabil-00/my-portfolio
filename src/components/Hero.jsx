@@ -124,7 +124,7 @@ const Hero = () => {
                             width={520}
                             height={520}
                             className="w-full h-full object-cover"
-                            style={{ transform: 'scale(1.05)' }}
+                            style={{ transform: 'scale(1.1)' }}
                         />
                     </div>
                 </div>
