@@ -888,6 +888,17 @@ button:disabled {
   }
 }
 
+@media (max-width: 639px) {
+  .project-visual-cta {
+    margin-top: 1.25rem;
+  }
+  .project-visual-cta .btn-primary {
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    box-shadow: 0 0 16px 0 var(--accent-glow), 0 4px 12px 0 var(--accent-glow);
+  }
+}
+
 @media (max-width: 1023px) {
   .project-feature,
   .project-feature--reverse {
