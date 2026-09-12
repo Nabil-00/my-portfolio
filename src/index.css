@@ -283,7 +283,7 @@ a {
 @keyframes fade-in-left {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-22px);
   }
   to {
     opacity: 1;
