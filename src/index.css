@@ -891,13 +891,17 @@ button:disabled {
 @media (max-width: 639px) {
   .project-visual-cta {
     margin-top: 1.25rem;
-    padding-inline: 4px;
+    padding-inline: 0;
+  }
+  .project-feature--reverse .project-visual-cta {
+    justify-content: stretch;
   }
   .project-visual-cta .btn-primary {
-    padding: 9px 21px;
-    font-size: 0.85rem;
-    gap: 6px;
-    box-shadow: 0 0 12px 0 var(--accent-glow), 0 3px 10px 0 var(--accent-glow);
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1rem;
+    gap: 8px;
+    box-shadow: 0 0 18px 0 var(--accent-glow), 0 4px 14px 0 var(--accent-glow);
   }
 }
 
