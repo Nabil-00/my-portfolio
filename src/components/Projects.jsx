@@ -29,6 +29,13 @@ const Projects = () => {
                     >
                         <div className="project-artwork">
                             <ProjectArtwork project={project} />
+                            {project.links?.caseStudy && (
+                                <div className="project-visual-cta">
+                                    <a href={project.links.caseStudy} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                                        {projectsSection.caseStudyLabel}<ArrowRight size={18} />
+                                    </a>
+                                </div>
+                            )}
                         </div>
 
                         <div className="project-copy">
@@ -55,23 +62,20 @@ const Projects = () => {
                                 ))}
                             </p>
 
-                            <div className="project-actions">
-                                {project.links?.caseStudy && (
-                                    <a href={project.links.caseStudy} target="_blank" rel="noopener noreferrer" className="project-link">
-                                        {projectsSection.caseStudyLabel}<ArrowRight size={15} />
-                                    </a>
-                                )}
-                                {project.links?.live && (
-                                    <a href={project.links.live} target="_blank" rel="noopener noreferrer" className="project-link project-link--secondary">
-                                        {projectsSection.liveLinkLabel}<ExternalLink size={15} />
-                                    </a>
-                                )}
-                                {project.links?.source && (
-                                    <a href={project.links.source} target="_blank" rel="noopener noreferrer" className="project-link project-link--secondary">
-                                        {projectsSection.githubLinkLabel}<ArrowRight size={15} />
-                                    </a>
-                                )}
-                            </div>
+                            {(project.links?.live || project.links?.source) && (
+                                <div className="project-actions">
+                                    {project.links.live && (
+                                        <a href={project.links.live} target="_blank" rel="noopener noreferrer" className="project-link">
+                                            {projectsSection.liveLinkLabel}<ExternalLink size={15} />
+                                        </a>
+                                    )}
+                                    {project.links.source && (
+                                        <a href={project.links.source} target="_blank" rel="noopener noreferrer" className="project-link project-link--secondary">
+                                            {projectsSection.githubLinkLabel}<ArrowRight size={15} />
+                                        </a>
+                                    )}
+                                </div>
+                            )}
                         </div>
                     </article>
                 ))}
