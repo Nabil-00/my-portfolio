@@ -870,8 +870,21 @@ button:disabled {
 
 .project-visual-cta {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 1.75rem;
+}
+
+.project-feature--reverse .project-visual-cta {
+  justify-content: flex-end;
+}
+
+.project-visual-cta .btn-primary {
+  box-shadow: 0 0 28px 0 var(--accent-glow), 0 4px 14px 0 var(--accent-glow);
+}
+@media (hover: hover) and (pointer: fine) {
+  .project-visual-cta .btn-primary:hover {
+    box-shadow: 0 0 36px 0 rgba(0, 229, 160, 0.45), 0 6px 20px 0 rgba(0, 229, 160, 0.4);
+  }
 }
 
 @media (max-width: 1023px) {
