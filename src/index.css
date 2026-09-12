@@ -888,20 +888,37 @@ button:disabled {
   }
 }
 
+@keyframes cta-soft-pulse {
+  0%, 100% { box-shadow: 0 0 8px 0 var(--accent-glow); }
+  50% { box-shadow: 0 0 18px 0 var(--accent-glow); }
+}
+
 @media (max-width: 639px) {
   .project-visual-cta {
     margin-top: 1.25rem;
     padding-inline: 0;
   }
   .project-feature--reverse .project-visual-cta {
-    justify-content: stretch;
+    justify-content: flex-end;
   }
   .project-visual-cta .btn-primary {
-    width: 100%;
-    padding: 14px 20px;
-    font-size: 1rem;
-    gap: 8px;
-    box-shadow: 0 0 18px 0 var(--accent-glow), 0 4px 14px 0 var(--accent-glow);
+    width: auto;
+    padding: 8px 18px;
+    font-size: 0.8rem;
+    gap: 6px;
+    background: var(--accent-dim);
+    color: var(--accent);
+    animation: cta-soft-pulse 2.4s ease-in-out infinite;
+  }
+  .project-visual-cta .btn-primary svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-visual-cta .btn-primary {
+    animation: none;
   }
 }
 

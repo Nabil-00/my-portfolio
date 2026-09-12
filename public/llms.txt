@@ -57,6 +57,7 @@ He teaches as well: annual Supervised Industrial Work Experience Scheme (SIWES) 
 
 
 
+
 ## Writing
 
 - [How to Find a Web Developer in Kano, Nigeria](https://nabil.is-a.dev/blog/web-developer-in-kano) — Finding a skilled web developer in Kano requires knowing what to look for — from technical expertise to local market understanding. A complete guide for Kano businesses. (Thu Sep 10 2026 01:00:00 GMT+0100 (West Africa Time))
