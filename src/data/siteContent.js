@@ -26,7 +26,7 @@ const siteContent = {
     headline: ["I'm ", "Nabil", " Ismail"],
     highlightWord: "Nabil",
     tagline: "Software Engineer · AI Builder · Based in Kano, Nigeria",
-    bio: "I'm Nabil Ismail, a software engineer in Kano, Nigeria. I've built 5+ production systems for organizations including DefendHub Enterprise and Hama Academy, from enterprise platforms to AI-powered tools. I work mostly with React, Node.js, and PostgreSQL, and bring in LLM integration where it actually helps.",
+    bio: "I'm Nabil Ismail, a software engineer in Kano, Nigeria. I've built 5+ production systems for organizations including DefendHub Enterprise and Hama Academy, from enterprise platforms to AI-powered tools. I work mostly with React, Node.js, and PostgreSQL, and use AI where it actually helps.",
     cta: { primary: "Let's Talk", secondary: "Download CV" },
     availability: "CS Undergraduate · Open to opportunities",
   },
