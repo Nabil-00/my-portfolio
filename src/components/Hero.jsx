@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle, Facebook, Github, Download, Music2 } from 'lucide-react';
+import { MessageCircle, Facebook, Linkedin, Github, Download, Music2 } from 'lucide-react';
 import siteContent from '../data/siteContent';
 
 const Hero = () => {
@@ -8,6 +8,7 @@ const Hero = () => {
     const socialLinks = [
         { icon: <MessageCircle size={16} />, href: meta.whatsapp, label: meta.socialLabels.whatsapp },
         { icon: <Facebook size={16} />, href: meta.facebook, label: meta.socialLabels.facebook },
+        { icon: <Linkedin size={16} />, href: meta.linkedin, label: meta.socialLabels.linkedin },
         { icon: <Music2 size={16} />, href: meta.tiktok, label: meta.socialLabels.tiktok },
         { icon: <Github size={16} />, href: meta.github, label: meta.socialLabels.github }
     ];

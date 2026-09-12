@@ -7,6 +7,7 @@ const siteContent = {
     email: "nabeelismailabdulkadir15@gmail.com",
     phone: "2349136159701",
     github: "https://github.com/Nabil-00",
+    linkedin: "https://www.linkedin.com/in/nabil-i-426230336",
     tiktok: "https://www.tiktok.com/@i_nabeel_",
     facebook: "https://www.facebook.com/nabil.ismail.5855",
     whatsapp: "https://wa.me/2349136159701",
@@ -14,6 +15,7 @@ const siteContent = {
     socialLabels: {
       whatsapp: "WhatsApp",
       facebook: "Facebook",
+      linkedin: "LinkedIn",
       tiktok: "TikTok",
       github: "GitHub",
       email: "Email",

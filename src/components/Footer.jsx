@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Facebook, MessageCircle, Mail, Music2 } from 'lucide-react';
+import { Github, Facebook, Linkedin, MessageCircle, Mail, Music2 } from 'lucide-react';
 import siteContent from '../data/siteContent';
 
 const Footer = () => {
@@ -9,6 +9,7 @@ const Footer = () => {
     const socialLinks = [
         { icon: <MessageCircle size={20} />, href: meta.whatsapp, label: meta.socialLabels.whatsapp },
         { icon: <Facebook size={20} />, href: meta.facebook, label: meta.socialLabels.facebook },
+        { icon: <Linkedin size={20} />, href: meta.linkedin, label: meta.socialLabels.linkedin },
         { icon: <Music2 size={20} />, href: meta.tiktok, label: meta.socialLabels.tiktok },
         { icon: <Github size={20} />, href: meta.github, label: meta.socialLabels.github },
         { icon: <Mail size={20} />, href: `mailto:${meta.email}`, label: meta.socialLabels.email },
