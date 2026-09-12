@@ -895,7 +895,8 @@ button:disabled {
 
 @media (max-width: 639px) {
   .project-visual-cta {
-    margin-top: 1.25rem;
+    width: auto;
+    margin: 1.25rem -1.25rem 0;
     padding-inline: 0;
   }
   .project-feature--reverse .project-visual-cta {
@@ -908,7 +909,17 @@ button:disabled {
     gap: 6px;
     background: var(--accent-dim);
     color: var(--accent);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transform: translateX(-22px);
     animation: cta-soft-pulse 2.4s ease-in-out infinite;
+  }
+  .project-feature--reverse .project-visual-cta .btn-primary {
+    border-top-left-radius: var(--radius-pill);
+    border-bottom-left-radius: var(--radius-pill);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    transform: translateX(22px);
   }
   .project-visual-cta .btn-primary svg {
     width: 14px;
