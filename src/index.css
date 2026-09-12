@@ -894,7 +894,10 @@ button:disabled {
     padding-inline: 4px;
   }
   .project-visual-cta .btn-primary {
-    box-shadow: 0 0 16px 0 var(--accent-glow), 0 4px 12px 0 var(--accent-glow);
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    gap: 6px;
+    box-shadow: 0 0 12px 0 var(--accent-glow), 0 3px 10px 0 var(--accent-glow);
   }
 }
 
