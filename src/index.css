@@ -911,7 +911,7 @@ button:disabled {
     color: var(--accent);
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    transform: translateX(-22px);
+    transform: translateX(-30px);
     animation: cta-soft-pulse 2.4s ease-in-out infinite;
   }
   .project-feature--reverse .project-visual-cta .btn-primary {
@@ -919,7 +919,7 @@ button:disabled {
     border-bottom-left-radius: var(--radius-pill);
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    transform: translateX(22px);
+    transform: translateX(30px);
   }
   .project-visual-cta .btn-primary svg {
     width: 14px;
